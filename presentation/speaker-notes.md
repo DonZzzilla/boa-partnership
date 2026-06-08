@@ -10,6 +10,8 @@ Good morning, and thank you all for being here today. I want to start by paintin
 
 Over the past several years, BOA has grown from a small, informal working group into something much more significant. We now support operations across moderation, event coordination, technical development, community outreach, and incident response. Our volunteers bring an incredible range of skills and dedication. That's the good news.
 
+But let me be transparent: volunteer numbers are at an all-time low. We have 20 to 30 active volunteers right now, down from a historical average of 45 or more. The high bar of Discord knowledge needed to understand how to run processes drives people away. That's a communication problem — and it's what these seven asks aim to fix.
+
 The challenge is that our growth has been organic — and while that organic quality gives us a strong community culture, it also means our infrastructure hasn't kept pace. We rely heavily on informal processes, personal relationships, and institutional memory held by a small number of long-standing members. Our onboarding is inconsistent. Our documentation is sparse. Our tools are manual.
 
 None of this is anyone's fault. It's the natural result of a passionate group of people doing their best with limited resources. But it does mean that if we want to scale — if we want to increase our impact without burning out our team — we need to make some strategic investments. And that's exactly what this partnership proposal is about.
@@ -160,7 +162,7 @@ What we've presented today is a comprehensive but achievable vision for what a p
 
 Let me summarize the key proposals:
 
-First, the BOA Bot — an automation tool that reduces operational burden and frees our volunteers to focus on high-impact work. Second, a Volunteer Recognition Program that celebrates contributions and drives retention. Third, a Knowledge Base Initiative that preserves institutional knowledge and positions BOA as a community resource. And fourth, a Technical Knowledge Sharing program that creates mutual value through expertise exchange.
+Seven focused asks in total: the BOA Bot for automation, a Volunteer Recognition Program, a Knowledge Base Initiative, more Official Technical Info, Volunteer Pulse Checks, Mod Log Access for Lead BOAs, and CWS Participation in BOA Meetings. Each addresses a specific communication, retention, or information flow problem.
 
 Our proposed approach is phased. We start with quick wins — the recognition program and knowledge base — that build momentum and trust. Then we layer in the BOA Bot as a medium-term project. And we grow the technical collaboration over time as the partnership matures.
 
