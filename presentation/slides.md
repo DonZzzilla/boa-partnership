@@ -17,8 +17,8 @@
 Good morning, and thank you for joining us. Today we want to share an honest and transparent picture of where BOA currently stands. Over the past several years, BOA has evolved from a small working group into a critical operational backbone for our community. Our volunteers contribute across moderation, event coordination, technical support, and outreach. However, as we've grown, we've encountered growing pains. Our tooling is largely manual, our onboarding process is inconsistent, and institutional knowledge lives in the heads of a few long-standing members rather than in accessible systems. This isn't a criticism of anyone's work — it's a natural consequence of organic growth. The exciting part is that we now have an opportunity to address these gaps together, and that's what this partnership proposal is about.
 
 **Supporting Statistics / Examples:**
-- BOA has grown approximately 3× in active membership over the past two years
-- Current volunteer base handles an estimated 200+ task requests per month
+- Volunteer numbers are at an all-time low: 20-30 active, down from a historical average of 45+
+- High bar of Discord knowledge needed to run processes drives people away
 - Onboarding a new volunteer currently takes 4–6 weeks due to lack of structured training materials
 - Approximately 60% of operational knowledge is held by just 20% of the team (concentration risk)
 
@@ -83,7 +83,7 @@ Communication is the connective tissue of any organization, and right now, ours 
 Before we talk about where we're going, it's important to honor where we've been. BOA's track record speaks for itself. Since our founding, we've been behind some of the most impactful initiatives this community has seen. Our event team has organized gatherings that brought together hundreds of participants. Our technical contributors have built and maintained tools that the entire community depends on. Perhaps most importantly, our mentorship culture has created a pipeline of leaders who started as BOA volunteers and now drive initiatives of their own. When incidents have threatened our community's stability, it's been BOA members who stepped up — often working around the clock — to resolve them. This partnership proposal isn't about fixing something that's broken. It's about investing in something that already works and helping it reach its full potential.
 
 **Supporting Statistics / Examples:**
-- 150+ community events coordinated since BOA's inception
+- 2000+ sessions coached / new players taught since inception
 - 12 open-source tools and utilities maintained by BOA technical contributors
 - 50+ mentees who have advanced to leadership or specialist roles
 - 95% incident resolution rate within SLA during the past year
@@ -214,12 +214,11 @@ BOA isn't just an operations team — we're a community of technical practitione
 
 **Slide Title:** Building the Future Together
 
-**Slide Title:** Building the Future Together
-
 **Key Talking Points:**
 - This partnership is an investment in people, processes, and long-term community sustainability
-- Proposed phased approach: Quick wins (recognition program, knowledge base) → Medium-term (BOA Bot) → Long-term (technical collaboration)
-- Mutual benefits: operational efficiency for BOA, community engagement and brand visibility for partner
+- Seven focused asks: (1) BOA Operations Bot, (2) Recognition Program, (3) Knowledge Base, (4) Official Technical Info, (5) Volunteer Pulse Checks, (6) Mod Log Access for Lead BOAs, (7) CWS Participation in BOA Meetings
+- Proposed phased approach: Quick wins (recognition program, knowledge base) → Medium-term (BOA Bot, Mod Log Access) → Long-term (CWS Meeting Participation, Technical Collaboration)
+- Mutual benefits: operational efficiency and volunteer retention for BOA, community engagement and brand visibility for CWS
 - Success metrics and regular check-ins to ensure alignment and measure impact
 - Invitation to co-design the partnership framework — this is a collaboration, not a transaction
 - Next step: schedule a working session to prioritize initiatives and define a 90-day roadmap
