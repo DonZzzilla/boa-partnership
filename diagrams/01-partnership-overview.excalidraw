@@ -24,13 +24,13 @@
       "y": 30,
       "width": 600,
       "height": 36,
-      "text": "BOA \u00d7 CWS Partnership Overview",
+      "text": "5 Asks, 1 Goal: Better Communication",
       "fontSize": 28,
       "fontFamily": 1,
       "strokeColor": "#d4a853",
       "textAlign": "center",
       "verticalAlign": "middle",
-      "originalText": "BOA \u00d7 CWS Partnership Overview",
+      "originalText": "5 Asks, 1 Goal: Better Communication",
       "autoResize": true
     },
     {
@@ -40,13 +40,13 @@
       "y": 70,
       "width": 500,
       "height": 20,
-      "text": "Three initiatives. One shared mission.",
+      "text": "Every ask ties to communication, retention, or information flow",
       "fontSize": 14,
       "fontFamily": 1,
       "strokeColor": "#5a5e72",
       "textAlign": "center",
       "verticalAlign": "middle",
-      "originalText": "Three initiatives. One shared mission.",
+      "originalText": "Every ask ties to communication, retention, or information flow",
       "autoResize": true
     },
     {
@@ -169,12 +169,12 @@
       "y": 332,
       "width": 230,
       "height": 18,
-      "text": "NEEDS",
+      "text": "COMMUNICATION NEEDS",
       "fontSize": 12,
       "fontFamily": 1,
       "strokeColor": "#e05555",
       "fontWeight": 700,
-      "originalText": "NEEDS",
+      "originalText": "COMMUNICATION NEEDS",
       "autoResize": true
     },
     {
@@ -184,11 +184,11 @@
       "y": 352,
       "width": 230,
       "height": 88,
-      "text": "\u2022 Less manual work\n\u2022 Better recognition\n\u2022 Knowledge capture\n\u2022 EU coverage\n\u2022 Automation tools",
+      "text": "\u2022 Faster information flow\n\u2022 Volunteer recognition\n\u2022 Knowledge preservation\n\u2022 Cross-timezone clarity\n\u2022 Less manual overhead",
       "fontSize": 12,
       "fontFamily": 1,
       "strokeColor": "#8b8fa3",
-      "originalText": "\u2022 Less manual work\n\u2022 Better recognition\n\u2022 Knowledge capture\n\u2022 EU coverage\n\u2022 Automation tools",
+      "originalText": "\u2022 Faster information flow\n\u2022 Volunteer recognition\n\u2022 Knowledge preservation\n\u2022 Cross-timezone clarity\n\u2022 Less manual overhead",
       "autoResize": true
     },
     {
@@ -215,12 +215,12 @@
       "y": 472,
       "width": 230,
       "height": 18,
-      "text": "BRINGS WILLINGNESS",
+      "text": "BRINGS EXPERTISE",
       "fontSize": 12,
       "fontFamily": 1,
       "strokeColor": "#55c57a",
       "fontWeight": 700,
-      "originalText": "BRINGS WILLINGNESS",
+      "originalText": "BRINGS EXPERTISE",
       "autoResize": true
     },
     {
@@ -230,11 +230,11 @@
       "y": 492,
       "width": 230,
       "height": 110,
-      "text": "\u2022 150+ events run\n\u2022 50+ leaders mentored\n\u2022 12 open-source tools\n\u2022 Dedicated volunteers\n\u2022 Deep community trust",
+      "text": "\u2022 150+ events coordinated\n\u2022 50+ leaders mentored\n\u2022 Deep game knowledge\n\u2022 Dedicated volunteers\n\u2022 Community trust",
       "fontSize": 12,
       "fontFamily": 1,
       "strokeColor": "#8b8fa3",
-      "originalText": "\u2022 150+ events run\n\u2022 50+ leaders mentored\n\u2022 12 open-source tools\n\u2022 Dedicated volunteers\n\u2022 Deep community trust",
+      "originalText": "\u2022 150+ events coordinated\n\u2022 50+ leaders mentored\n\u2022 Deep game knowledge\n\u2022 Dedicated volunteers\n\u2022 Community trust",
       "autoResize": true
     },
     {
@@ -311,12 +311,12 @@
       "y": 225,
       "width": 230,
       "height": 20,
-      "text": "Ghost of Tabor Game",
+      "text": "Ghosts of Tabor",
       "fontSize": 16,
       "fontFamily": 1,
       "strokeColor": "#5b8dee",
       "fontWeight": 700,
-      "originalText": "Ghost of Tabor Game",
+      "originalText": "Ghosts of Tabor",
       "autoResize": true
     },
     {
@@ -326,11 +326,11 @@
       "y": 248,
       "width": 230,
       "height": 48,
-      "text": "Dev\u00b7 Publishing\nCommunity Management",
+      "text": "Development \u00b7 Publishing\nCommunity Management",
       "fontSize": 13,
       "fontFamily": 1,
       "strokeColor": "#8b8fa3",
-      "originalText": "Dev \u00b7 Publishing\nCommunity Management",
+      "originalText": "Development \u00b7 Publishing\nCommunity Management",
       "autoResize": true
     },
     {
@@ -372,11 +372,11 @@
       "y": 352,
       "width": 230,
       "height": 88,
-      "text": "\u2022 Technical infrastructure\n\u2022 Hosting & monitoring\n\u2022 Security review\n\u2022 Developer consultation\n\u2022 Community data access",
+      "text": "\u2022 Technical infrastructure\n\u2022 Official information access\n\u2022 Developer consultation\n\u2022 Community data access\n\u2022 Communication channels",
       "fontSize": 12,
       "fontFamily": 1,
       "strokeColor": "#8b8fa3",
-      "originalText": "\u2022 Technical infrastructure\n\u2022 Hosting & monitoring\n\u2022 Security review\n\u2022 Developer consultation\n\u2022 Community data access",
+      "originalText": "\u2022 Technical infrastructure\n\u2022 Official information access\n\u2022 Developer consultation\n\u2022 Community data access\n\u2022 Communication channels",
       "autoResize": true
     },
     {
@@ -418,11 +418,11 @@
       "y": 492,
       "width": 230,
       "height": 110,
-      "text": "\u2022 Stronger player community\n\u2022 Better player retention\n\u2022 Community goodwill\n\u2022 Brand visibility\n\u2022 Reduced speculation",
+      "text": "\u2022 Stronger player community\n\u2022 Better volunteer retention\n\u2022 Reduced misinformation\n\u2022 Brand visibility\n\u2022 Community goodwill",
       "fontSize": 12,
       "fontFamily": 1,
       "strokeColor": "#8b8fa3",
-      "originalText": "\u2022 Stronger player community\n\u2022 Better player retention\n\u2022 Community goodwill\n\u2022 Brand visibility\n\u2022 Reduced speculation",
+      "originalText": "\u2022 Stronger player community\n\u2022 Better volunteer retention\n\u2022 Reduced misinformation\n\u2022 Brand visibility\n\u2022 Community goodwill",
       "autoResize": true
     },
     {
@@ -449,14 +449,14 @@
       "y": 150,
       "width": 320,
       "height": 28,
-      "text": "COLLABORATION",
+      "text": "COMMUNICATION",
       "fontSize": 20,
       "fontFamily": 1,
       "strokeColor": "#d4a853",
       "textAlign": "center",
       "verticalAlign": "middle",
       "fontWeight": 800,
-      "originalText": "COLLABORATION",
+      "originalText": "COMMUNICATION",
       "autoResize": true
     },
     {
@@ -466,13 +466,13 @@
       "y": 178,
       "width": 320,
       "height": 18,
-      "text": "Three Connected Initiatives",
+      "text": "Five Focused Asks",
       "fontSize": 13,
       "fontFamily": 1,
       "strokeColor": "#5a5e72",
       "textAlign": "center",
       "verticalAlign": "middle",
-      "originalText": "Three Connected Initiatives",
+      "originalText": "Five Focused Asks",
       "autoResize": true
     },
     {
@@ -499,12 +499,12 @@
       "y": 222,
       "width": 290,
       "height": 20,
-      "text": "01 BOA OPERATIONS BOT",
+      "text": "01 OPERATIONS BOT",
       "fontSize": 14,
       "fontFamily": 1,
       "strokeColor": "#5b8dee",
       "fontWeight": 700,
-      "originalText": "01 BOA OPERATIONS BOT",
+      "originalText": "01 OPERATIONS BOT",
       "autoResize": true
     },
     {
@@ -514,11 +514,11 @@
       "y": 244,
       "width": 290,
       "height": 72,
-      "text": "Session tracking \u00b7 Recognition\nTicket analytics \u00b7 Auto-reporting\n642-876 hrs/yr saved",
+      "text": "Session tracking \u00b7 Scheduling\nTicket analytics \u00b7 Reporting\nFaster information flow",
       "fontSize": 12,
       "fontFamily": 1,
       "strokeColor": "#8b8fa3",
-      "originalText": "Session tracking \u00b7 Recognition\nTicket analytics \u00b7 Auto-reporting\n642-876 hrs/yr saved",
+      "originalText": "Session tracking \u00b7 Scheduling\nTicket analytics \u00b7 Reporting\nFaster information flow",
       "autoResize": true
     },
     {
@@ -560,11 +560,11 @@
       "y": 369,
       "width": 290,
       "height": 72,
-      "text": "Milestone tiers \u00b7 Service records\nRecommendation letters \u00b7 Badges\n30-40% retention improvement",
+      "text": "Milestone tiers \u00b7 Service records\nRecommendation letters \u00b7 Badges\nBetter feedback loops",
       "fontSize": 12,
       "fontFamily": 1,
       "strokeColor": "#8b8fa3",
-      "originalText": "Milestone tiers \u00b7 Service records\nRecommendation letters \u00b7 Badges\n30-40% retention improvement",
+      "originalText": "Milestone tiers \u00b7 Service records\nRecommendation letters \u00b7 Badges\nBetter feedback loops",
       "autoResize": true
     },
     {
@@ -606,11 +606,11 @@
       "y": 494,
       "width": 290,
       "height": 72,
-      "text": "SOPs \u00b7 Onboarding \u00b7 Archives\nDecision logs \u00b7 Role guides\n40-60% faster onboarding",
+      "text": "SOPs \u00b7 Onboarding \u00b7 Archives\nDecision logs \u00b7 Role guides\nInstitutional knowledge preserved",
       "fontSize": 12,
       "fontFamily": 1,
       "strokeColor": "#8b8fa3",
-      "originalText": "SOPs \u00b7 Onboarding \u00b7 Archives\nDecision logs \u00b7 Role guides\n40-60% faster onboarding",
+      "originalText": "SOPs \u00b7 Onboarding \u00b7 Archives\nDecision logs \u00b7 Role guides\nInstitutional knowledge preserved",
       "autoResize": true
     },
     {
@@ -690,13 +690,13 @@
       "y": 328,
       "width": 40,
       "height": 16,
-      "text": "needs",
+      "text": "communicates",
       "fontSize": 11,
       "fontFamily": 1,
       "strokeColor": "#d4a853",
       "textAlign": "center",
       "verticalAlign": "middle",
-      "originalText": "needs",
+      "originalText": "communicates",
       "autoResize": true
     },
     {
@@ -706,13 +706,13 @@
       "y": 328,
       "width": 40,
       "height": 16,
-      "text": "supports",
+      "text": "enables",
       "fontSize": 11,
       "fontFamily": 1,
       "strokeColor": "#d4a853",
       "textAlign": "center",
       "verticalAlign": "middle",
-      "originalText": "supports",
+      "originalText": "enables",
       "autoResize": true
     },
     {
@@ -722,13 +722,13 @@
       "y": 655,
       "width": 500,
       "height": 16,
-      "text": "Not a transaction. A partnership built on mutual benefit.",
+      "text": "Better communication between everyone.",
       "fontSize": 12,
       "fontFamily": 1,
       "strokeColor": "#5a5e72",
       "textAlign": "center",
       "verticalAlign": "middle",
-      "originalText": "Not a transaction. A partnership built on mutual benefit.",
+      "originalText": "Better communication between everyone.",
       "autoResize": true
     }
   ],
