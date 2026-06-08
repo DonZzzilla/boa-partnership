@@ -1,6 +1,6 @@
 # BOA Volunteer Recognition Program
 
-**Prepared for:** Brotherhood of Ascension (BOA) Leadership & Partnership Review
+**Prepared for:** Battlefield Operation and Awareness (BOA) Leadership & Partnership Review
 **Prepared by:** OWL Intelligent Systems, a division of ZOO Company
 **Date:** June 2026
 **Classification:** Partnership Deliverable — Confidential
@@ -27,7 +27,7 @@
 
 ### 1.1 Mission Statement
 
-The BOA Volunteer Recognition Program exists to ensure that every individual who contributes their time, energy, and expertise to the Brotherhood of Ascension feels genuinely seen, valued, and supported — not just within our community, but in their professional lives beyond it.
+The BOA Volunteer Recognition Program exists to ensure that every individual who contributes their time, energy, and expertise to the Battlefield Operation and Awareness feels genuinely seen, valued, and supported — not just within our community, but in their professional lives beyond it.
 
 ### 1.2 The Problem We're Solving
 
@@ -249,7 +249,7 @@ The following policy language is recommended for adoption by BOA leadership to f
 
 > **BOA Volunteer Recognition Program Policy**
 >
-> The Brotherhood of Ascension is committed to recognizing and celebrating the contributions of every volunteer who serves our community. To that end, BOA maintains a formal Volunteer Recognition Program that provides:
+> The Battlefield Operation and Awareness is committed to recognizing and celebrating the contributions of every volunteer who serves our community. To that end, BOA maintains a formal Volunteer Recognition Program that provides:
 >
 > a) **Service Records** — A persistent, accurate record of each volunteer's contributions, roles, hours, and milestones, maintained with the volunteer's consent and accessible to them at any time.
 >
@@ -435,7 +435,7 @@ The following mockup illustrates the volunteer's experience of the Recognition P
 
 > **BOA Bot** · *Just now*
 >
-> 🎉 Welcome to the Brotherhood of Ascension, **@Mira**!
+> 🎉 Welcome to the Battlefield Operation and Awareness, **@Mira**!
 >
 > You've been automatically enrolled in the **BOA Volunteer Recognition Program** — our way of making sure your contributions are seen, recorded, and celebrated.
 >
