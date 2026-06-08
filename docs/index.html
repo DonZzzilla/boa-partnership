@@ -182,10 +182,10 @@ footer{border-top:1px solid var(--bo);padding:48px 0;text-align:center;position:
 .footer-tagline{color:var(--tm);font-size:0.85rem;margin-bottom:20px}
 .footer-meta{font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:var(--td);letter-spacing:0.1em}
 
-.mobile-nav{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:#0a0c0e;background-color:#0a0c0e;z-index:9999;flex-direction:column;align-items:center;justify-content:center;gap:8px;opacity:0;visibility:hidden;transition:all 0.4s cubic-bezier(0.4,0,0.2,1)}.mobile-nav.open{display:flex;opacity:1;visibility:visible}
+.mobile-nav{display:none;position:fixed;top:60px;left:0;right:0;bottom:0;background:#0a0c0e;z-index:10000;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:24px;-webkit-overflow-scrolling:touch;overflow-y:auto}.mobile-nav.open{display:flex}
 .mobile-nav-close{position:absolute;top:16px;right:20px;background:none;border:1px solid var(--a);color:var(--a);width:40px;height:40px;border-radius:50%;font-size:1.1rem;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;transition:all 0.3s}
 .mobile-nav-close:hover{background:var(--a);color:var(--bg)}
-.mobile-nav a{color:var(--t);text-decoration:none;font-weight:700;padding:14px 32px;font-family:'JetBrains Mono',monospace;font-size:1.1rem;text-transform:uppercase;letter-spacing:0.15em;transition:all 0.3s;border:1px solid transparent;border-radius:var(--R);width:80%;max-width:320px;text-align:center}
+.mobile-nav a{color:var(--t);text-decoration:none;font-weight:700;padding:16px 32px;font-family:'JetBrains Mono',monospace;font-size:1.1rem;text-transform:uppercase;letter-spacing:0.15em;border:1px solid transparent;border-radius:var(--R);width:85%;max-width:340px;text-align:center;min-height:48px;display:flex;align-items:center;justify-content:center}
 .mobile-nav a:hover{color:var(--a);border-color:rgba(168,191,106,0.3);background:var(--ag);transform:translateX(4px)}
 .mobile-nav .nav-cta{background:transparent;color:var(--a)!important;border:1px solid var(--a)!important;margin-top:16px;box-shadow:0 0 20px var(--ag),inset 0 0 20px var(--ag)!important}
 .mobile-nav .nav-cta:hover{background:var(--ag2)!important;box-shadow:0 0 30px var(--ag2)!important;transform:translateY(-2px)!important}
@@ -228,13 +228,13 @@ a,button,.mobile-toggle,.nav-cta{cursor:url("data:image/svg+xml,%3Csvg xmlns='ht
 </div>
 <div class='mobile-nav' id='mobileNav'>
 <button class='mobile-nav-close' onclick='toggleMobile()' aria-label='Close'>&times;</button>
+<a href='#asks' onclick='toggleMobile()' style='background:var(--a);color:var(--bg);font-weight:900;border:none;margin-bottom:8px'>&#9654; VIEW THE 7 ASKS</a>
 <a href='#context' onclick='toggleMobile()'>Context</a>
 <a href='#challenges' onclick='toggleMobile()'>Problems</a>
-<a href='#asks' onclick='toggleMobile()'>Asks</a>
 <a href='#communication' onclick='toggleMobile()'>Theme</a>
 <a href='#vision' onclick='toggleMobile()'>Roadmap</a>
 <a href='#diagrams' onclick='toggleMobile()'>Diagrams</a>
-<a href='#contact' class='nav-cta' onclick='toggleMobile()'>Engage</a>
+<a href='#contact' onclick='toggleMobile()'>Contact</a>
 </div>
 </nav>
 <section class='hero'>
@@ -544,7 +544,7 @@ document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
 window.addEventListener('scroll',()=>{const n=document.getElementById('nav');if(window.scrollY>50)n.classList.add('scrolled');else n.classList.remove('scrolled');});
 
 // MOBILE NAV
-function toggleMobile(){var nav=document.getElementById('mobileNav');nav.classList.toggle('open');document.body.style.overflow=nav.classList.contains('open')?'hidden':'';};document.addEventListener('keydown',function(e){if(e.key==='Escape'){document.getElementById('mobileNav').classList.remove('open');document.body.style.overflow='';}});
+function toggleMobile(){var nav=document.getElementById('mobileNav');if(!nav)return;nav.classList.toggle('open');document.body.style.overflow=nav.classList.contains('open')?'hidden':'';}document.addEventListener('keydown',function(e){if(e.key==='Escape'){var nav=document.getElementById('mobileNav');if(nav){nav.classList.remove('open');document.body.style.overflow='';}}});
 
 // SMOOTH SCROLL
 document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',function(e){e.preventDefault();const t=document.querySelector(this.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth',block:'start'});});});
