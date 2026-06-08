@@ -1,6 +1,6 @@
 # Executive Brief: BOA Partnership Proposal
 
-**Prepared by:** DonZzzilla (on behalf of the Ghost of Tabor community)
+**Prepared by:** Lead BOA Team (DonZzzilla, Frost, Sharky & Kashi aka Oracle) | 2026-06-08
 **Date:** June 2026
 **Purpose:** To outline the current state of the Battlefield Operation and Awareness (BOA), identify key challenges the guild is navigating, and propose a collaborative partnership to strengthen mutual outcomes.
 
@@ -10,7 +10,7 @@
 
 The Battlefield Operation and Awareness (BOA) has long served as a cornerstone organization for the Ghost of Tabor player community. Through volunteer-driven mentorship, structured onboarding programs, educational initiatives, wiki maintenance, documentation efforts, and broad community support, BOA has played an instrumental role in helping players navigate the game and become productive, engaged members of the community. BOA's culture of selfless contribution is a significant asset—one that has shaped the experience of countless players and continues to underpin the health of the broader ecosystem.
 
-Today, BOA faces a period of transition. While the guild's mission remains as relevant as ever, several converging factors require thoughtful attention and proactive investment to ensure operational continuity and long-term sustainability.
+Today, BOA faces a period of transition. Volunteer numbers are at an all-time low — 20 to 30 active volunteers, down from a historical average of 45 or more. The high bar of Discord knowledge needed to run processes drives people away. Volunteers give their time for a crumb of acknowledgment, and better communication with CWS — even a bi-annual visit to our monthly meetings — would show them they matter. While the guild's mission remains as relevant as ever, several converging factors require thoughtful attention and proactive investment to ensure operational continuity and long-term sustainability.
 
 ## Leadership Stability
 
