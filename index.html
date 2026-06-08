@@ -32,6 +32,10 @@
   --gold:#DED59A;--goldg:rgba(222,213,154,0.12);
   --R:4px;--RL:8px
 }
+/* Futuristic cursor */
+*{cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='10' fill='none' stroke='%23A8BF6A' stroke-width='2' opacity='0.8'/%3E%3Ccircle cx='12' cy='12' r='3' fill='%23A8BF6A'/%3E%3Cline x1='12' y1='2' x2='12' y2='6' stroke='%23A8BF6A' stroke-width='1.5'/%3E%3Cline x1='12' y1='18' x2='12' y2='22' stroke='%23A8BF6A' stroke-width='1.5'/%3E%3Cline x1='2' y1='12' x2='6' y2='12' stroke='%23A8BF6A' stroke-width='1.5'/%3E%3Cline x1='18' y1='12' x2='22' y2='12' stroke='%23A8BF6A' stroke-width='1.5'/%3E%3C/svg%3E") 12 12,auto}
+a,button,.mobile-toggle,.nav-cta{cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='10' fill='none' stroke='%23A8BF6A' stroke-width='2'/%3E%3Ccircle cx='12' cy='12' r='4' fill='%23A8BF6A' opacity='0.6'/%3E%3Cline x1='12' y1='1' x2='12' y2='7' stroke='%23A8BF6A' stroke-width='2'/%3E%3Cline x1='12' y1='17' x2='12' y2='23' stroke='%23A8BF6A' stroke-width='2'/%3E%3Cline x1='1' y1='12' x2='7' y2='12' stroke='%23A8BF6A' stroke-width='2'/%3E%3Cline x1='17' y1='12' x2='23' y2='12' stroke='%23A8BF6A' stroke-width='2'/%3E%3C/svg%3E") 12 12,pointer}
+
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;background:var(--bg)}
 body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
@@ -176,7 +180,7 @@ footer{border-top:1px solid var(--bo);padding:48px 0;text-align:center;position:
 .footer-logo{font-family:'Orbitron',monospace;font-weight:800;font-size:1rem;margin-bottom:12px;letter-spacing:0.1em}
 .footer-tagline{color:var(--tm);font-size:0.85rem;margin-bottom:20px}
 .footer-meta{font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:var(--td);letter-spacing:0.1em}
-.mobile-nav{display:none;position:fixed;top:60px;left:0;right:0;bottom:0;background:#050608;z-index:99;padding:24px;flex-direction:column;gap:12px;border-top:1px solid var(--bo);backdrop-filter:blur(20px)}.mobile-nav.open{display:flex}
+.mobile-nav{display:none;position:fixed;top:60px;left:0;right:0;bottom:0;background:rgba(10,12,14,0.97);z-index:99;padding:24px;flex-direction:column;gap:12px;border-top:1px solid var(--bo);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);overflow-y:auto}.mobile-nav.open{display:flex}
 .mobile-nav a{color:var(--t);text-decoration:none;font-weight:600;padding:12px 0;border-bottom:1px solid var(--bo);font-family:'JetBrains Mono',monospace;font-size:0.85rem;text-transform:uppercase;letter-spacing:0.1em}
 .fade-up{opacity:0;transform:translateY(30px);transition:opacity 0.8s cubic-bezier(0.4,0,0.2,1),transform 0.8s cubic-bezier(0.4,0,0.2,1)}.fade-up.visible{opacity:1;transform:translateY(0)}
 @media(max-width:1024px){.about-grid{grid-template-columns:repeat(2,1fr)}.contrib-grid{grid-template-columns:repeat(2,1fr)}.proposal-grid{grid-template-columns:1fr}}
@@ -188,6 +192,13 @@ footer{border-top:1px solid var(--bo);padding:48px 0;text-align:center;position:
 
 .diagram-section{padding:80px 0;background:var(--bg)}.diagram-grid{display:grid;gap:48px}.diagram-card{background:rgba(10,12,16,0.6);border:1px solid var(--bo);border-radius:var(--RL);overflow:hidden;transition:all 0.4s}.diagram-card:hover{border-color:rgba(168,191,106,0.25);box-shadow:0 20px 60px rgba(0,0,0,0.3)}.diagram-svg-wrap{padding:24px 24px 0;background:rgba(5,6,8,0.5)}.diagram-svg-wrap svg{border-radius:var(--RL) var(--RL) 0 0}.diagram-label{padding:16px 24px 20px}.diagram-label h4{font-family:'Orbitron',sans-serif;font-size:0.85rem;font-weight:700;color:var(--a);margin-bottom:4px}.diagram-label p{font-size:0.75rem;color:var(--tm)}
 
+
+/* Futuristic cursor */
+*{cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='10' fill='none' stroke='%23A8BF6A' stroke-width='2' opacity='0.8'/%3E%3Ccircle cx='12' cy='12' r='3' fill='%23A8BF6A'/%3E%3Cline x1='12' y1='2' x2='12' y2='6' stroke='%23A8BF6A' stroke-width='1.5'/%3E%3Cline x1='12' y1='18' x2='12' y2='22' stroke='%23A8BF6A' stroke-width='1.5'/%3E%3Cline x1='2' y1='12' x2='6' y2='12' stroke='%23A8BF6A' stroke-width='1.5'/%3E%3Cline x1='18' y1='12' x2='22' y2='12' stroke='%23A8BF6A' stroke-width='1.5'/%3E%3C/svg%3E") 12 12,auto}
+a,button,.mobile-toggle,.nav-cta{cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='10' fill='none' stroke='%23A8BF6A' stroke-width='2'/%3E%3Ccircle cx='12' cy='12' r='4' fill='%23A8BF6A' opacity='0.6'/%3E%3Cline x1='12' y1='1' x2='12' y2='7' stroke='%23A8BF6A' stroke-width='2'/%3E%3Cline x1='12' y1='17' x2='12' y2='23' stroke='%23A8BF6A' stroke-width='2'/%3E%3Cline x1='1' y1='12' x2='7' y2='12' stroke='%23A8BF6A' stroke-width='2'/%3E%3Cline x1='17' y1='12' x2='23' y2='12' stroke='%23A8BF6A' stroke-width='2'/%3E%3C/svg%3E") 12 12,pointer}
+
+/* Return to top button */
+#returnTop{position:fixed;bottom:28px;right:28px;width:48px;height:48px;border-radius:50%;background:var(--a);color:var(--bg);border:none;font-size:1.2rem;display:flex;align-items:center;justify-content:center;opacity:0;transform:translateY(20px);transition:all 0.4s cubic-bezier(0.4,0,0.2,1);z-index:999;box-shadow:0 4px 20px rgba(168,191,106,0.3)}#returnTop.visible{opacity:1;transform:translateY(0)}#returnTop:hover{transform:translateY(-4px) scale(1.1);box-shadow:0 8px 30px rgba(168,191,106,0.5)}@media(max-width:768px){#returnTop{bottom:20px;right:20px;width:44px;height:44px}}
 </style>
 </head>
 <body>
@@ -199,20 +210,20 @@ footer{border-top:1px solid var(--bo);padding:48px 0;text-align:center;position:
 <div class='nav-links'>
 <a href='#context'>Context</a>
 <a href='#challenges'>Problems</a>
-<a href='#challenges'>Problems</a>
 <a href='#asks'>Asks</a>
-<a href='#roadmap'>Roadmap</a>
+<a href='#communication'>Theme</a>
+<a href='#vision'>Roadmap</a>
 <a href='#diagrams'>Diagrams</a>
 <a href='#contact' class='nav-cta'>Engage</a>
 </div>
 <button class='mobile-toggle' onclick='toggleMobile()' aria-label='Menu'>&#9776;</button>
 </div>
 <div class='mobile-nav' id='mobileNav'>
-<a href='#state' onclick='toggleMobile()'>Context</a>
+<a href='#context' onclick='toggleMobile()'>Context</a>
 <a href='#challenges' onclick='toggleMobile()'>Challenges</a>
-<a href='#contributions' onclick='toggleMobile()'>Problems</a>
-<a href='#proposals' onclick='toggleMobile()'>Asks</a>
-<a href='#knowledge' onclick='toggleMobile()'>Knowledge Base</a>
+<a href='#challenges' onclick='toggleMobile()'>Problems</a>
+<a href='#asks' onclick='toggleMobile()'>Asks</a>
+<a href='#communication' onclick='toggleMobile()'>Unifying Theme</a>
 <a href='#communication' onclick='toggleMobile()'>Communication</a>
 <a href='#vision' onclick='toggleMobile()'>Roadmap</a>
 <a href='#diagrams' onclick='toggleMobile()'>Diagrams</a>
@@ -228,45 +239,42 @@ footer{border-top:1px solid var(--bo);padding:48px 0;text-align:center;position:
 <div style="display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:24px;flex-wrap:wrap;">
 <img src="assets/boa-logo.png" alt="BOA" style="height:56px;width:auto;object-fit:contain;">
 <span style="font-family:'Orbitron',monospace;font-size:0.7rem;color:var(--tm);letter-spacing:0.2em;">×</span>
-<img src="assets/cws-logo.png" alt="Combat Waffle Studios" style="height:36px;width:auto;object-fit:contain;">
+<img src="assets/cws-logo.png" alt="Combat Waffle Studios" style="height:36px;width:auto;object-fit:contain;background:#fff;border-radius:8px;padding:6px 10px;">
 </div>
 <div class='hero-badge'>// COMMUNICATION IMPROVEMENT PROPOSAL</div>
 <h1 class='glitch' data-text='How Can CWS Improve Communication With BOAs and Mods?'>
 How Can CWS Improve Communication With <span class='accent'>BOAs and Mods</span>?
 </h1>
-<p class='hero-sub'>BOA volunteers coach new players through their first sessions in Ghosts of Tabor — a VR extraction shooter by Combat Waffle Studios. Five focused asks to improve how we communicate, retain volunteers, and share knowledge.</p>
+<p class='hero-sub'>BOA volunteers coach new players through their first sessions in Ghosts of Tabor — a VR extraction shooter by Combat Waffle Studios. Volunteer numbers are at an all-time low (20-30 active, down from a 45+ average). High barriers to entry and manual processes drive people away. Seven focused asks to improve communication, retain volunteers, and rebuild.</p>
 <div class='hero-actions'>
 <a href='#asks' class='btn btn-primary'>// VIEW_ASKS &#8594;</a>
 <a href='#context' class='btn btn-secondary'>Read Context</a>
 </div>
 <div class='stats-bar'>
-<div class='stat'><div class='stat-value'>200+</div><div class='stat-label'>Volunteers</div><div class='stat-sub'>active community</div></div>
+<div class='stat'><div class='stat-value'>20-30</div><div class='stat-label'>Active Volunteers</div><div class='stat-sub'>down from 45+ avg</div></div>
 <div class='stat'><div class='stat-value'>2000+</div><div class='stat-label'>Sessions Coached</div><div class='stat-sub'>new players taught</div></div>
-<div class='stat'><div class='stat-value'>50+</div><div class='stat-label'>Leaders Mentored</div><div class='stat-sub'>advanced up</div></div>
-<div class='stat'><div class='stat-value'>6</div><div class='stat-label'>Focused Asks</div><div class='stat-sub'>1 unifying goal</div></div>
-</div></div></section>
-
-<div style="height:1px;background:linear-gradient(90deg,transparent,var(--a),transparent);opacity:0.2;margin:0;"></div>
+<div class='stat'><div class='stat-value'>50+</div><div class='stat-label'>Leaders Mentored</div><div class='stat-sub'>over the years</div></div>
+<div class='stat'><div class='stat-value'>7</div><div class='stat-label'>Focused Asks</div><div class='stat-sub'>1 unifying goal</div></div>
+</div></div></section<div style="height:1px;background:linear-gradient(90deg,transparent,var(--a),transparent);opacity:0.2;margin:0;"></div>
 
 <section id='context'><div class='container'>
 <div class='section-header fade-up'>
 <div class='sl'>// 01 - THE COMMUNICATION PROBLEM</div>
 <h2 class='st'>Where Information <span class='gold'>Breaks Down</span></h2>
-<p class='ss'>BOA volunteers coach new players through their first sessions in Ghosts of Tabor every day. But the communication infrastructure hasn't kept pace with the community's growth.</p>
+<p class='ss'>BOA volunteers coach new players through their first sessions in Ghosts of Tabor every day. But volunteer numbers are at an all-time low — 20-30 active, down from a historical average of 45+. The high bar of Discord knowledge needed to run processes drives people away. Volunteers give up their time for a crumb of acknowledgment. Better communication with CWS — even a bi-annual visit to our monthly meetings — would show volunteers they matter.</p>
 </div>
 <div class='challenges-grid'>
 <div class='challenge-card fade-up'><h3>&#9654; Manual Processes <span class='challenge-tag tag-risk'>CRITICAL</span></h3><p>Ticket counting, session tracking, scheduling, and recognition are all handled by hand. Information gets delayed or lost because humans are manually moving data around.</p></div>
 <div class='challenge-card fade-up'><h3>&#9654; Knowledge Walks Out <span class='challenge-tag tag-retention'>HIGH</span></h3><p>When experienced volunteers depart, institutional memory leaves with them. Critical knowledge lives in Discord messages and tribal understanding.</p></div>
 <div class='challenge-card fade-up'><h3>&#9654; Volunteers Feel Invisible <span class='challenge-tag tag-efficiency'>HIGH</span></h3><p>Contributions disappear into the void. Limited formal acknowledgment means volunteers don't know their work matters.</p></div>
 <div class='challenge-card fade-up'><h3>&#9654; Players Seek Answers <span class='challenge-tag tag-growth'>MEDIUM</span></h3><p>Without official information, speculation fills the gap. Community members reverse-engineer answers that could be communicated directly.</p></div>
-</div></div></section>>
-
-<div style="height:1px;background:linear-gradient(90deg,transparent,var(--a),transparent);opacity:0.2;margin:0;"></div>
+<div class='challenge-card fade-up'><h3>&#9654; Volunteers Give, Get Little Back <span class='challenge-tag tag-retention'>HIGH</span></h3><p>Volunteers give up their time for a crumb of acknowledgment. No direct line to CWS means they don't know if their work matters. A bi-annual visit to BOA meetings would change that.</p></div>
+</div></div></section<div style="height:1px;background:linear-gradient(90deg,transparent,var(--a),transparent);opacity:0.2;margin:0;"></div>
 
 <section id='challenges' style='background:var(--bg2);'><div class='container'>
 <div class='section-header fade-up'>
-<div class='sl'>// 02 - THE FIVE ASKS</div>
-<h2 class='st'>Five Focused <span class='gold'>Asks</span></h2>
+<div class='sl'>// 02 - THE SEVEN ASKS</div>
+<h2 class='st'>Seven Focused <span class='gold'>Asks</span></h2>
 <p class='ss'>Each ask addresses a specific communication, retention, or information flow problem.</p>
 </div>
 <div class='challenges-grid'>
@@ -274,15 +282,12 @@ How Can CWS Improve Communication With <span class='accent'>BOAs and Mods</span>
 <div class='challenge-card fade-up'><h3>&#9654; Knowledge Retention <span class='challenge-tag tag-retention'>HIGH</span></h3><p>When experienced volunteers depart, institutional memory walks out the door. Only 25% of decisions are documented.</p></div>
 <div class='challenge-card fade-up'><h3>&#9654; Operational Burden <span class='challenge-tag tag-efficiency'>MEDIUM</span></h3><p>35% of volunteer hours are spent on repetitive, automatable tasks. Monthly reporting takes ~20 person-hours.</p></div>
 <div class='challenge-card fade-up'><h3>&#9654; EU Coverage Gap <span class='challenge-tag tag-growth'>MEDIUM</span></h3><p>Leadership departures created responsiveness gaps during EU prime-time hours.</p></div>
-</div></div></section>
-
->
-
+</div></div></section
 <div style="height:1px;background:linear-gradient(90deg,transparent,var(--a),transparent);opacity:0.2;margin:0;"></div>
 
 <section id='asks' style='background:var(--bg2);'><div class='container'>
 <div class='section-header fade-up'>
-<div class='sl'>// 03 - THE FIVE ASKS</div>
+<div class='sl'>// 03 - THE SEVEN ASKS</div>
 <h2 class='st'>What We're <span class='gold'>Asking For</span></h2>
 <p class='ss'>Every ask reduces friction between people — volunteers communicating with leadership, BOAs communicating with players, or developers communicating with the community.</p>
 </div>
@@ -333,15 +338,21 @@ How Can CWS Improve Communication With <span class='accent'>BOAs and Mods</span>
 <div class='card proposal-detail'><h4>// COMMUNICATION IMPROVEMENT</h4><ul><li>Faster vetting of BOA candidates</li><li>Lead BOAs can review moderation actions directly</li><li>One less manual step in the onboarding pipeline</li><li>BOA leadership already signed an NDA with CWS</li></ul></div>
 </div>
 <div class='proposal-stats'><div class='proposal-stat'><div class='value'>Faster</div><div class='label'>Vetting</div></div><div class='proposal-stat'><div class='value'>Less</div><div class='label'>Manual Steps</div></div><div class='proposal-stat'><div value='NDA</div><div class='label'>Already Signed</div></div></div>
-</div></div></section>
-
-<div style="height:1px;background:linear-gradient(90deg,transparent,var(--a),transparent);opacity:0.2;margin:0;"></div>
+</div>
+<div class='proposal fade-up'>
+<div class='proposal-header'><div class='proposal-num'>07</div><div class='proposal-title'><h3>CWS Participation in BOA Meetings</h3><p>CWS team members visit BOA monthly meetings at least once or twice a year.</p></div></div>
+<div class='proposal-grid'>
+<div class='card proposal-detail'><h4>// COMMUNICATION PROBLEM</h4><ul><li>Volunteers have no direct line to CWS</li><li>No visibility into whether their work matters</li><li>Feels like shouting into the void</li><li>Volunteers give time for a crumb of acknowledgment</li></ul></div>
+<div class='card proposal-detail'><h4>// COMMUNICATION IMPROVEMENT</h4><ul><li>Shows volunteers their work is seen and valued</li><li>Direct feedback loop between CWS and volunteer leadership</li><li>Even once or twice a year makes a difference</li><li>They came to our meeting — huge for morale</li></ul></div>
+</div>
+<div class='proposal-stats'><div class='proposal-stat'><div class='value'>Morale</div><div class='label'>Boost</div></div><div class='proposal-stat'><div class='value'>Direct</div><div class='label'>Feedback</div></div><div class='proposal-stat'><div class='value'>1-2x</div><div class='label'>Per Year</div></div></div>
+</div></div></section<div style="height:1px;background:linear-gradient(90deg,transparent,var(--a),transparent);opacity:0.2;margin:0;"></div>
 
 <section id='communication'><div class='container'>
 <div class='section-header fade-up'>
 <div class='sl'>// 04 - THE UNIFYING THEME</div>
 <h2 class='st'>What Ties It All <span class='gold'>Together</span></h2>
-<p class='ss'>If asked: what's the common thread between all six requests?</p>
+<p class='ss'>If asked: what's the common thread between all seven requests?</p>
 </div>
 <div class='comm-frame fade-up'>
 <h3 style='font-size:1.2rem;font-weight:800;margin-bottom:16px;font-family:Orbitron,sans-serif;'>The Common Thread</h3>
@@ -354,9 +365,7 @@ How Can CWS Improve Communication With <span class='accent'>BOAs and Mods</span>
 </div>
 <div style='margin-top:24px;padding:18px;border:1px solid rgba(168,191,106,0.15);border-radius:var(--R);background:var(--ag);'>
 <p style='font-size:0.85rem;color:var(--tm);line-height:1.6;'><strong style='color:var(--a);'>Our approach:</strong> We're not asking for compensation or proprietary access. We're asking for better tools to communicate with each other.</p>
-</div></div></div></section>>
-
-<div style="height:1px;background:linear-gradient(90deg,transparent,var(--a),transparent);opacity:0.2;margin:0;"></div>
+</div></div></div></section<div style="height:1px;background:linear-gradient(90deg,transparent,var(--a),transparent);opacity:0.2;margin:0;"></div>
 
 <section id='vision' style='background:var(--bg2);'><div class='container'>
 <div class='section-header fade-up'>
@@ -373,9 +382,7 @@ How Can CWS Improve Communication With <span class='accent'>BOAs and Mods</span>
 <div class='matrix-quadrant' style='background:var(--ag);border-color:rgba(168,191,106,0.2);'><h5 style='color:var(--a)'>Flagship Projects</h5><p>BOA Bot, Tech Collaboration</p></div>
 <div class='matrix-quadrant' style='background:rgba(0,229,255,0.05);border-color:rgba(204,51,102,0.15);'><h5 style='color:var(--c)'>Fill-Ins</h5><p>EU Recruitment, Workshops</p></div>
 <div class='matrix-quadrant' style='background:rgba(58,63,85,0.1);border-color:rgba(58,63,85,0.2);'><h5 style='color:var(--td)'>Deprioritize</h5><p>Annual Events, Formal Council</p></div>
-</div></div></section>
-
-<div style="height:1px;background:linear-gradient(90deg,transparent,var(--a),transparent);opacity:0.2;margin:0;"></div>
+</div></div></section<div style="height:1px;background:linear-gradient(90deg,transparent,var(--a),transparent);opacity:0.2;margin:0;"></div>
 
 
 <div style="height:1px;background:linear-gradient(90deg,transparent,var(--a),transparent);opacity:0.2;margin:0;"></div>
@@ -385,7 +392,7 @@ How Can CWS Improve Communication With <span class='accent'>BOAs and Mods</span>
 <div class='section-header fade-up'>
 <div class='sl'>// 06 - VISUAL OVERVIEW</div>
 <h2 class='st'>Communication <span class='gold'>Diagrams</span></h2>
-<p class='ss'>Visual overview of the five asks and how they improve communication flow.</p>
+<p class='ss'>Visual overview of the seven asks and how they improve communication flow.</p>
 </div>
 <div class='diagram-grid'>
 
@@ -433,9 +440,7 @@ How Can CWS Improve Communication With <span class='accent'>BOAs and Mods</span>
 </div>
 </div>
 </div>
-</section>
-
-<div style="height:1px;background:linear-gradient(90deg,transparent,var(--a),transparent);opacity:0.2;margin:0;"></div>
+</section<div style="height:1px;background:linear-gradient(90deg,transparent,var(--a),transparent);opacity:0.2;margin:0;"></div>
 <section id='contact' style='padding:120px 0;position:relative;overflow:hidden;'>
 <div style='position:absolute;top:0;left:50%;transform:translateX(-50%);width:600px;height:600px;background:radial-gradient(ellipse,rgba(168,191,106,0.04) 0%,transparent 70%);pointer-events:none;'></div>
 <div class='container' style='text-align:center;position:relative;z-index:1;'>
@@ -457,10 +462,16 @@ How Can CWS Improve Communication With <span class='accent'>BOAs and Mods</span>
 <div style="display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:16px;flex-wrap:wrap;">
 <img src="assets/boa-logo.png" alt="BOA" style="height:32px;width:auto;object-fit:contain;opacity:0.9;">
 <span style="color:var(--a);font-family:'Orbitron',monospace;font-size:0.8rem;">×</span>
-<img src="assets/cws-logo.png" alt="Combat Waffle Studios" style="height:24px;width:auto;object-fit:contain;opacity:0.9;">
+<img src="assets/cws-logo.png" alt="Combat Waffle Studios" style="height:24px;width:auto;object-fit:contain;background:#fff;border-radius:6px;padding:4px 8px;">
 </div>
 <div class='footer-tagline'>A communication improvement proposal for the Ghost of Tabor volunteer community</div>
-<div class='footer-meta'>Prepared by DonZzzilla, Lead BOA | June 2026 | Prepared by DonZzzilla, Lead BOA | June 2026</div>
+<div class='footer-meta'>Lead BOA Team (DonZzzilla, Frost, Sharky &amp; Kashi aka Oracle) | 2026-06-08</div>
+<div style='margin-top:16px;display:flex;justify-content:center;gap:16px;flex-wrap:wrap;'>
+<a href='https://github.com/donzzzilla/boa-partnership/blob/main/presentation/slides.md' target='_blank' style='color:var(--tm);font-size:0.7rem;text-decoration:none;border:1px solid var(--bo);padding:6px 14px;border-radius:4px;font-family:JetBrains Mono,monospace;'>SLIDES</a>
+<a href='https://github.com/donzzzilla/boa-partnership/blob/main/presentation/speaker-notes.md' target='_blank' style='color:var(--tm);font-size:0.7rem;text-decoration:none;border:1px solid var(--bo);padding:6px 14px;border-radius:4px;font-family:JetBrains Mono,monospace;'>SPEAKER NOTES</a>
+<a href='https://github.com/donzzzilla/boa-partnership/blob/main/docs/executive-brief.md' target='_blank' style='color:var(--tm);font-size:0.7rem;text-decoration:none;border:1px solid var(--bo);padding:6px 14px;border-radius:4px;font-family:JetBrains Mono,monospace;'>EXEC BRIEF</a>
+<a href='https://github.com/donzzzilla/boa-partnership/blob/main/README.md' target='_blank' style='color:var(--tm);font-size:0.7rem;text-decoration:none;border:1px solid var(--bo);padding:6px 14px;border-radius:4px;font-family:JetBrains Mono,monospace;'>README</a>
+</div>
 </div></footer>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js'></script>
 <script>
@@ -610,7 +621,7 @@ DIAGRAMS.push({id: "01-partnership-overview", svg: `<svg xmlns="http://www.w3.or
 <text x="875" y="559.2" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">• Community goodwill</text>
 <rect x="420" y="130" width="360" height="500" rx="8" fill="#111318" stroke="#A8BF6A" stroke-width="2" opacity="1.0"/>
 <text x="600.0" y="150.0" dy="1em" font-size="20" fill="#A8BF6A" font-weight="bold" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">COMMUNICATION</text>
-<text x="600.0" y="178.0" dy="1em" font-size="13" fill="#5a5e72" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Five Focused Asks</text>
+<text x="600.0" y="178.0" dy="1em" font-size="13" fill="#5a5e72" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Seven Focused Asks</text>
 <rect x="445" y="215" width="310" height="110" rx="8" fill="#1e2230" stroke="#5b8dee" stroke-width="2" opacity="1.0"/>
 <text x="455" y="222.0" dy="1em" font-size="14" fill="#5b8dee" font-weight="bold" text-anchor="start" font-family="monospace" dominant-baseline="hanging">01 OPERATIONS BOT</text>
 <text x="455" y="244.0" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Session tracking · Scheduling</text>
@@ -995,6 +1006,12 @@ DIAGRAMS.push({id: "05-roadmap-timeline", svg: `<svg xmlns="http://www.w3.org/20
     if(el) el.innerHTML = d.svg;
   });
 })();
+</script>
+
+<button id="returnTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Return to top">&#8679;</button>
+<script>
+var rtb=document.getElementById('returnTop');
+window.addEventListener('scroll',function(){if(window.scrollY>400){rtb.classList.add('visible')}else{rtb.classList.remove('visible')}});
 </script>
 </body>
 </html>
