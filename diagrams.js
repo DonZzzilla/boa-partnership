@@ -1,8 +1,8 @@
 const DIAGRAMS = [];
 DIAGRAMS.push({id: "01-partnership-overview", svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" width="100%" height="auto" style="display:block;margin:0 auto;max-width:100%;">
 <rect width="1200" height="700" fill="#0a0c0e"/>
-<text x="600.0" y="30.0" dy="1em" font-size="28" fill="#A8BF6A" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">BOA × CWS Partnership Overview</text>
-<text x="600.0" y="70.0" dy="1em" font-size="14" fill="#5a5e72" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Three initiatives. One shared mission.</text>
+<text x="600.0" y="30.0" dy="1em" font-size="28" fill="#A8BF6A" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">5 Asks, 1 Goal: Better Communication</text>
+<text x="600.0" y="70.0" dy="1em" font-size="14" fill="#5a5e72" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Every ask ties to communication, retention, or information flow</text>
 <rect x="60" y="130" width="300" height="500" rx="8" fill="#111318" stroke="#2a2e3a" stroke-width="2" opacity="1.0"/>
 <text x="210.0" y="145.0" dy="1em" font-size="14" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">BATTLEFIELD OPERATION</text>
 <text x="210.0" y="168.0" dy="1em" font-size="18" fill="#A8BF6A" font-weight="bold" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">AND AWARENESS (BOA)</text>
@@ -11,65 +11,65 @@ DIAGRAMS.push({id: "01-partnership-overview", svg: `<svg xmlns="http://www.w3.or
 <text x="95" y="248.0" dy="1em" font-size="13" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Mentorship · Events</text>
 <text x="95" y="266.2" dy="1em" font-size="13" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Wiki · Support</text>
 <rect x="85" y="325" width="250" height="120" rx="8" fill="#181b22" stroke="#3a3e4e" stroke-width="1" opacity="0.8"/>
-<text x="95" y="332.0" dy="1em" font-size="12" fill="#e05555" font-weight="bold" text-anchor="start" font-family="monospace" dominant-baseline="hanging">NEEDS</text>
-<text x="95" y="352.0" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">• Less manual work</text>
-<text x="95" y="368.8" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">• Better recognition</text>
-<text x="95" y="385.6" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">• Knowledge capture</text>
-<text x="95" y="402.4" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">• EU coverage</text>
-<text x="95" y="419.2" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">• Automation tools</text>
+<text x="95" y="332.0" dy="1em" font-size="12" fill="#e05555" font-weight="bold" text-anchor="start" font-family="monospace" dominant-baseline="hanging">COMMUNICATION NEEDS</text>
+<text x="95" y="352.0" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">• Faster information flow</text>
+<text x="95" y="368.8" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">• Volunteer recognition</text>
+<text x="95" y="385.6" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">• Knowledge preservation</text>
+<text x="95" y="402.4" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">• Cross-timezone clarity</text>
+<text x="95" y="419.2" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">• Less manual overhead</text>
 <rect x="85" y="465" width="250" height="145" rx="8" fill="#181b22" stroke="#3a3e4e" stroke-width="1" opacity="0.8"/>
-<text x="95" y="472.0" dy="1em" font-size="12" fill="#55c57a" font-weight="bold" text-anchor="start" font-family="monospace" dominant-baseline="hanging">BRINGS WILLINGNESS</text>
-<text x="95" y="492.0" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">• 150+ events run</text>
+<text x="95" y="472.0" dy="1em" font-size="12" fill="#55c57a" font-weight="bold" text-anchor="start" font-family="monospace" dominant-baseline="hanging">BRINGS EXPERTISE</text>
+<text x="95" y="492.0" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">• 150+ events coordinated</text>
 <text x="95" y="508.8" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">• 50+ leaders mentored</text>
-<text x="95" y="525.6" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">• 12 open-source tools</text>
+<text x="95" y="525.6" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">• Deep game knowledge</text>
 <text x="95" y="542.4" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">• Dedicated volunteers</text>
-<text x="95" y="559.2" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">• Deep community trust</text>
+<text x="95" y="559.2" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">• Community trust</text>
 <rect x="840" y="130" width="300" height="500" rx="8" fill="#111318" stroke="#2a2e3a" stroke-width="2" opacity="1.0"/>
 <text x="990.0" y="145.0" dy="1em" font-size="14" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">COMBAT WAFFLE</text>
 <text x="990.0" y="168.0" dy="1em" font-size="18" fill="#5b8dee" font-weight="bold" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">STUDIOS (CWS)</text>
 <rect x="865" y="215" width="250" height="90" rx="8" fill="#181b22" stroke="#5b8dee" stroke-width="1" opacity="0.7"/>
-<text x="875" y="225.0" dy="1em" font-size="16" fill="#5b8dee" font-weight="bold" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Ghost of Tabor Game</text>
-<text x="875" y="248.0" dy="1em" font-size="13" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Dev· Publishing</text>
+<text x="875" y="225.0" dy="1em" font-size="16" fill="#5b8dee" font-weight="bold" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Ghosts of Tabor</text>
+<text x="875" y="248.0" dy="1em" font-size="13" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Development · Publishing</text>
 <text x="875" y="266.2" dy="1em" font-size="13" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Community Management</text>
 <rect x="865" y="325" width="250" height="120" rx="8" fill="#181b22" stroke="#3a3e4e" stroke-width="1" opacity="0.8"/>
 <text x="875" y="332.0" dy="1em" font-size="12" fill="#55c57a" font-weight="bold" text-anchor="start" font-family="monospace" dominant-baseline="hanging">CAN PROVIDE</text>
 <text x="875" y="352.0" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">• Technical infrastructure</text>
-<text x="875" y="368.8" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">• Hosting &amp; monitoring</text>
-<text x="875" y="385.6" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">• Security review</text>
-<text x="875" y="402.4" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">• Developer consultation</text>
-<text x="875" y="419.2" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">• Community data access</text>
+<text x="875" y="368.8" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">• Official information access</text>
+<text x="875" y="385.6" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">• Developer consultation</text>
+<text x="875" y="402.4" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">• Community data access</text>
+<text x="875" y="419.2" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">• Communication channels</text>
 <rect x="865" y="465" width="250" height="145" rx="8" fill="#181b22" stroke="#3a3e4e" stroke-width="1" opacity="0.8"/>
 <text x="875" y="472.0" dy="1em" font-size="12" fill="#A8BF6A" font-weight="bold" text-anchor="start" font-family="monospace" dominant-baseline="hanging">GAINS FROM PARTNERSHIP</text>
 <text x="875" y="492.0" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">• Stronger player community</text>
-<text x="875" y="508.8" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">• Better player retention</text>
-<text x="875" y="525.6" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">• Community goodwill</text>
+<text x="875" y="508.8" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">• Better volunteer retention</text>
+<text x="875" y="525.6" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">• Reduced misinformation</text>
 <text x="875" y="542.4" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">• Brand visibility</text>
-<text x="875" y="559.2" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">• Reduced speculation</text>
+<text x="875" y="559.2" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">• Community goodwill</text>
 <rect x="420" y="130" width="360" height="500" rx="8" fill="#111318" stroke="#A8BF6A" stroke-width="2" opacity="1.0"/>
-<text x="600.0" y="150.0" dy="1em" font-size="20" fill="#A8BF6A" font-weight="bold" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">COLLABORATION</text>
-<text x="600.0" y="178.0" dy="1em" font-size="13" fill="#5a5e72" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Three Connected Initiatives</text>
+<text x="600.0" y="150.0" dy="1em" font-size="20" fill="#A8BF6A" font-weight="bold" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">COMMUNICATION</text>
+<text x="600.0" y="178.0" dy="1em" font-size="13" fill="#5a5e72" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Five Focused Asks</text>
 <rect x="445" y="215" width="310" height="110" rx="8" fill="#1e2230" stroke="#5b8dee" stroke-width="2" opacity="1.0"/>
-<text x="455" y="222.0" dy="1em" font-size="14" fill="#5b8dee" font-weight="bold" text-anchor="start" font-family="monospace" dominant-baseline="hanging">01 BOA OPERATIONS BOT</text>
-<text x="455" y="244.0" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Session tracking · Recognition</text>
-<text x="455" y="260.8" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Ticket analytics · Auto-reporting</text>
-<text x="455" y="277.6" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">642-876 hrs/yr saved</text>
+<text x="455" y="222.0" dy="1em" font-size="14" fill="#5b8dee" font-weight="bold" text-anchor="start" font-family="monospace" dominant-baseline="hanging">01 OPERATIONS BOT</text>
+<text x="455" y="244.0" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Session tracking · Scheduling</text>
+<text x="455" y="260.8" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Ticket analytics · Reporting</text>
+<text x="455" y="277.6" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Faster information flow</text>
 <rect x="445" y="340" width="310" height="110" rx="8" fill="#1e2230" stroke="#A8BF6A" stroke-width="2" opacity="1.0"/>
 <text x="455" y="347.0" dy="1em" font-size="14" fill="#A8BF6A" font-weight="bold" text-anchor="start" font-family="monospace" dominant-baseline="hanging">02 RECOGNITION PROGRAM</text>
 <text x="455" y="369.0" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Milestone tiers · Service records</text>
 <text x="455" y="385.8" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Recommendation letters · Badges</text>
-<text x="455" y="402.6" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">30-40% retention improvement</text>
+<text x="455" y="402.6" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Better feedback loops</text>
 <rect x="445" y="465" width="310" height="110" rx="8" fill="#1e2230" stroke="#55c57a" stroke-width="2" opacity="1.0"/>
 <text x="455" y="472.0" dy="1em" font-size="14" fill="#55c57a" font-weight="bold" text-anchor="start" font-family="monospace" dominant-baseline="hanging">03 KNOWLEDGE BASE</text>
 <text x="455" y="494.0" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">SOPs · Onboarding · Archives</text>
 <text x="455" y="510.8" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Decision logs · Role guides</text>
-<text x="455" y="527.6" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">40-60% faster onboarding</text>
+<text x="455" y="527.6" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Institutional knowledge preserved</text>
 <defs><marker id="a0" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#A8BF6A"/></marker></defs>
 <path d="M 0 0 L 60 0" stroke="#A8BF6A" stroke-width="3" fill="none" marker-end="url(#a0)"/>
 <defs><marker id="a1" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#A8BF6A"/></marker></defs>
 <path d="M 0 0 L -60 0" stroke="#A8BF6A" stroke-width="3" fill="none" marker-end="url(#a1)"/>
-<text x="390.0" y="328.0" dy="1em" font-size="11" fill="#A8BF6A" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">needs</text>
-<text x="810.0" y="328.0" dy="1em" font-size="11" fill="#A8BF6A" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">supports</text>
-<text x="600.0" y="655.0" dy="1em" font-size="12" fill="#5a5e72" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Not a transaction. A partnership built on mutual benefit.</text>
+<text x="390.0" y="328.0" dy="1em" font-size="11" fill="#A8BF6A" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">communicates</text>
+<text x="810.0" y="328.0" dy="1em" font-size="11" fill="#A8BF6A" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">enables</text>
+<text x="600.0" y="655.0" dy="1em" font-size="12" fill="#5a5e72" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Better communication between everyone.</text>
 </svg>`});
 DIAGRAMS.push({id: "02-bot-architecture", svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" width="100%" height="auto" style="display:block;margin:0 auto;max-width:100%;">
 <rect width="1200" height="700" fill="#0a0c0e"/>
