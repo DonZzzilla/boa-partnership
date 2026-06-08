@@ -4,8 +4,8 @@ DIAGRAMS.push({id: "01-partnership-overview", svg: `<svg xmlns="http://www.w3.or
 <text x="600.0" y="30.0" dy="1em" font-size="28" fill="#d4a853" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">BOA × CWS Partnership Overview</text>
 <text x="600.0" y="70.0" dy="1em" font-size="14" fill="#5a5e72" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Three initiatives. One shared mission.</text>
 <rect x="60" y="130" width="300" height="500" rx="8" fill="#111318" stroke="#2a2e3a" stroke-width="2" opacity="1.0"/>
-<text x="210.0" y="145.0" dy="1em" font-size="14" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">BROTHERHOOD OF</text>
-<text x="210.0" y="168.0" dy="1em" font-size="18" fill="#d4a853" font-weight="bold" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">ASCENSION (BOA)</text>
+<text x="210.0" y="145.0" dy="1em" font-size="14" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">BATTLEFIELD OPERATION</text>
+<text x="210.0" y="168.0" dy="1em" font-size="18" fill="#d4a853" font-weight="bold" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">AND AWARENESS (BOA)</text>
 <rect x="85" y="215" width="250" height="90" rx="8" fill="#181b22" stroke="#d4a853" stroke-width="1" opacity="0.7"/>
 <text x="95" y="225.0" dy="1em" font-size="16" fill="#d4a853" font-weight="bold" text-anchor="start" font-family="monospace" dominant-baseline="hanging">200+ volunteers</text>
 <text x="95" y="248.0" dy="1em" font-size="13" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Mentorship · Events</text>
