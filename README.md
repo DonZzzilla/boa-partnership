@@ -119,4 +119,4 @@ boa-partnership/
 
 ---
 
-*Prepared by OWL Strategic Advisory · June 2026*
+*Prepared by DonZzzilla, Lead BOA · June 2026*
