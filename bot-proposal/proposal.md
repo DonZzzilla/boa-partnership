@@ -1,7 +1,7 @@
 # BOA Bot Partnership Proposal
 
 **Prepared for:** Combat Waffle Studios (CWS) Leadership  
-**Prepared by:** OWL Intelligent Systems, a division of ZOO Company  
+**Prepared by:** DonZzzilla, Lead BOA, a division of ZOO Company  
 **Date:** June 2026  
 **Classification:** Partnership Proposal — Confidential  
 **Version:** 1.0
@@ -488,7 +488,7 @@ We recommend **Option 1 (Managed Cloud)** for the following reasons:
 ### 10.5 SLA & Uptime
 
 - Target uptime: **99.5%** (approximately 3.6 hours of downtime per month).
-- Monitoring and alerting via Prometheus/Grafana with notifications to both OWL and CWS contacts.
+- Monitoring and alerting via Prometheus/Grafana with notifications to both DonZzzilla and CWS contacts.
 - Graceful degradation: If the bot is offline, Discord-native features (manual commands, existing workflows) remain available.
 
 ---
@@ -500,12 +500,12 @@ We recommend **Option 1 (Managed Cloud)** for the following reasons:
 | # | Risk | Probability | Impact | Mitigation Strategy | Owner |
 |---|------|------------|--------|---------------------|-------|
 | R1 | Community resistance to bot adoption | Medium | High | Phased rollout, community feedback loops, opt-in features, CWS leadership endorsement | CWS Leadership |
-| R2 | Discord API changes break bot functionality | Medium | Medium | Abstraction layer for Discord API, active dependency maintenance, Discord developer community monitoring | OWL |
-| R3 | Data loss due to infrastructure failure | Low | Critical | Automated backups, disaster recovery plan, infrastructure-as-code | OWL |
+| R2 | Discord API changes break bot functionality | Medium | Medium | Abstraction layer for Discord API, active dependency maintenance, Discord developer community monitoring | DonZzzilla |
+| R3 | Data loss due to infrastructure failure | Low | Critical | Automated backups, disaster recovery plan, infrastructure-as-code | DonZzzilla |
 | R4 | Scope creep delays core deliverables | Medium | Medium | Strict sprint planning, change request process, MVP-first approach | Joint |
 | R5 | Key personnel departure (either party) | Medium | High | Comprehensive documentation, knowledge transfer sessions, runbook delivery | Joint |
 | R6 | Bot behavior conflicts with community culture | Medium | High | Extensive testing in staging, community beta period, configurable behavior, CWS approval gates | CWS Leadership |
-| R7 | Security incident (data breach, token leak) | Low | Critical | Security measures in Section 9, incident response plan, cyber insurance consideration | OWL |
+| R7 | Security incident (data breach, token leak) | Low | Critical | Security measures in Section 9, incident response plan, cyber insurance consideration | DonZzzilla |
 | R8 | Volunteer data entry fatigue | Medium | Medium | Minimize required manual entry, maximize automation, UX testing with volunteers | Joint |
 
 ### 11.2 Contingency Plans
@@ -518,7 +518,7 @@ We recommend **Option 1 (Managed Cloud)** for the following reasons:
 
 **If technical issues cause extended downtime (R2, R3):**
 - Activate manual workflow procedures (documented in runbook).
-- OWL provides emergency response within 4 hours.
+- DonZzzilla provides emergency response within 4 hours.
 - Post-incident review within 48 hours with CWS leadership.
 
 **If partnership is terminated (R5):**
@@ -529,7 +529,7 @@ We recommend **Option 1 (Managed Cloud)** for the following reasons:
 
 ### 11.3 Governance
 
-- **Steering Committee:** 2 CWS leaders + 2 OWL representatives, meeting monthly.
+- **Steering Committee:** 2 CWS leaders + 2 DonZzzilla representatives, meeting monthly.
 - **Change Request Process:** All scope changes require written approval from steering committee.
 - **Escalation Path:** Feature-level issues → Sprint review → Steering committee → Partnership review.
 
@@ -600,7 +600,7 @@ We propose a **collaborative partnership** with the following principles:
 
 1. **Joint ownership of outcomes** — Success is measured by CWS's operational improvement, not just technical delivery.
 2. **Transparent communication** — Weekly status updates, open issue tracking, shared documentation.
-3. **Shared investment** — OWL contributes technical development; CWS contributes domain expertise, community access, and feedback.
+3. **Shared investment** — DonZzzilla contributes technical development; CWS contributes domain expertise, community access, and feedback.
 4. **Data sovereignty** — All community data remains CWS property at all times.
 5. **Flexible engagement** — Phased approach allows CWS to evaluate and adjust commitment at each phase boundary.
 
@@ -609,14 +609,14 @@ We propose a **collaborative partnership** with the following principles:
 | Step | Owner | Timeline |
 |------|-------|----------|
 | Leadership review of this proposal | CWS Leadership | Week 1 |
-| Q&A session with OWL team | Joint | Week 2 |
+| Q&A session with DonZzzilla team | Joint | Week 2 |
 | Technical discovery workshop | Joint | Week 3 |
 | Partnership agreement finalization | Joint | Week 4 |
 | Phase 1 kickoff | Joint | Week 5 |
 
 ### 13.3 Points of Contact
 
-**OWL Intelligent Systems**  
+**DonZzzilla, Lead BOA**  
 *Partnership Lead:* [To be designated]  
 *Technical Lead:* [To be designated]  
 *Email:* [To be provided]
@@ -676,4 +676,4 @@ We propose a **collaborative partnership** with the following principles:
 
 | Version | Date | Author | Changes |
 |---------|------|--------|---------|
-| 1.0 | June 2026 | OWL Intelligent Systems | Initial proposal |
+| 1.0 | June 2026 | DonZzzilla, Lead BOA | Initial proposal |
