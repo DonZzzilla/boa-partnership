@@ -166,7 +166,7 @@ footer{border-top:1px solid var(--bo);padding:48px 0;text-align:center;position:
 .footer-logo{font-family:'Orbitron',monospace;font-weight:800;font-size:1rem;margin-bottom:12px;letter-spacing:0.1em}
 .footer-tagline{color:var(--tm);font-size:0.85rem;margin-bottom:20px}
 .footer-meta{font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:var(--td);letter-spacing:0.1em}
-.mobile-nav{display:none;position:fixed;top:60px;left:0;right:0;bottom:0;background:var(--bg);z-index:99;padding:24px;flex-direction:column;gap:12px;border-top:1px solid var(--bo)}.mobile-nav.open{display:flex}
+.mobile-nav{display:none;position:fixed;top:60px;left:0;right:0;bottom:0;background:#050608;z-index:99;padding:24px;flex-direction:column;gap:12px;border-top:1px solid var(--bo);backdrop-filter:blur(20px)}.mobile-nav.open{display:flex}
 .mobile-nav a{color:var(--t);text-decoration:none;font-weight:600;padding:12px 0;border-bottom:1px solid var(--bo);font-family:'JetBrains Mono',monospace;font-size:0.85rem;text-transform:uppercase;letter-spacing:0.1em}
 .fade-up{opacity:0;transform:translateY(30px);transition:opacity 0.8s cubic-bezier(0.4,0,0.2,1),transform 0.8s cubic-bezier(0.4,0,0.2,1)}.fade-up.visible{opacity:1;transform:translateY(0)}
 @media(max-width:1024px){.about-grid{grid-template-columns:repeat(2,1fr)}.contrib-grid{grid-template-columns:repeat(2,1fr)}.proposal-grid{grid-template-columns:1fr}}
@@ -543,6 +543,7 @@ const sb=document.querySelector('.stats-bar');if(sb)statsObs.observe(sb);
 
 </script>
 
+
 <script>
 // Render Excalidraw diagrams as inline SVGs
 (function(){
@@ -551,8 +552,8 @@ const sb=document.querySelector('.stats-bar');if(sb)statsObs.observe(sb);
   <text x="600.0" y="30.0" dy="1em" font-size="28" fill="#d4a853" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">BOA × CWS Partnership Overview</text>
   <text x="600.0" y="70.0" dy="1em" font-size="14" fill="#5a5e72" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Three initiatives. One shared mission.</text>
   <rect x="60" y="130" width="300" height="500" rx="8" fill="#111318" stroke="#2a2e3a" stroke-width="2" opacity="1.0"/>
-  <text x="210.0" y="145.0" dy="1em" font-size="14" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">BROTHERHOOD OF</text>
-  <text x="210.0" y="168.0" dy="1em" font-size="18" fill="#d4a853" font-weight="bold" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">ASCENSION (BOA)</text>
+  <text x="210.0" y="145.0" dy="1em" font-size="14" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">BATTLEFIELD OPERATION</text>
+  <text x="210.0" y="168.0" dy="1em" font-size="18" fill="#d4a853" font-weight="bold" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">AND AWARENESS (BOA)</text>
   <rect x="85" y="215" width="250" height="90" rx="8" fill="#181b22" stroke="#d4a853" stroke-width="1" opacity="0.7"/>
   <text x="95" y="225.0" dy="1em" font-size="16" fill="#d4a853" font-weight="bold" text-anchor="start" font-family="monospace" dominant-baseline="hanging">200+ volunteers</text>
   <text x="95" y="248.0" dy="1em" font-size="13" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Mentorship · Events</text>
