@@ -1,0 +1,1017 @@
+
+<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:400px;height:400px;pointer-events:none;opacity:0.04;">
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+<circle cx="200" cy="200" r="180" fill="none" stroke="#A8BF6A" stroke-width="1"/>
+<circle cx="200" cy="200" r="120" fill="none" stroke="#A8BF6A" stroke-width="0.5"/>
+<circle cx="200" cy="200" r="60" fill="none" stroke="#A8BF6A" stroke-width="0.5"/>
+<line x1="200" y1="10" x2="200" y2="390" stroke="#A8BF6A" stroke-width="0.5"/>
+<line x1="10" y1="200" x2="390" y2="200" stroke="#A8BF6A" stroke-width="0.5"/>
+<line x1="60" y1="60" x2="340" y2="340" stroke="#A8BF6A" stroke-width="0.3"/>
+<line x1="340" y1="60" x2="60" y2="340" stroke="#A8BF6A" stroke-width="0.3"/>
+</svg>
+</div>
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width,initial-scale=1.0'>
+<title>BOA x CWS - Communication Improvement</title>
+<link rel='preconnect' href='https://fonts.googleapis.com'>
+<link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+<link href='https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&display=swap' rel='stylesheet'>
+<style>
+
+:root{
+  --bg:#0a0c0e;--bg2:#0e1014;--bg3:#121418;--bg4:#181c24;
+  --bo:#1e2228;--bl:#2a2e38;
+  --t:#e0e4f0;--tm:#7a8099;--td:#3a3f55;
+  --a:#A8BF6A;--ag:rgba(168,191,106,0.12);--ag2:rgba(168,191,106,0.25);
+  --c:#CC3366;--cg:rgba(204,51,102,0.12);
+  --g:#5F64EB;--gg:rgba(95,100,235,0.1);
+  --r:#ff3355;--p:#a855f7;
+  --gold:#DED59A;--goldg:rgba(222,213,154,0.12);
+  --R:4px;--RL:8px
+}
+/* Futuristic cursor */
+*{cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='10' fill='none' stroke='%23A8BF6A' stroke-width='2' opacity='0.8'/%3E%3Ccircle cx='12' cy='12' r='3' fill='%23A8BF6A'/%3E%3Cline x1='12' y1='2' x2='12' y2='6' stroke='%23A8BF6A' stroke-width='1.5'/%3E%3Cline x1='12' y1='18' x2='12' y2='22' stroke='%23A8BF6A' stroke-width='1.5'/%3E%3Cline x1='2' y1='12' x2='6' y2='12' stroke='%23A8BF6A' stroke-width='1.5'/%3E%3Cline x1='18' y1='12' x2='22' y2='12' stroke='%23A8BF6A' stroke-width='1.5'/%3E%3C/svg%3E") 12 12,auto}
+a,button,.mobile-toggle,.nav-cta{cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='10' fill='none' stroke='%23A8BF6A' stroke-width='2'/%3E%3Ccircle cx='12' cy='12' r='4' fill='%23A8BF6A' opacity='0.6'/%3E%3Cline x1='12' y1='1' x2='12' y2='7' stroke='%23A8BF6A' stroke-width='2'/%3E%3Cline x1='12' y1='17' x2='12' y2='23' stroke='%23A8BF6A' stroke-width='2'/%3E%3Cline x1='1' y1='12' x2='7' y2='12' stroke='%23A8BF6A' stroke-width='2'/%3E%3Cline x1='17' y1='12' x2='23' y2='12' stroke='%23A8BF6A' stroke-width='2'/%3E%3C/svg%3E") 12 12,pointer}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;background:var(--bg)}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--bl);border-radius:3px}::-webkit-scrollbar-thumb:hover{background:var(--a)}
+#bg-canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.scanlines{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9999;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,0.03) 2px,rgba(0,0,0,0.03) 4px)}
+.container{max-width:1200px;margin:0 auto;padding:0 24px;position:relative;z-index:1}
+.sl{font-family:'JetBrains Mono',monospace;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.25em;color:var(--a);margin-bottom:16px;font-weight:600;text-shadow:0 0 20px var(--ag2)}
+.st{font-family:'Orbitron','Inter',sans-serif;font-size:clamp(1.6rem,4vw,2.6rem);font-weight:800;line-height:1.15;margin-bottom:20px;letter-spacing:-0.02em}
+.ss{font-size:1.05rem;color:var(--tm);max-width:640px;line-height:1.7}
+.gold{color:var(--a);text-shadow:0 0 30px var(--ag2),0 0 60px var(--ag)}.cyan{color:var(--c)}.green{color:var(--g)}
+.glitch{position:relative;display:inline-block}
+.glitch::before,.glitch::after{content:attr(data-text);position:absolute;top:0;left:0;width:100%;height:100%;opacity:0;pointer-events:none}
+.glitch:hover::before{animation:gl1 0.3s infinite;color:var(--c);z-index:-1;opacity:0.8}
+.glitch:hover::after{animation:gl2 0.3s infinite;color:var(--r);z-index:-2;opacity:0.8}
+@keyframes gl1{0%,100%{transform:translate(0)}20%{transform:translate(-3px,3px)}40%{transform:translate(3px,-3px)}60%{transform:translate(-2px,-2px)}80%{transform:translate(2px,2px)}}
+@keyframes gl2{0%,100%{transform:translate(0)}20%{transform:translate(3px,-3px)}40%{transform:translate(-3px,3px)}60%{transform:translate(2px,2px)}80%{transform:translate(-2px,-2px)}}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(5,6,8,0.85);backdrop-filter:blur(20px) saturate(1.5);border-bottom:1px solid var(--bo);transition:all 0.3s}
+.nav.scrolled{border-bottom-color:rgba(168,191,106,0.15);box-shadow:0 4px 30px rgba(0,0,0,0.5)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:60px}
+.nav-logo{font-family:'Orbitron',monospace;font-weight:700;font-size:0.85rem;color:var(--t);text-decoration:none;letter-spacing:0.15em}
+.nav-logo span{color:var(--a);text-shadow:0 0 15px var(--ag2)}
+.nav-links{display:flex;gap:24px;align-items:center}
+.nav-links a{color:var(--tm);text-decoration:none;font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;transition:all 0.2s;font-family:'JetBrains Mono',monospace;position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--a);transition:width 0.3s;box-shadow:0 0 8px var(--ag2)}
+.nav-links a:hover{color:var(--t)}.nav-links a:hover::after{width:100%}
+.nav-cta{background:transparent!important;color:var(--a)!important;padding:6px 16px!important;border:1px solid var(--a)!important;border-radius:var(--R)!important;font-weight:700!important;transition:all 0.3s!important;text-shadow:0 0 10px var(--ag2);box-shadow:0 0 15px var(--ag),inset 0 0 15px var(--ag)!important}
+.nav-cta:hover{background:var(--ag2)!important;box-shadow:0 0 25px var(--ag2),inset 0 0 25px var(--ag)!important;transform:translateY(-1px)!important}
+.mobile-toggle{display:none;background:none;border:none;color:var(--t);font-size:1.4rem;cursor:pointer}
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;padding:120px 24px 80px}
+.hero-content{position:relative;z-index:2;max-width:850px}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 18px;background:var(--ag);border:1px solid rgba(168,191,106,0.25);border-radius:100px;font-size:0.7rem;color:var(--a);font-weight:700;margin-bottom:36px;letter-spacing:0.15em;font-family:'JetBrains Mono',monospace;text-transform:uppercase;box-shadow:0 0 20px var(--ag);animation:pb 3s ease-in-out infinite}
+@keyframes pb{0%,100%{box-shadow:0 0 20px var(--ag)}50%{box-shadow:0 0 35px var(--ag2)}}
+.hero h1{font-family:'Orbitron','Inter',sans-serif;font-size:clamp(2.2rem,6vw,4.2rem);font-weight:900;line-height:1.05;letter-spacing:-0.03em;margin-bottom:28px;text-shadow:0 0 60px rgba(168,191,106,0.15)}
+.hero h1 .accent{color:var(--a);text-shadow:0 0 40px var(--ag2),0 0 80px var(--ag)}
+.hero-sub{font-size:clamp(0.95rem,2vw,1.15rem);color:var(--tm);max-width:560px;margin:0 auto 44px;line-height:1.8}
+.hero-actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:var(--R);font-weight:700;font-size:0.85rem;text-decoration:none;transition:all 0.3s;cursor:pointer;border:none;font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:0.08em;position:relative;overflow:hidden}
+.btn::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(168,191,106,0.08),transparent);transition:left 0.5s}
+.btn:hover::before{left:100%}
+.btn-primary{background:transparent;color:var(--a);border:1px solid var(--a);box-shadow:0 0 20px var(--ag),inset 0 0 20px var(--ag);text-shadow:0 0 10px var(--ag2)}
+.btn-primary:hover{background:var(--ag2);box-shadow:0 0 40px var(--ag2),inset 0 0 30px var(--ag);transform:translateY(-2px)}
+.btn-secondary{background:var(--bg3);color:var(--t);border:1px solid var(--bo)}
+.btn-secondary:hover{border-color:var(--bl);background:var(--bg4);box-shadow:0 0 20px rgba(168,191,106,0.03);transform:translateY(-2px)}
+.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--bo);border-radius:var(--RL);background:rgba(10,12,16,0.8);backdrop-filter:blur(10px);overflow:hidden;margin-top:64px;position:relative}
+.stats-bar::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--a),transparent);opacity:0.3}
+.stat{padding:24px 16px;text-align:center;border-right:1px solid var(--bo);transition:all 0.3s;position:relative}
+.stat:last-child{border-right:none}.stat:hover{background:var(--ag)}
+.stat-value{font-family:'Orbitron',monospace;font-size:1.6rem;font-weight:800;color:var(--a);line-height:1.2;text-shadow:0 0 20px var(--ag2)}
+.stat-label{font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:var(--tm);text-transform:uppercase;letter-spacing:0.15em;margin-top:6px}
+.stat-sub{font-size:0.65rem;color:var(--td);margin-top:2px}
+section{padding:100px 0;position:relative;z-index:1}
+.section-header{text-align:center;margin-bottom:64px}
+.section-header .ss{margin:0 auto}
+.about-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px}
+.card{background:rgba(10,12,16,0.6);border:1px solid var(--bo);border-radius:var(--RL);padding:28px;transition:all 0.4s cubic-bezier(0.4,0,0.2,1);position:relative;overflow:hidden;backdrop-filter:blur(10px)}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--a),transparent);opacity:0;transition:opacity 0.4s}
+.card:hover{border-color:rgba(212,168,83,0.3);transform:translateY(-4px);box-shadow:0 20px 60px rgba(0,0,0,0.4),0 0 40px var(--ag)}.card:hover::before{opacity:0.5}
+.card-icon{width:44px;height:44px;background:var(--ag);border:1px solid rgba(168,191,106,0.15);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;margin-bottom:18px;box-shadow:0 0 15px var(--ag)}
+.card h3{font-size:1rem;font-weight:700;margin-bottom:10px;font-family:'Orbitron',sans-serif;letter-spacing:0.03em}
+.card p{font-size:0.88rem;color:var(--tm);line-height:1.6}
+.timeline{position:relative;max-width:760px;margin:0 auto}
+.timeline::before{content:'';position:absolute;left:20px;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,var(--a),var(--bo),var(--a));opacity:0.3}
+.timeline-item{position:relative;padding-left:56px;margin-bottom:40px}
+.timeline-item::before{content:'';position:absolute;left:13px;top:6px;width:14px;height:14px;background:var(--bg);border:2px solid var(--a);border-radius:50%;z-index:1;box-shadow:0 0 12px var(--ag2);transition:all 0.3s}
+.timeline-item:hover::before{background:var(--a);box-shadow:0 0 25px var(--ag2)}
+.timeline-year{font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:var(--a);font-weight:700;margin-bottom:6px;text-shadow:0 0 10px var(--ag2)}
+.timeline-item h4{font-size:1rem;font-weight:700;margin-bottom:6px}
+.timeline-item p{font-size:0.88rem;color:var(--tm)}
+.challenges-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.challenge-card{border-left:2px solid;padding:24px 28px;background:rgba(10,12,16,0.5);border-radius:0 var(--RL) var(--RL) 0;transition:all 0.4s;position:relative;overflow:hidden;backdrop-filter:blur(5px)}
+.challenge-card:nth-child(1){border-color:var(--r)}.challenge-card:nth-child(2){border-color:var(--a)}.challenge-card:nth-child(3){border-color:var(--c)}.challenge-card:nth-child(4){border-color:var(--g)}
+.challenge-card:hover{transform:translateX(4px)}.challenge-card:nth-child(1):hover{box-shadow:-8px 0 30px rgba(255,51,85,0.1)}.challenge-card:nth-child(2):hover{box-shadow:-8px 0 30px var(--ag)}.challenge-card:nth-child(3):hover{box-shadow:-8px 0 30px rgba(0,229,255,0.1)}.challenge-card:nth-child(4):hover{box-shadow:-8px 0 30px rgba(95,100,235,0.1)}
+.challenge-card h3{font-size:0.95rem;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:10px}
+.challenge-card p{font-size:0.85rem;color:var(--tm)}
+.challenge-tag{font-family:'JetBrains Mono',monospace;font-size:0.55rem;padding:2px 8px;border-radius:2px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em}
+.tag-risk{background:rgba(255,51,85,0.12);color:var(--r);border:1px solid rgba(255,51,85,0.2)}
+.tag-retention{background:var(--ag);color:var(--a);border:1px solid rgba(168,191,106,0.2)}
+.tag-efficiency{background:rgba(204,51,102,0.08);color:var(--c);border:1px solid rgba(204,51,102,0.15)}
+.tag-growth{background:rgba(95,100,235,0.08);color:var(--g);border:1px solid rgba(95,100,235,0.15)}
+.contrib-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.contrib-card{text-align:center;padding:32px 20px;background:rgba(10,12,16,0.4);border:1px solid var(--bo);border-radius:var(--RL);transition:all 0.4s;position:relative;overflow:hidden}
+.contrib-card::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,var(--ag) 0%,transparent 70%);opacity:0;transition:opacity 0.4s;pointer-events:none}
+.contrib-card:hover{border-color:rgba(168,191,106,0.25);transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,0.3)}.contrib-card:hover::before{opacity:1}
+.contrib-stat{font-family:'Orbitron',monospace;font-size:2rem;font-weight:900;color:var(--a);margin-bottom:4px;text-shadow:0 0 30px var(--ag2);position:relative;z-index:1}
+.contrib-card h4{font-size:0.85rem;font-weight:700;margin-bottom:6px;position:relative;z-index:1}
+.contrib-card p{font-size:0.78rem;color:var(--tm);position:relative;z-index:1}
+.proposal{margin-bottom:80px}
+.proposal-header{display:flex;align-items:flex-start;gap:20px;margin-bottom:32px}
+.proposal-num{width:52px;height:52px;min-width:52px;background:var(--ag);border:1px solid rgba(168,191,106,0.25);border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:'Orbitron',monospace;font-size:1rem;font-weight:800;color:var(--a);box-shadow:0 0 20px var(--ag)}
+.proposal-title h3{font-size:1.4rem;font-weight:800;margin-bottom:6px;font-family:'Orbitron',sans-serif}
+.proposal-title p{color:var(--tm);font-size:0.9rem;max-width:520px}
+.proposal-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.proposal-detail h4{font-family:'JetBrains Mono',monospace;font-size:0.65rem;text-transform:uppercase;letter-spacing:0.2em;color:var(--a);margin-bottom:14px;font-weight:700;text-shadow:0 0 10px var(--ag2)}
+.proposal-detail ul{list-style:none}
+.proposal-detail ul li{padding:8px 0;font-size:0.85rem;color:var(--tm);border-bottom:1px solid var(--bo);display:flex;align-items:flex-start;gap:10px;line-height:1.5;transition:all 0.2s}
+.proposal-detail ul li:hover{color:var(--t);padding-left:4px}
+.proposal-detail ul li:last-child{border-bottom:none}
+.proposal-detail ul li::before{content:'>';color:var(--a);font-family:'JetBrains Mono',monospace;font-weight:700;font-size:0.8rem;line-height:1.6;text-shadow:0 0 8px var(--ag2)}
+.proposal-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px}
+.proposal-stat{background:rgba(10,12,16,0.6);border:1px solid var(--bo);border-radius:var(--R);padding:16px;text-align:center;transition:all 0.3s}
+.proposal-stat:hover{border-color:rgba(168,191,106,0.2);box-shadow:0 0 20px var(--ag)}
+.proposal-stat .value{font-family:'Orbitron',monospace;font-size:1.2rem;font-weight:800;color:var(--a);text-shadow:0 0 15px var(--ag2)}
+.proposal-stat .label{font-family:'JetBrains Mono',monospace;font-size:0.55rem;color:var(--tm);text-transform:uppercase;letter-spacing:0.1em;margin-top:4px}
+.mockup-box{background:rgba(14,16,22,0.8);border:1px solid var(--bo);border-radius:var(--RL);padding:24px;margin-top:20px;position:relative;overflow:hidden}
+.mockup-box::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--c),transparent);opacity:0.2}
+.mockup-box h5{font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:var(--td);text-transform:uppercase;letter-spacing:0.2em;margin-bottom:14px}
+.mockup-badge{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:2px;font-size:0.75rem;font-weight:700;font-family:'JetBrains Mono',monospace;letter-spacing:0.05em}
+.badge-gold{background:var(--ag);color:var(--a);border:1px solid rgba(168,191,106,0.25)}
+.badge-cyan{background:var(--cg);color:var(--c);border:1px solid rgba(0,229,255,0.2)}
+.badge-green{background:var(--gg);color:var(--g);border:1px solid rgba(0,255,136,0.2)}
+.arch-diagram{font-family:'JetBrains Mono',monospace;font-size:0.72rem;line-height:1.8;color:var(--tm);background:rgba(10,12,16,0.6);border:1px solid var(--bo);border-radius:var(--RL);padding:28px;overflow-x:auto;white-space:pre;position:relative}
+.arch-diagram::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--g),transparent);opacity:0.2}
+.arch-diagram .accent{color:var(--a)}.arch-diagram .cyan{color:var(--c)}.arch-diagram .green{color:var(--g)}.arch-dim{color:var(--td)}
+.comm-frame{background:rgba(10,12,16,0.5);border:1px solid var(--bo);border-radius:var(--RL);padding:32px;position:relative;overflow:hidden;backdrop-filter:blur(10px)}
+.comm-frame::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--a),var(--c),var(--g),transparent);opacity:0.4}
+.comm-insight{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:28px}
+.comm-insight-card{padding:20px;background:rgba(14,16,22,0.6);border-radius:var(--R);border:1px solid var(--bo);transition:all 0.3s}
+.comm-insight-card:hover{border-color:rgba(168,191,106,0.2);box-shadow:0 0 25px var(--ag);transform:translateY(-2px)}
+.comm-insight-card h4{font-size:0.85rem;font-weight:700;margin-bottom:8px}
+.comm-insight-card p{font-size:0.8rem;color:var(--tm)}
+.phase-timeline{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px}
+.phase-card{background:rgba(10,12,16,0.5);border:1px solid var(--bo);border-radius:var(--RL);padding:28px;position:relative;overflow:hidden;transition:all 0.4s;backdrop-filter:blur(5px)}
+.phase-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;opacity:0.5}
+.phase-card:nth-child(1)::before{background:linear-gradient(90deg,var(--g),transparent)}
+.phase-card:nth-child(2)::before{background:linear-gradient(90deg,var(--a),transparent)}
+.phase-card:nth-child(3)::before{background:linear-gradient(90deg,var(--c),transparent)}
+.phase-card:hover{transform:translateY(-4px);box-shadow:0 20px 60px rgba(0,0,0,0.4)}
+.phase-card:nth-child(1):hover{border-color:rgba(0,255,136,0.2)}.phase-card:nth-child(2):hover{border-color:rgba(168,191,106,0.2)}.phase-card:nth-child(3):hover{border-color:rgba(0,229,255,0.2)}
+.phase-number{font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:var(--a);font-weight:700;margin-bottom:12px;letter-spacing:0.15em;text-transform:uppercase}
+.phase-card h4{font-size:1rem;font-weight:700;margin-bottom:8px;font-family:'Orbitron',sans-serif}
+.phase-card ul{list-style:none}
+.phase-card ul li{font-size:0.82rem;color:var(--tm);padding:4px 0;display:flex;align-items:flex-start;gap:8px}
+.phase-card ul li::before{content:'+';color:var(--a);font-family:'JetBrains Mono',monospace;font-size:0.7rem;line-height:1.8}
+.matrix{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:600px;margin:32px auto 0}
+.matrix-quadrant{padding:20px;border-radius:var(--R);border:1px solid var(--bo);text-align:center;transition:all 0.3s}
+.matrix-quadrant:hover{transform:scale(1.02)}
+.matrix-quadrant h5{font-size:0.7rem;font-weight:700;margin-bottom:6px;text-transform:uppercase;letter-spacing:0.1em;font-family:'JetBrains Mono',monospace}
+.matrix-quadrant p{font-size:0.75rem;color:var(--tm)}
+.vision-quote{font-size:clamp(1.1rem,3vw,1.6rem);font-weight:300;font-style:italic;color:var(--tm);max-width:800px;margin:0 auto 40px;line-height:1.7;position:relative;padding-left:24px;border-left:2px solid var(--a);text-shadow:0 0 30px rgba(168,191,106,0.05)}
+footer{border-top:1px solid var(--bo);padding:48px 0;text-align:center;position:relative;z-index:1}
+.footer-logo{font-family:'Orbitron',monospace;font-weight:800;font-size:1rem;margin-bottom:12px;letter-spacing:0.1em}
+.footer-tagline{color:var(--tm);font-size:0.85rem;margin-bottom:20px}
+.footer-meta{font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:var(--td);letter-spacing:0.1em}
+.mobile-nav{display:none;position:fixed;top:60px;left:0;right:0;bottom:0;background:rgba(10,12,14,0.97);z-index:99;padding:24px;flex-direction:column;gap:12px;border-top:1px solid var(--bo);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);overflow-y:auto}.mobile-nav.open{display:flex}
+.mobile-nav a{color:var(--t);text-decoration:none;font-weight:600;padding:12px 0;border-bottom:1px solid var(--bo);font-family:'JetBrains Mono',monospace;font-size:0.85rem;text-transform:uppercase;letter-spacing:0.1em}
+.fade-up{opacity:0;transform:translateY(30px);transition:opacity 0.8s cubic-bezier(0.4,0,0.2,1),transform 0.8s cubic-bezier(0.4,0,0.2,1)}.fade-up.visible{opacity:1;transform:translateY(0)}
+@media(max-width:1024px){.about-grid{grid-template-columns:repeat(2,1fr)}.contrib-grid{grid-template-columns:repeat(2,1fr)}.proposal-grid{grid-template-columns:1fr}}
+@media(max-width:768px){.nav-links{display:none}.mobile-toggle{display:block}.stats-bar{grid-template-columns:repeat(2,1fr)}.stat:nth-child(2){border-right:none}.about-grid{grid-template-columns:1fr}.challenges-grid{grid-template-columns:1fr}.contrib-grid{grid-template-columns:1fr}.proposal-header{flex-direction:column;gap:12px}.proposal-stats{grid-template-columns:repeat(3,1fr)}.comm-insight{grid-template-columns:1fr}.phase-timeline{grid-template-columns:1fr}.matrix{grid-template-columns:1fr 1fr}section{padding:64px 0}.hero{min-height:auto;padding:100px 24px 60px}.hero h1{font-size:2rem}}
+@media(max-width:480px){.stats-bar{grid-template-columns:1fr}.stat{border-right:none;border-bottom:1px solid var(--bo)}.proposal-stats{grid-template-columns:1fr}}
+
+
+.diagram-section{padding:80px 0;background:var(--bg)}.diagram-grid{display:grid;gap:48px}.diagram-card{background:rgba(10,12,16,0.6);border:1px solid var(--bo);border-radius:var(--RL);overflow:hidden;transition:all 0.4s}.diagram-card:hover{border-color:rgba(168,191,106,0.25);box-shadow:0 20px 60px rgba(0,0,0,0.3)}.diagram-card svg{border-radius:var(--RL) var(--RL) 0 0}.diagram-label{padding:16px 24px 20px}.diagram-label h4{font-family:'Orbitron',sans-serif;font-size:0.85rem;font-weight:700;color:var(--a);margin-bottom:4px}.diagram-label p{font-size:0.75rem;color:var(--tm)}.diagram-svg-wrap{padding:24px 24px 0;background:rgba(5,6,8,0.5)}
+
+.diagram-section{padding:80px 0;background:var(--bg)}.diagram-grid{display:grid;gap:48px}.diagram-card{background:rgba(10,12,16,0.6);border:1px solid var(--bo);border-radius:var(--RL);overflow:hidden;transition:all 0.4s}.diagram-card:hover{border-color:rgba(168,191,106,0.25);box-shadow:0 20px 60px rgba(0,0,0,0.3)}.diagram-svg-wrap{padding:24px 24px 0;background:rgba(5,6,8,0.5)}.diagram-svg-wrap svg{border-radius:var(--RL) var(--RL) 0 0}.diagram-label{padding:16px 24px 20px}.diagram-label h4{font-family:'Orbitron',sans-serif;font-size:0.85rem;font-weight:700;color:var(--a);margin-bottom:4px}.diagram-label p{font-size:0.75rem;color:var(--tm)}
+
+
+/* Futuristic cursor */
+*{cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='10' fill='none' stroke='%23A8BF6A' stroke-width='2' opacity='0.8'/%3E%3Ccircle cx='12' cy='12' r='3' fill='%23A8BF6A'/%3E%3Cline x1='12' y1='2' x2='12' y2='6' stroke='%23A8BF6A' stroke-width='1.5'/%3E%3Cline x1='12' y1='18' x2='12' y2='22' stroke='%23A8BF6A' stroke-width='1.5'/%3E%3Cline x1='2' y1='12' x2='6' y2='12' stroke='%23A8BF6A' stroke-width='1.5'/%3E%3Cline x1='18' y1='12' x2='22' y2='12' stroke='%23A8BF6A' stroke-width='1.5'/%3E%3C/svg%3E") 12 12,auto}
+a,button,.mobile-toggle,.nav-cta{cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='10' fill='none' stroke='%23A8BF6A' stroke-width='2'/%3E%3Ccircle cx='12' cy='12' r='4' fill='%23A8BF6A' opacity='0.6'/%3E%3Cline x1='12' y1='1' x2='12' y2='7' stroke='%23A8BF6A' stroke-width='2'/%3E%3Cline x1='12' y1='17' x2='12' y2='23' stroke='%23A8BF6A' stroke-width='2'/%3E%3Cline x1='1' y1='12' x2='7' y2='12' stroke='%23A8BF6A' stroke-width='2'/%3E%3Cline x1='17' y1='12' x2='23' y2='12' stroke='%23A8BF6A' stroke-width='2'/%3E%3C/svg%3E") 12 12,pointer}
+
+/* Return to top button */
+#returnTop{position:fixed;bottom:28px;right:28px;width:48px;height:48px;border-radius:50%;background:var(--a);color:var(--bg);border:none;font-size:1.2rem;display:flex;align-items:center;justify-content:center;opacity:0;transform:translateY(20px);transition:all 0.4s cubic-bezier(0.4,0,0.2,1);z-index:999;box-shadow:0 4px 20px rgba(168,191,106,0.3)}#returnTop.visible{opacity:1;transform:translateY(0)}#returnTop:hover{transform:translateY(-4px) scale(1.1);box-shadow:0 8px 30px rgba(168,191,106,0.5)}@media(max-width:768px){#returnTop{bottom:20px;right:20px;width:44px;height:44px}}
+</style>
+</head>
+<body>
+<div class='scanlines'></div>
+<canvas id='bg-canvas'></canvas>
+<nav class='nav' id='nav'>
+<div class='container nav-inner'>
+<a href='#' class='nav-logo'>BOA<span>x</span>CWS</a>
+<div class='nav-links'>
+<a href='#context'>Context</a>
+<a href='#challenges'>Problems</a>
+<a href='#asks'>Asks</a>
+<a href='#communication'>Theme</a>
+<a href='#vision'>Roadmap</a>
+<a href='#diagrams'>Diagrams</a>
+<a href='#contact' class='nav-cta'>Engage</a>
+</div>
+<button class='mobile-toggle' onclick='toggleMobile()' aria-label='Menu'>&#9776;</button>
+</div>
+<div class='mobile-nav' id='mobileNav'>
+<a href='#context' onclick='toggleMobile()'>Context</a>
+<a href='#challenges' onclick='toggleMobile()'>Challenges</a>
+<a href='#challenges' onclick='toggleMobile()'>Problems</a>
+<a href='#asks' onclick='toggleMobile()'>Asks</a>
+<a href='#communication' onclick='toggleMobile()'>Unifying Theme</a>
+<a href='#communication' onclick='toggleMobile()'>Communication</a>
+<a href='#vision' onclick='toggleMobile()'>Roadmap</a>
+<a href='#diagrams' onclick='toggleMobile()'>Diagrams</a>
+<a href='#contact' class='btn btn-primary' style='margin-top:16px;justify-content:center;' onclick='toggleMobile()'>Engage</a>
+</div>
+</nav>
+<section class='hero'>
+<div style="position:absolute;top:40px;left:40px;width:60px;height:60px;border-top:2px solid var(--a);border-left:2px solid var(--a);opacity:0.3;pointer-events:none;"></div>
+<div style="position:absolute;top:40px;right:40px;width:60px;height:60px;border-top:2px solid var(--a);border-right:2px solid var(--a);opacity:0.3;pointer-events:none;"></div>
+<div style="position:absolute;bottom:40px;left:40px;width:60px;height:60px;border-bottom:2px solid var(--a);border-left:2px solid var(--a);opacity:0.3;pointer-events:none;"></div>
+<div style="position:absolute;bottom:40px;right:40px;width:60px;height:60px;border-bottom:2px solid var(--a);border-right:2px solid var(--a);opacity:0.3;pointer-events:none;"></div>
+<div class='hero-content'>
+<div style="display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:24px;flex-wrap:wrap;">
+<img src="assets/boa-logo.png" alt="BOA" style="height:56px;width:auto;object-fit:contain;">
+<span style="font-family:'Orbitron',monospace;font-size:0.7rem;color:var(--tm);letter-spacing:0.2em;">×</span>
+<img src="assets/cws-logo.png" alt="Combat Waffle Studios" style="height:36px;width:auto;object-fit:contain;background:#fff;border-radius:8px;padding:6px 10px;">
+</div>
+<div class='hero-badge'>// COMMUNICATION IMPROVEMENT PROPOSAL</div>
+<h1 class='glitch' data-text='How Can CWS Improve Communication With BOAs and Mods?'>
+How Can CWS Improve Communication With <span class='accent'>BOAs and Mods</span>?
+</h1>
+<p class='hero-sub'>BOA volunteers coach new players through their first sessions in Ghosts of Tabor — a VR extraction shooter by Combat Waffle Studios. Volunteer numbers are at an all-time low (20-30 active, down from a 45+ average). High barriers to entry and manual processes drive people away. Seven focused asks to improve communication, retain volunteers, and rebuild.</p>
+<div class='hero-actions'>
+<a href='#asks' class='btn btn-primary'>// VIEW_ASKS &#8594;</a>
+<a href='#context' class='btn btn-secondary'>Read Context</a>
+</div>
+<div class='stats-bar'>
+<div class='stat'><div class='stat-value'>20-30</div><div class='stat-label'>Active Volunteers</div><div class='stat-sub'>down from 45+ avg</div></div>
+<div class='stat'><div class='stat-value'>2000+</div><div class='stat-label'>Sessions Coached</div><div class='stat-sub'>new players taught</div></div>
+<div class='stat'><div class='stat-value'>50+</div><div class='stat-label'>Leaders Mentored</div><div class='stat-sub'>over the years</div></div>
+<div class='stat'><div class='stat-value'>7</div><div class='stat-label'>Focused Asks</div><div class='stat-sub'>1 unifying goal</div></div>
+</div></div></section<div style="height:1px;background:linear-gradient(90deg,transparent,var(--a),transparent);opacity:0.2;margin:0;"></div>
+
+<section id='context'><div class='container'>
+<div class='section-header fade-up'>
+<div class='sl'>// 01 - THE COMMUNICATION PROBLEM</div>
+<h2 class='st'>Where Information <span class='gold'>Breaks Down</span></h2>
+<p class='ss'>BOA volunteers coach new players through their first sessions in Ghosts of Tabor every day. But volunteer numbers are at an all-time low — 20-30 active, down from a historical average of 45+. The high bar of Discord knowledge needed to run processes drives people away. Volunteers give up their time for a crumb of acknowledgment. Better communication with CWS — even a bi-annual visit to our monthly meetings — would show volunteers they matter.</p>
+</div>
+<div class='challenges-grid'>
+<div class='challenge-card fade-up'><h3>&#9654; Manual Processes <span class='challenge-tag tag-risk'>CRITICAL</span></h3><p>Ticket counting, session tracking, scheduling, and recognition are all handled by hand. Information gets delayed or lost because humans are manually moving data around.</p></div>
+<div class='challenge-card fade-up'><h3>&#9654; Knowledge Walks Out <span class='challenge-tag tag-retention'>HIGH</span></h3><p>When experienced volunteers depart, institutional memory leaves with them. Critical knowledge lives in Discord messages and tribal understanding.</p></div>
+<div class='challenge-card fade-up'><h3>&#9654; Volunteers Feel Invisible <span class='challenge-tag tag-efficiency'>HIGH</span></h3><p>Contributions disappear into the void. Limited formal acknowledgment means volunteers don't know their work matters.</p></div>
+<div class='challenge-card fade-up'><h3>&#9654; Players Seek Answers <span class='challenge-tag tag-growth'>MEDIUM</span></h3><p>Without official information, speculation fills the gap. Community members reverse-engineer answers that could be communicated directly.</p></div>
+<div class='challenge-card fade-up'><h3>&#9654; Volunteers Give, Get Little Back <span class='challenge-tag tag-retention'>HIGH</span></h3><p>Volunteers give up their time for a crumb of acknowledgment. No direct line to CWS means they don't know if their work matters. A bi-annual visit to BOA meetings would change that.</p></div>
+</div></div></section<div style="height:1px;background:linear-gradient(90deg,transparent,var(--a),transparent);opacity:0.2;margin:0;"></div>
+
+<section id='challenges' style='background:var(--bg2);'><div class='container'>
+<div class='section-header fade-up'>
+<div class='sl'>// 02 - THE SEVEN ASKS</div>
+<h2 class='st'>Seven Focused <span class='gold'>Asks</span></h2>
+<p class='ss'>Each ask addresses a specific communication, retention, or information flow problem.</p>
+</div>
+<div class='challenges-grid'>
+<div class='challenge-card fade-up'><h3>&#9654; Volunteer Burnout <span class='challenge-tag tag-risk'>CRITICAL</span></h3><p>41% of departing volunteers cite burnout. Repetitive manual tasks consume time that skilled volunteers could spend on high-impact work.</p></div>
+<div class='challenge-card fade-up'><h3>&#9654; Knowledge Retention <span class='challenge-tag tag-retention'>HIGH</span></h3><p>When experienced volunteers depart, institutional memory walks out the door. Only 25% of decisions are documented.</p></div>
+<div class='challenge-card fade-up'><h3>&#9654; Operational Burden <span class='challenge-tag tag-efficiency'>MEDIUM</span></h3><p>35% of volunteer hours are spent on repetitive, automatable tasks. Monthly reporting takes ~20 person-hours.</p></div>
+<div class='challenge-card fade-up'><h3>&#9654; EU Coverage Gap <span class='challenge-tag tag-growth'>MEDIUM</span></h3><p>Leadership departures created responsiveness gaps during EU prime-time hours.</p></div>
+</div></div></section
+<div style="height:1px;background:linear-gradient(90deg,transparent,var(--a),transparent);opacity:0.2;margin:0;"></div>
+
+<section id='asks' style='background:var(--bg2);'><div class='container'>
+<div class='section-header fade-up'>
+<div class='sl'>// 03 - THE SEVEN ASKS</div>
+<h2 class='st'>What We're <span class='gold'>Asking For</span></h2>
+<p class='ss'>Every ask reduces friction between people — volunteers communicating with leadership, BOAs communicating with players, or developers communicating with the community.</p>
+</div>
+<div class='proposal fade-up'>
+<div class='proposal-header'><div class='proposal-num'>01</div><div class='proposal-title'><h3>Allow a BOA Operations Bot</h3><p>Permission to host and operate a BOA-managed Discord bot within BOA Hub.</p></div></div>
+<div class='proposal-grid'>
+<div class='card proposal-detail'><h4>// COMMUNICATION PROBLEM</h4><ul><li>Ticket counting is manual</li><li>Session tracking is manual</li><li>Volunteer metrics are manual</li><li>Scheduling across timezones is manual</li><li>Recognition tracking is manual</li></ul></div>
+<div class='card proposal-detail'><h4>// COMMUNICATION IMPROVEMENT</h4><ul><li>Reduces administrative overhead</li><li>Improves visibility into volunteer activity</li><li>Standardizes information sharing</li><li>Simplifies cross-timezone scheduling</li><li>Frees leadership time for people, not data</li></ul></div>
+</div>
+<div class='proposal-stats'><div class='proposal-stat'><div class='value'>Faster</div><div class='label'>Info Flow</div></div><div class='proposal-stat'><div class='value'>Less</div><div class='label'>Manual</div></div><div class='proposal-stat'><div class='value'>More</div><div class='label'>Visibility</div></div></div>
+</div>
+<div class='proposal fade-up'>
+<div class='proposal-header'><div class='proposal-num'>02</div><div class='proposal-title'><h3>Approval for Recognition Program</h3><p>Clarification on using BOA/CWS branding for volunteer recommendation letters.</p></div></div>
+<div class='proposal-grid'>
+<div class='card proposal-detail'><h4>// COMMUNICATION PROBLEM</h4><ul><li>Volunteers feel contributions disappear</li><li>Limited formal acknowledgment of service</li><li>No feedback loop between org and volunteers</li></ul></div>
+<div class='card proposal-detail'><h4>// COMMUNICATION IMPROVEMENT</h4><ul><li>Communicates appreciation clearly</li><li>Documents contribution history</li><li>Creates stronger feedback loops</li><li>Shows professional value of volunteer work</li></ul></div>
+</div>
+<div class='proposal-stats'><div class='proposal-stat'><div class='value'>Stronger</div><div class='label'>Feedback</div></div><div class='proposal-stat'><div class='value'>Better</div><div class='label'>Retention</div></div><div class='proposal-stat'><div class='value'>Clear</div><div class='label'>Appreciation</div></div></div>
+</div>
+<div class='proposal fade-up' id='knowledge'>
+<div class='proposal-header'><div class='proposal-num'>03</div><div class='proposal-title'><h3>Knowledge Base Partnership</h3><p>Support for a centralized BOA knowledge base and resource hub.</p></div></div>
+<div class='proposal-grid'>
+<div class='card proposal-detail'><h4>// COMMUNICATION PROBLEM</h4><ul><li>Knowledge lives in individual leaders</li><li>Discord messages get buried</li><li>Tribal knowledge is fragile</li><li>Old conversations are lost</li></ul></div>
+<div class='card proposal-detail'><h4>// COMMUNICATION IMPROVEMENT</h4><ul><li>Centralizes institutional knowledge</li><li>Improves onboarding consistency</li><li>Preserves knowledge across transitions</li><li>Enables cross-timezone communication</li></ul></div>
+</div>
+<div class='proposal-stats'><div class='proposal-stat'><div class='value'>40-60%</div><div class='label'>Faster Onboard</div></div><div class='proposal-stat'><div class='value'>Knowledge</div><div class='label'>Preserved</div></div><div class='proposal-stat'><div class='value'>Cross</div><div class='label'>Timezone</div></div></div>
+</div>
+<div class='proposal fade-up'>
+<div class='proposal-header'><div class='proposal-num'>04</div><div class='proposal-title'><h3>More Official Technical Info</h3><p>Improved communication around game systems: armor, ballistics, damage, penetration.</p></div></div>
+<div class='proposal-grid'>
+<div class='card proposal-detail'><h4>// COMMUNICATION PROBLEM</h4><ul><li>Players want answers</li><li>Speculation fills information gaps</li><li>Community reverse-engineers mechanics</li><li>Repeated questions create pressure</li></ul></div>
+<div class='card proposal-detail'><h4>// COMMUNICATION IMPROVEMENT</h4><ul><li>Reduces misinformation</li><li>Improves player education</li><li>Reduces repeated questions</li><li>Reduces pressure on contributors</li></ul></div>
+</div>
+<div class='proposal-stats'><div class='proposal-stat'><div class='value'>Less</div><div class='label'>Speculation</div></div><div class='proposal-stat'><div class='value'>Better</div><div class='label'>Education</div></div><div class='proposal-stat'><div class='value'>Reduced</div><div class='label'>Pressure</div></div></div>
+</div>
+<div class='proposal fade-up'>
+<div class='proposal-header'><div class='proposal-num'>05</div><div class='proposal-title'><h3>Volunteer Pulse Checks</h3><p>Occasional structured feedback between CWS and volunteer groups.</p></div></div>
+<div class='proposal-grid'>
+<div class='card proposal-detail'><h4>// COMMUNICATION PROBLEM</h4><ul><li>Problems discovered after burnout</li><li>Frustrations surface too late</li><li>Resource gaps go unreported</li><li>Breakdowns become departures</li></ul></div>
+<div class='card proposal-detail'><h4>// COMMUNICATION IMPROVEMENT</h4><ul><li>Identifies burnout early</li><li>Captures frustrations before they compound</li><li>Surfaces resource gaps proactively</li><li>Prevents communication breakdowns</li></ul></div>
+</div>
+<div class='proposal-stats'><div class='proposal-stat'><div class='value'>Early</div><div class='label'>Detection</div></div><div class='proposal-stat'><div class='value'>Proactive</div><div class='label'>Listening</div></div><div class='proposal-stat'><div class='value'>Fewer</div><div class='label'>Departures</div></div></div>
+</div>
+<div class='proposal fade-up'>
+<div class='proposal-header'><div class='proposal-num'>06</div><div class='proposal-title'><h3>Mod Log Access for Lead BOAs</h3><p>Lead BOA role holders should get access to moderation logs for vetting BOA candidate applicants.</p></div></div>
+<div class='proposal-grid'>
+<div class='card proposal-detail'><h4>// COMMUNICATION PROBLEM</h4><ul><li>Vetting new volunteers is manual and slow</li><li>Lead BOAs can't see moderation history on applicants</li><li>Candidate research requires asking around</li><li>Communication gaps in the vetting pipeline</li></ul></div>
+<div class='card proposal-detail'><h4>// COMMUNICATION IMPROVEMENT</h4><ul><li>Faster vetting of BOA candidates</li><li>Lead BOAs can review moderation actions directly</li><li>One less manual step in the onboarding pipeline</li><li>BOA leadership already signed an NDA with CWS</li></ul></div>
+</div>
+<div class='proposal-stats'><div class='proposal-stat'><div class='value'>Faster</div><div class='label'>Vetting</div></div><div class='proposal-stat'><div class='value'>Less</div><div class='label'>Manual Steps</div></div><div class='proposal-stat'><div value='NDA</div><div class='label'>Already Signed</div></div></div>
+</div>
+<div class='proposal fade-up'>
+<div class='proposal-header'><div class='proposal-num'>07</div><div class='proposal-title'><h3>CWS Participation in BOA Meetings</h3><p>CWS team members visit BOA monthly meetings at least once or twice a year.</p></div></div>
+<div class='proposal-grid'>
+<div class='card proposal-detail'><h4>// COMMUNICATION PROBLEM</h4><ul><li>Volunteers have no direct line to CWS</li><li>No visibility into whether their work matters</li><li>Feels like shouting into the void</li><li>Volunteers give time for a crumb of acknowledgment</li></ul></div>
+<div class='card proposal-detail'><h4>// COMMUNICATION IMPROVEMENT</h4><ul><li>Shows volunteers their work is seen and valued</li><li>Direct feedback loop between CWS and volunteer leadership</li><li>Even once or twice a year makes a difference</li><li>They came to our meeting — huge for morale</li></ul></div>
+</div>
+<div class='proposal-stats'><div class='proposal-stat'><div class='value'>Morale</div><div class='label'>Boost</div></div><div class='proposal-stat'><div class='value'>Direct</div><div class='label'>Feedback</div></div><div class='proposal-stat'><div class='value'>1-2x</div><div class='label'>Per Year</div></div></div>
+</div></div></section<div style="height:1px;background:linear-gradient(90deg,transparent,var(--a),transparent);opacity:0.2;margin:0;"></div>
+
+<section id='communication'><div class='container'>
+<div class='section-header fade-up'>
+<div class='sl'>// 04 - THE UNIFYING THEME</div>
+<h2 class='st'>What Ties It All <span class='gold'>Together</span></h2>
+<p class='ss'>If asked: what's the common thread between all seven requests?</p>
+</div>
+<div class='comm-frame fade-up'>
+<h3 style='font-size:1.2rem;font-weight:800;margin-bottom:16px;font-family:Orbitron,sans-serif;'>The Common Thread</h3>
+<p style='color:var(--tm);font-size:0.95rem;margin-bottom:24px;'>Every request reduces friction between people. Whether it's volunteers communicating with leadership, BOAs communicating with players, or developers communicating with the community.</p>
+<div class='comm-insight'>
+<div class='comm-insight-card'><h4>&#9679; Information Flow</h4><p>Better data sharing means faster, more accurate communication across the entire volunteer ecosystem.</p></div>
+<div class='comm-insight-card'><h4>&#9679; Retention</h4><p>When volunteers feel heard and recognized, they stay. Recognition is communication.</p></div>
+<div class='comm-insight-card'><h4>&#9679; Knowledge Preservation</h4><p>Capturing institutional knowledge means communication survives leadership transitions.</p></div>
+<div class='comm-insight-card'><h4>&#9679; Developer-Community Bridge</h4><p>Official information reduces speculation and builds trust between CWS and the player base.</p></div>
+</div>
+<div style='margin-top:24px;padding:18px;border:1px solid rgba(168,191,106,0.15);border-radius:var(--R);background:var(--ag);'>
+<p style='font-size:0.85rem;color:var(--tm);line-height:1.6;'><strong style='color:var(--a);'>Our approach:</strong> We're not asking for compensation or proprietary access. We're asking for better tools to communicate with each other.</p>
+</div></div></div></section<div style="height:1px;background:linear-gradient(90deg,transparent,var(--a),transparent);opacity:0.2;margin:0;"></div>
+
+<section id='vision' style='background:var(--bg2);'><div class='container'>
+<div class='section-header fade-up'>
+<div class='sl'>// 05 - IMPLEMENTATION ROADMAP</div>
+<h2 class='st'>Implementation <span class='gold'>Roadmap</span></h2>
+</div>
+<div class='phase-timeline'>
+<div class='phase-card fade-up'><div class='phase-number'>PHASE 1 - QUICK WINS [WEEKS 1-8]</div><h4>Foundation</h4><ul><li>Recognition program launch</li><li>Knowledge base MVP</li><li>Bot requirements & approval</li><li>EU recruitment drive</li></ul></div>
+<div class='phase-card fade-up'><div class='phase-number'>PHASE 2 - CORE BUILD [WEEKS 9-20]</div><h4>Development</h4><ul><li>Bot MVP development</li><li>Knowledge base expansion</li><li>SOP documentation project</li><li>Recognition program expansion</li></ul></div>
+<div class='phase-card fade-up'><div class='phase-number'>PHASE 3 - MATURITY [WEEKS 21-52]</div><h4>Scale &amp; Sustain</h4><ul><li>Full bot deployment</li><li>Pulse check feedback sessions</li><li>Cross-organizational content</li><li>Measurable impact reporting</li></ul></div>
+</div>
+<div class='matrix fade-up'>
+<div class='matrix-quadrant' style='background:rgba(0,255,136,0.05);border-color:rgba(0,255,136,0.2);'><h5 style='color:var(--g)'>Quick Wins</h5><p>Recognition, Knowledge Base</p></div>
+<div class='matrix-quadrant' style='background:var(--ag);border-color:rgba(168,191,106,0.2);'><h5 style='color:var(--a)'>Flagship Projects</h5><p>BOA Bot, Tech Collaboration</p></div>
+<div class='matrix-quadrant' style='background:rgba(0,229,255,0.05);border-color:rgba(204,51,102,0.15);'><h5 style='color:var(--c)'>Fill-Ins</h5><p>EU Recruitment, Workshops</p></div>
+<div class='matrix-quadrant' style='background:rgba(58,63,85,0.1);border-color:rgba(58,63,85,0.2);'><h5 style='color:var(--td)'>Deprioritize</h5><p>Annual Events, Formal Council</p></div>
+</div></div></section<div style="height:1px;background:linear-gradient(90deg,transparent,var(--a),transparent);opacity:0.2;margin:0;"></div>
+
+
+<div style="height:1px;background:linear-gradient(90deg,transparent,var(--a),transparent);opacity:0.2;margin:0;"></div>
+
+<section id='diagrams' class='diagram-section'>
+<div class='container'>
+<div class='section-header fade-up'>
+<div class='sl'>// 06 - VISUAL OVERVIEW</div>
+<h2 class='st'>Communication <span class='gold'>Diagrams</span></h2>
+<p class='ss'>Visual overview of the seven asks and how they improve communication flow.</p>
+</div>
+<div class='diagram-grid'>
+
+<div class='diagram-card fade-up'>
+<div class='diagram-svg-wrap' id='diag-01-partnership-overview'></div>
+<div class='diagram-label'>
+<h4>Partnership Overview</h4>
+<p>Click to interact</p>
+</div>
+</div>
+<div class='diagram-card fade-up'>
+<div class='diagram-svg-wrap' id='diag-02-bot-architecture'></div>
+<div class='diagram-label'>
+<h4>Bot Architecture</h4>
+<p>Click to interact</p>
+</div>
+</div>
+<div class='diagram-card fade-up'>
+<div class='diagram-svg-wrap' id='diag-03-recognition-program'></div>
+<div class='diagram-label'>
+<h4>Recognition Program</h4>
+<p>Click to interact</p>
+</div>
+</div>
+<div class='diagram-card fade-up'>
+<div class='diagram-svg-wrap' id='diag-04-knowledge-base'></div>
+<div class='diagram-label'>
+<h4>Knowledge Base</h4>
+<p>Click to interact</p>
+</div>
+</div>
+<div class='diagram-card fade-up'>
+<div class='diagram-svg-wrap' id='diag-05-roadmap-timeline'></div>
+<div class='diagram-label'>
+<h4>Roadmap Timeline</h4>
+<p>Click to interact</p>
+</div>
+</div>
+<div class='diagram-card fade-up'>
+<div class='diagram-svg-wrap' id='diag-06-mod-log-access'></div>
+<div class='diagram-label'>
+<h4>Mod Log Access</h4>
+<p>Click to interact</p>
+</div>
+</div>
+</div>
+</div>
+</section<div style="height:1px;background:linear-gradient(90deg,transparent,var(--a),transparent);opacity:0.2;margin:0;"></div>
+<section id='contact' style='padding:120px 0;position:relative;overflow:hidden;'>
+<div style='position:absolute;top:0;left:50%;transform:translateX(-50%);width:600px;height:600px;background:radial-gradient(ellipse,rgba(168,191,106,0.04) 0%,transparent 70%);pointer-events:none;'></div>
+<div class='container' style='text-align:center;position:relative;z-index:1;'>
+<div class='sl fade-up'>// CLOSING STATEMENT</div>
+<div class='vision-quote fade-up'>We're not asking for compensation. We're asking for better communication between the people who make this community work.</div>
+<p style='color:var(--tm);max-width:520px;margin:0 auto 40px;line-height:1.7;' class='fade-up'>BOA has the passion, the people, and the track record. Better communication tools will help us all do more together.</p>
+<div class='fade-up' style='display:none;'>
+<a href='presentation/slides.md' class='btn btn-primary' target='_blank' rel='noopener'>// VIEW_DECK &#8594;</a>
+<a href='executive-brief.md' class='btn btn-secondary' target='_blank' rel='noopener'>Read Brief</a>
+</div>
+<div style='margin-top:48px;padding:20px;background:rgba(14,16,22,0.6);border:1px solid var(--bo);border-radius:var(--RL);max-width:480px;margin-left:auto;margin-right:auto;' class='fade-up'>
+<p style='font-family:JetBrains Mono,monospace;font-size:0.6rem;color:var(--td);margin-bottom:8px;letter-spacing:0.15em;'>PROJECTED COMBINED IMPACT</p>
+<div style='display:flex;justify-content:space-around;'>
+<div><div style='font-size:1.4rem;font-weight:900;color:var(--g);font-family:Orbitron,monospace;'>50%</div><div style='font-size:0.65rem;color:var(--tm);'>Better Flow</div></div>
+<div><div style='font-size:1.4rem;font-weight:900;color:var(--a);font-family:Orbitron,monospace;'>40%</div><div style='font-size:0.65rem;color:var(--tm);'>Retention</div></div>
+<div><div style='font-size:1.4rem;font-weight:900;color:var(--c);font-family:Orbitron,monospace;'>3x</div><div style='font-size:0.65rem;color:var(--tm);'>Reach</div></div>
+</div></div></div></section>
+<footer><div class='container'>
+<div style="display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:16px;flex-wrap:wrap;">
+<img src="assets/boa-logo.png" alt="BOA" style="height:32px;width:auto;object-fit:contain;opacity:0.9;">
+<span style="color:var(--a);font-family:'Orbitron',monospace;font-size:0.8rem;">×</span>
+<img src="assets/cws-logo.png" alt="Combat Waffle Studios" style="height:24px;width:auto;object-fit:contain;background:#fff;border-radius:6px;padding:4px 8px;">
+</div>
+<div class='footer-tagline'>A communication improvement proposal for the Ghost of Tabor volunteer community</div>
+<div class='footer-meta'>Lead BOA Team (DonZzzilla, Frost, Sharky &amp; Kashi aka Oracle) | 2026-06-08</div>
+<div style='margin-top:16px;display:flex;justify-content:center;gap:16px;flex-wrap:wrap;'>
+<a href='https://github.com/donzzzilla/boa-partnership/blob/main/presentation/slides.md' target='_blank' style='color:var(--tm);font-size:0.7rem;text-decoration:none;border:1px solid var(--bo);padding:6px 14px;border-radius:4px;font-family:JetBrains Mono,monospace;'>SLIDES</a>
+<a href='https://github.com/donzzzilla/boa-partnership/blob/main/presentation/speaker-notes.md' target='_blank' style='color:var(--tm);font-size:0.7rem;text-decoration:none;border:1px solid var(--bo);padding:6px 14px;border-radius:4px;font-family:JetBrains Mono,monospace;'>SPEAKER NOTES</a>
+<a href='https://github.com/donzzzilla/boa-partnership/blob/main/docs/executive-brief.md' target='_blank' style='color:var(--tm);font-size:0.7rem;text-decoration:none;border:1px solid var(--bo);padding:6px 14px;border-radius:4px;font-family:JetBrains Mono,monospace;'>EXEC BRIEF</a>
+<a href='https://github.com/donzzzilla/boa-partnership/blob/main/README.md' target='_blank' style='color:var(--tm);font-size:0.7rem;text-decoration:none;border:1px solid var(--bo);padding:6px 14px;border-radius:4px;font-family:JetBrains Mono,monospace;'>README</a>
+</div>
+</div></footer>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js'></script>
+<script>
+
+// THREE.JS PARTICLE FIELD
+const canvas=document.getElementById('bg-canvas');
+const renderer=new THREE.WebGLRenderer({canvas,alpha:true,antialias:true});
+renderer.setSize(window.innerWidth,window.innerHeight);
+renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
+const scene=new THREE.Scene();
+const camera=new THREE.PerspectiveCamera(75,window.innerWidth/window.innerHeight,0.1,1000);
+camera.position.z=50;
+const particleCount=2000;
+const positions=new Float32Array(particleCount*3);
+const colors=new Float32Array(particleCount*3);
+for(let i=0;i<particleCount;i++){
+  positions[i*3]=(Math.random()-0.5)*200;
+  positions[i*3+1]=(Math.random()-0.5)*200;
+  positions[i*3+2]=(Math.random()-0.5)*200;
+  const c=Math.random();
+  if(c<0.4){colors[i*3]=0.83;colors[i*3+1]=0.66;colors[i*3+2]=0.33;}
+  else if(c<0.6){colors[i*3]=0;colors[i*3+1]=0.9;colors[i*3+2]=1;}
+  else{colors[i*3]=0.3;colors[i*3+1]=0.3;colors[i*3+2]=0.4;}
+}
+const geo=new THREE.BufferGeometry();
+geo.setAttribute('position',new THREE.BufferAttribute(positions,3));
+geo.setAttribute('color',new THREE.BufferAttribute(colors,3));
+const mat=new THREE.PointsMaterial({size:0.8,vertexColors:true,transparent:true,opacity:0.6,sizeAttenuation:true,blending:THREE.AdditiveBlending,depthWrite:false});
+const particles=new THREE.Points(geo,mat);
+scene.add(particles);
+const grid=new THREE.GridHelper(100,40,0x1a1e2a,0x0e1016);
+grid.position.y=-30;grid.material.transparent=true;grid.material.opacity=0.3;
+scene.add(grid);
+const shapes=[];
+const geoms=[new THREE.OctahedronGeometry(2),new THREE.TetrahedronGeometry(2),new THREE.IcosahedronGeometry(1.5)];
+for(let i=0;i<12;i++){
+  const g=geoms[Math.floor(Math.random()*geoms.length)];
+  const m=new THREE.MeshBasicMaterial({color:Math.random()>0.5?0xd4a853:0x00e5ff,wireframe:true,transparent:true,opacity:0.15});
+  const mesh=new THREE.Mesh(g,m);
+  mesh.position.set((Math.random()-0.5)*80,(Math.random()-0.5)*60,(Math.random()-0.5)*40);
+  mesh.userData={rx:(Math.random()-0.5)*0.02,ry:(Math.random()-0.5)*0.02,fs:Math.random()*0.5+0.2,fo:Math.random()*Math.PI*2};
+  shapes.push(mesh);scene.add(mesh);
+}
+let mx=0,my=0,trx=0,try2=0;
+document.addEventListener('mousemove',e=>{mx=(e.clientX/window.innerWidth-0.5)*2;my=(e.clientY/window.innerHeight-0.5)*2;});
+let t=0;
+function animate(){requestAnimationFrame(animate);t+=0.01;
+  particles.rotation.y+=0.0005;particles.rotation.x+=0.0002;
+  trx+=(my*0.3-trx)*0.02;try2+=(mx*0.5-try2)*0.02;
+  particles.rotation.x+=trx*0.001;particles.rotation.y+=try2*0.001;
+  grid.material.opacity=0.2+Math.sin(t*0.5)*0.1;
+  shapes.forEach(s=>{s.rotation.x+=s.userData.rx;s.rotation.y+=s.userData.ry;s.position.y+=Math.sin(t*s.userData.fs+s.userData.fo)*0.02;});
+  renderer.render(scene,camera);
+}
+animate();
+window.addEventListener('resize',()=>{camera.aspect=window.innerWidth/window.innerHeight;camera.updateProjectionMatrix();renderer.setSize(window.innerWidth,window.innerHeight);});
+
+// INTERSECTION OBSERVER
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.1,rootMargin:'0px 0px -50px 0px'});
+document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+
+// NAV SCROLL
+window.addEventListener('scroll',()=>{const n=document.getElementById('nav');if(window.scrollY>50)n.classList.add('scrolled');else n.classList.remove('scrolled');});
+
+// MOBILE NAV
+function toggleMobile(){document.getElementById('mobileNav').classList.toggle('open');}
+
+// SMOOTH SCROLL
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',function(e){e.preventDefault();const t=document.querySelector(this.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth',block:'start'});});});
+
+// TILT EFFECT
+document.querySelectorAll('.card,.challenge-card,.contrib-card,.phase-card').forEach(card=>{
+  card.addEventListener('mousemove',e=>{
+    const r=card.getBoundingClientRect();
+    const x=e.clientX-r.left,y=e.clientY-r.top;
+    card.style.transform='perspective(1000px) rotateX('+(y-r.height/2)/20+'deg) rotateY('+(r.width/2-x)/20+'deg) translateY(-4px)';
+  });
+  card.addEventListener('mouseleave',()=>{card.style.transform='';});
+});
+
+// COUNTER ANIMATION
+function animateCounters(){
+  document.querySelectorAll('.stat-value,.contrib-stat').forEach(el=>{
+    const txt=el.textContent;const m=txt.match(/[\d.]+/);if(!m)return;
+    const num=parseFloat(m[0]);const suffix=txt.replace(m[0],'');const prefix=txt.substring(0,txt.indexOf(m[0]));
+    let cur=0;const step=num/40;
+    const timer=setInterval(()=>{cur+=step;if(cur>=num){cur=num;clearInterval(timer);}
+      el.textContent=prefix+(num%1===0?Math.floor(cur):cur.toFixed(1))+suffix;
+    },30);
+  });
+}
+const statsObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){animateCounters();statsObs.unobserve(e.target);}});},{threshold:0.5});
+const sb=document.querySelector('.stats-bar');if(sb)statsObs.observe(sb);
+
+</script>
+
+
+<script>
+// Render Excalidraw diagrams as inline SVGs
+(function(){
+  const DIAGRAMS = [];
+DIAGRAMS.push({id: "01-partnership-overview", svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" width="100%" height="auto" style="display:block;margin:0 auto;max-width:100%;">
+<rect width="1200" height="700" fill="#0a0c0e"/>
+<text x="600.0" y="30.0" dy="1em" font-size="28" fill="#A8BF6A" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">5 Asks, 1 Goal: Better Communication</text>
+<text x="600.0" y="70.0" dy="1em" font-size="14" fill="#5a5e72" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Every ask ties to communication, retention, or information flow</text>
+<rect x="60" y="130" width="300" height="500" rx="8" fill="#111318" stroke="#2a2e3a" stroke-width="2" opacity="1.0"/>
+<text x="210.0" y="145.0" dy="1em" font-size="14" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">BATTLEFIELD OPERATION</text>
+<text x="210.0" y="168.0" dy="1em" font-size="18" fill="#A8BF6A" font-weight="bold" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">AND AWARENESS (BOA)</text>
+<rect x="85" y="215" width="250" height="90" rx="8" fill="#181b22" stroke="#A8BF6A" stroke-width="1" opacity="0.7"/>
+<text x="95" y="225.0" dy="1em" font-size="16" fill="#A8BF6A" font-weight="bold" text-anchor="start" font-family="monospace" dominant-baseline="hanging">200+ volunteers</text>
+<text x="95" y="248.0" dy="1em" font-size="13" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Mentorship · Events</text>
+<text x="95" y="266.2" dy="1em" font-size="13" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Wiki · Support</text>
+<rect x="85" y="325" width="250" height="120" rx="8" fill="#181b22" stroke="#3a3e4e" stroke-width="1" opacity="0.8"/>
+<text x="95" y="332.0" dy="1em" font-size="12" fill="#e05555" font-weight="bold" text-anchor="start" font-family="monospace" dominant-baseline="hanging">COMMUNICATION NEEDS</text>
+<text x="95" y="352.0" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">• Faster information flow</text>
+<text x="95" y="368.8" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">• Volunteer recognition</text>
+<text x="95" y="385.6" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">• Knowledge preservation</text>
+<text x="95" y="402.4" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">• Cross-timezone clarity</text>
+<text x="95" y="419.2" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">• Less manual overhead</text>
+<rect x="85" y="465" width="250" height="145" rx="8" fill="#181b22" stroke="#3a3e4e" stroke-width="1" opacity="0.8"/>
+<text x="95" y="472.0" dy="1em" font-size="12" fill="#55c57a" font-weight="bold" text-anchor="start" font-family="monospace" dominant-baseline="hanging">BRINGS EXPERTISE</text>
+<text x="95" y="492.0" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">• 150+ events coordinated</text>
+<text x="95" y="508.8" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">• 50+ leaders mentored</text>
+<text x="95" y="525.6" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">• Deep game knowledge</text>
+<text x="95" y="542.4" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">• Dedicated volunteers</text>
+<text x="95" y="559.2" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">• Community trust</text>
+<rect x="840" y="130" width="300" height="500" rx="8" fill="#111318" stroke="#2a2e3a" stroke-width="2" opacity="1.0"/>
+<text x="990.0" y="145.0" dy="1em" font-size="14" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">COMBAT WAFFLE</text>
+<text x="990.0" y="168.0" dy="1em" font-size="18" fill="#5b8dee" font-weight="bold" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">STUDIOS (CWS)</text>
+<rect x="865" y="215" width="250" height="90" rx="8" fill="#181b22" stroke="#5b8dee" stroke-width="1" opacity="0.7"/>
+<text x="875" y="225.0" dy="1em" font-size="16" fill="#5b8dee" font-weight="bold" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Ghosts of Tabor</text>
+<text x="875" y="248.0" dy="1em" font-size="13" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Development · Publishing</text>
+<text x="875" y="266.2" dy="1em" font-size="13" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Community Management</text>
+<rect x="865" y="325" width="250" height="120" rx="8" fill="#181b22" stroke="#3a3e4e" stroke-width="1" opacity="0.8"/>
+<text x="875" y="332.0" dy="1em" font-size="12" fill="#55c57a" font-weight="bold" text-anchor="start" font-family="monospace" dominant-baseline="hanging">CAN PROVIDE</text>
+<text x="875" y="352.0" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">• Technical infrastructure</text>
+<text x="875" y="368.8" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">• Official information access</text>
+<text x="875" y="385.6" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">• Developer consultation</text>
+<text x="875" y="402.4" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">• Community data access</text>
+<text x="875" y="419.2" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">• Communication channels</text>
+<rect x="865" y="465" width="250" height="145" rx="8" fill="#181b22" stroke="#3a3e4e" stroke-width="1" opacity="0.8"/>
+<text x="875" y="472.0" dy="1em" font-size="12" fill="#A8BF6A" font-weight="bold" text-anchor="start" font-family="monospace" dominant-baseline="hanging">GAINS FROM PARTNERSHIP</text>
+<text x="875" y="492.0" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">• Stronger player community</text>
+<text x="875" y="508.8" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">• Better volunteer retention</text>
+<text x="875" y="525.6" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">• Reduced misinformation</text>
+<text x="875" y="542.4" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">• Brand visibility</text>
+<text x="875" y="559.2" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">• Community goodwill</text>
+<rect x="420" y="130" width="360" height="500" rx="8" fill="#111318" stroke="#A8BF6A" stroke-width="2" opacity="1.0"/>
+<text x="600.0" y="150.0" dy="1em" font-size="20" fill="#A8BF6A" font-weight="bold" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">COMMUNICATION</text>
+<text x="600.0" y="178.0" dy="1em" font-size="13" fill="#5a5e72" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Seven Focused Asks</text>
+<rect x="445" y="215" width="310" height="110" rx="8" fill="#1e2230" stroke="#5b8dee" stroke-width="2" opacity="1.0"/>
+<text x="455" y="222.0" dy="1em" font-size="14" fill="#5b8dee" font-weight="bold" text-anchor="start" font-family="monospace" dominant-baseline="hanging">01 OPERATIONS BOT</text>
+<text x="455" y="244.0" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Session tracking · Scheduling</text>
+<text x="455" y="260.8" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Ticket analytics · Reporting</text>
+<text x="455" y="277.6" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Faster information flow</text>
+<rect x="445" y="340" width="310" height="110" rx="8" fill="#1e2230" stroke="#A8BF6A" stroke-width="2" opacity="1.0"/>
+<text x="455" y="347.0" dy="1em" font-size="14" fill="#A8BF6A" font-weight="bold" text-anchor="start" font-family="monospace" dominant-baseline="hanging">02 RECOGNITION PROGRAM</text>
+<text x="455" y="369.0" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Milestone tiers · Service records</text>
+<text x="455" y="385.8" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Recommendation letters · Badges</text>
+<text x="455" y="402.6" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Better feedback loops</text>
+<rect x="445" y="465" width="310" height="110" rx="8" fill="#1e2230" stroke="#55c57a" stroke-width="2" opacity="1.0"/>
+<text x="455" y="472.0" dy="1em" font-size="14" fill="#55c57a" font-weight="bold" text-anchor="start" font-family="monospace" dominant-baseline="hanging">03 KNOWLEDGE BASE</text>
+<text x="455" y="494.0" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">SOPs · Onboarding · Archives</text>
+<text x="455" y="510.8" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Decision logs · Role guides</text>
+<text x="455" y="527.6" dy="1em" font-size="12" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Institutional knowledge preserved</text>
+<defs><marker id="a0" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#A8BF6A"/></marker></defs>
+<path d="M 0 0 L 60 0" stroke="#A8BF6A" stroke-width="3" fill="none" marker-end="url(#a0)"/>
+<defs><marker id="a1" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#A8BF6A"/></marker></defs>
+<path d="M 0 0 L -60 0" stroke="#A8BF6A" stroke-width="3" fill="none" marker-end="url(#a1)"/>
+<text x="390.0" y="328.0" dy="1em" font-size="11" fill="#A8BF6A" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">communicates</text>
+<text x="810.0" y="328.0" dy="1em" font-size="11" fill="#A8BF6A" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">enables</text>
+<text x="600.0" y="655.0" dy="1em" font-size="12" fill="#5a5e72" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Better communication between everyone.</text>
+</svg>`});
+DIAGRAMS.push({id: "02-bot-architecture", svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" width="100%" height="auto" style="display:block;margin:0 auto;max-width:100%;">
+<rect width="1200" height="700" fill="#0a0c0e"/>
+<text x="600.0" y="25.0" dy="1em" font-size="26" fill="#5b8dee" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">BOA Bot — Architecture Overview</text>
+<text x="600.0" y="58.0" dy="1em" font-size="13" fill="#5a5e72" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Automation layer between volunteers and operations</text>
+<rect x="60" y="110" width="200" height="160" rx="8" fill="#111318" stroke="#A8BF6A" stroke-width="2" opacity="1.0"/>
+<text x="160.0" y="120.0" dy="1em" font-size="16" fill="#A8BF6A" font-weight="bold" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">VOLUNTEERS</text>
+<text x="160.0" y="148.0" dy="1em" font-size="13" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Mentors</text>
+<text x="160.0" y="166.2" dy="1em" font-size="13" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Event Leads</text>
+<text x="160.0" y="184.4" dy="1em" font-size="13" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Tech Team</text>
+<text x="160.0" y="202.6" dy="1em" font-size="13" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Moderators</text>
+<text x="160.0" y="220.8" dy="1em" font-size="13" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">New Members</text>
+<rect x="440" y="110" width="320" height="580" rx="8" fill="#111318" stroke="#5b8dee" stroke-width="3" opacity="1.0"/>
+<text x="600.0" y="120.0" dy="1em" font-size="18" fill="#5b8dee" font-weight="bold" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">BOA OPERATIONS BOT</text>
+<text x="600.0" y="145.0" dy="1em" font-size="11" fill="#5a5e72" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Python · discord.py · PostgreSQL</text>
+<rect x="460" y="175" width="280" height="85" rx="8" fill="#1e2230" stroke="#5b8dee" stroke-width="1" opacity="1.0"/>
+<text x="470" y="180.0" dy="1em" font-size="12" fill="#5b8dee" font-weight="bold" text-anchor="start" font-family="monospace" dominant-baseline="hanging">SESSION TRACKING</text>
+<text x="470" y="198.0" dy="1em" font-size="11" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Schedule · Log attendance</text>
+<text x="470" y="213.4" dy="1em" font-size="11" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Auto-reminders</text>
+<text x="470" y="228.8" dy="1em" font-size="11" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Timestamp recording</text>
+<rect x="460" y="272" width="280" height="85" rx="8" fill="#1e2230" stroke="#A8BF6A" stroke-width="1" opacity="1.0"/>
+<text x="470" y="277.0" dy="1em" font-size="12" fill="#A8BF6A" font-weight="bold" text-anchor="start" font-family="monospace" dominant-baseline="hanging">RECOGNITION ENGINE</text>
+<text x="470" y="295.0" dy="1em" font-size="11" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Milestone tracking</text>
+<text x="470" y="310.4" dy="1em" font-size="11" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Badge awards</text>
+<text x="470" y="325.8" dy="1em" font-size="11" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Celebration messages</text>
+<text x="470" y="341.2" dy="1em" font-size="11" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Service records</text>
+<rect x="460" y="369" width="280" height="85" rx="8" fill="#1e2230" stroke="#55c57a" stroke-width="1" opacity="1.0"/>
+<text x="470" y="374.0" dy="1em" font-size="12" fill="#55c57a" font-weight="bold" text-anchor="start" font-family="monospace" dominant-baseline="hanging">TICKET ANALYTICS</text>
+<text x="470" y="392.0" dy="1em" font-size="11" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Auto-routing by skill</text>
+<text x="470" y="407.4" dy="1em" font-size="11" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Priority queuing</text>
+<text x="470" y="422.8" dy="1em" font-size="11" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Response time tracking</text>
+<text x="470" y="438.2" dy="1em" font-size="11" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Resolution logging</text>
+<rect x="460" y="466" width="280" height="85" rx="8" fill="#1e2230" stroke="#e05555" stroke-width="1" opacity="1.0"/>
+<text x="470" y="471.0" dy="1em" font-size="12" fill="#e05555" font-weight="bold" text-anchor="start" font-family="monospace" dominant-baseline="hanging">REPORTING &amp; METRICS</text>
+<text x="470" y="489.0" dy="1em" font-size="11" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Auto-generated reports</text>
+<text x="470" y="504.4" dy="1em" font-size="11" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Volunteer dashboards</text>
+<text x="470" y="519.8" dy="1em" font-size="11" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Trend analysis</text>
+<text x="470" y="535.2" dy="1em" font-size="11" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Impact summaries</text>
+<rect x="460" y="563" width="280" height="85" rx="8" fill="#1e2230" stroke="#d0bfff" stroke-width="1" opacity="1.0"/>
+<text x="470" y="568.0" dy="1em" font-size="12" fill="#d0bfff" font-weight="bold" text-anchor="start" font-family="monospace" dominant-baseline="hanging">ONBOARDING WORKFLOWS</text>
+<text x="470" y="586.0" dy="1em" font-size="11" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Welcome sequences</text>
+<text x="470" y="601.4" dy="1em" font-size="11" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Resource delivery</text>
+<text x="470" y="616.8" dy="1em" font-size="11" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Progress tracking</text>
+<text x="470" y="632.2" dy="1em" font-size="11" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Mentor alerts</text>
+<rect x="880" y="110" width="260" height="160" rx="8" fill="#111318" stroke="#5b8dee" stroke-width="2" opacity="1.0"/>
+<text x="1010.0" y="120.0" dy="1em" font-size="16" fill="#5b8dee" font-weight="bold" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">CWS INFRASTRUCTURE</text>
+<text x="1010.0" y="148.0" dy="1em" font-size="13" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Hosting (VPS/Cloud)</text>
+<text x="1010.0" y="166.2" dy="1em" font-size="13" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Database (PostgreSQL)</text>
+<text x="1010.0" y="184.4" dy="1em" font-size="13" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Monitoring &amp; alerts</text>
+<text x="1010.0" y="202.6" dy="1em" font-size="13" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Security review</text>
+<text x="1010.0" y="220.8" dy="1em" font-size="13" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">API access</text>
+<rect x="880" y="310" width="260" height="140" rx="8" fill="#111318" stroke="#55c57a" stroke-width="2" opacity="1.0"/>
+<text x="1010.0" y="320.0" dy="1em" font-size="16" fill="#55c57a" font-weight="bold" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">DATA LAYER</text>
+<text x="1010.0" y="348.0" dy="1em" font-size="13" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">PostgreSQL</text>
+<text x="1010.0" y="366.2" dy="1em" font-size="13" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Redis cache</text>
+<text x="1010.0" y="384.4" dy="1em" font-size="13" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Encrypted at rest</text>
+<text x="1010.0" y="402.6" dy="1em" font-size="13" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Access controlled</text>
+<text x="1010.0" y="420.8" dy="1em" font-size="13" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Data sovereignty: CWS</text>
+<rect x="880" y="490" width="260" height="140" rx="8" fill="#111318" stroke="#e05555" stroke-width="2" opacity="1.0"/>
+<text x="1010.0" y="500.0" dy="1em" font-size="16" fill="#e05555" font-weight="bold" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">SECURITY</text>
+<text x="1010.0" y="528.0" dy="1em" font-size="13" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">RBAC (7 role levels)</text>
+<text x="1010.0" y="546.2" dy="1em" font-size="13" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Minimal permissions</text>
+<text x="1010.0" y="564.4" dy="1em" font-size="13" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Audit logging</text>
+<text x="1010.0" y="582.6" dy="1em" font-size="13" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Rate limiting</text>
+<text x="1010.0" y="600.8" dy="1em" font-size="13" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">No message content storage</text>
+<defs><marker id="a0" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#A8BF6A"/></marker></defs>
+<path d="M 0 0 L 180 0" stroke="#A8BF6A" stroke-width="2" fill="none" marker-end="url(#a0)"/>
+<defs><marker id="a1" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#5b8dee"/></marker></defs>
+<path d="M 0 0 L 120 0" stroke="#5b8dee" stroke-width="2" fill="none" marker-end="url(#a1)"/>
+<defs><marker id="a2" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#55c57a"/></marker></defs>
+<path d="M 0 0 L 120 0" stroke="#55c57a" stroke-width="2" fill="none" marker-end="url(#a2)"/>
+<defs><marker id="a3" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#e05555"/></marker></defs>
+<path d="M 0 0 L 120 0" stroke="#e05555" stroke-width="2" fill="none" marker-end="url(#a3)"/>
+<text x="350.0" y="170.0" dy="1em" font-size="10" fill="#A8BF6A" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">interacts</text>
+<text x="820.0" y="330.0" dy="1em" font-size="10" fill="#5b8dee" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">runs on</text>
+<text x="820.0" y="430.0" dy="1em" font-size="10" fill="#55c57a" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">reads/writes</text>
+<text x="820.0" y="540.0" dy="1em" font-size="10" fill="#e05555" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">enforces</text>
+<rect x="880" y="660" width="260" height="60" rx="8" fill="#1e2230" stroke="#A8BF6A" stroke-width="1" opacity="1.0"/>
+<text x="1010.0" y="668.0" dy="1em" font-size="13" fill="#A8BF6A" font-weight="bold" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">HOSTING COST: ~$40/month</text>
+<text x="1010.0" y="688.0" dy="1em" font-size="11" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">VPS + DB + Monitoring</text>
+</svg>`});
+DIAGRAMS.push({id: "03-recognition-program", svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" width="100%" height="auto" style="display:block;margin:0 auto;max-width:100%;">
+<rect width="1200" height="700" fill="#0a0c0e"/>
+<text x="600.0" y="25.0" dy="1em" font-size="26" fill="#A8BF6A" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Recognition Program - Milestone System</text>
+<text x="600.0" y="58.0" dy="1em" font-size="13" fill="#5a5e72" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Every volunteer contribution is tracked, celebrated, and made career-relevant</text>
+<rect x="60" y="115" width="170" height="90" rx="8" fill="#181b22" stroke="#5b8dee" stroke-width="2" opacity="1.0"/>
+<text x="145.0" y="122.0" dy="1em" font-size="12" fill="#5b8dee" font-weight="bold" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">NEWCOMER</text>
+<text x="145.0" y="140.0" dy="1em" font-size="10" fill="#5a5e72" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">0-5 hours</text>
+<text x="145.0" y="158.0" dy="1em" font-size="10" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Welcome badge | Orientation | First tasks</text>
+<rect x="250" y="115" width="170" height="90" rx="8" fill="#181b22" stroke="#55c57a" stroke-width="2" opacity="1.0"/>
+<text x="335.0" y="122.0" dy="1em" font-size="12" fill="#55c57a" font-weight="bold" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">CONTRIBUTOR</text>
+<text x="335.0" y="140.0" dy="1em" font-size="10" fill="#5a5e72" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">5-25 hours</text>
+<text x="335.0" y="158.0" dy="1em" font-size="10" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Contributor badge | Role assignment | Bot access</text>
+<rect x="440" y="115" width="170" height="90" rx="8" fill="#181b22" stroke="#A8BF6A" stroke-width="2" opacity="1.0"/>
+<text x="525.0" y="122.0" dy="1em" font-size="12" fill="#A8BF6A" font-weight="bold" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">VETERAN</text>
+<text x="525.0" y="140.0" dy="1em" font-size="10" fill="#5a5e72" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">25-75 hours</text>
+<text x="525.0" y="158.0" dy="1em" font-size="10" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Gold badge | Mentor eligibility | Letter eligible</text>
+<rect x="630" y="115" width="170" height="90" rx="8" fill="#181b22" stroke="#d0bfff" stroke-width="2" opacity="1.0"/>
+<text x="715.0" y="122.0" dy="1em" font-size="12" fill="#d0bfff" font-weight="bold" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">MENTOR</text>
+<text x="715.0" y="140.0" dy="1em" font-size="10" fill="#5a5e72" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">75-200 hours</text>
+<text x="715.0" y="158.0" dy="1em" font-size="10" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Purple badge | Co-branding letter | Leadership track</text>
+<rect x="820" y="115" width="170" height="90" rx="8" fill="#181b22" stroke="#e05555" stroke-width="2" opacity="1.0"/>
+<text x="905.0" y="122.0" dy="1em" font-size="12" fill="#e05555" font-weight="bold" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">OFFICER</text>
+<text x="905.0" y="140.0" dy="1em" font-size="10" fill="#5a5e72" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">200-500 hours</text>
+<text x="905.0" y="158.0" dy="1em" font-size="10" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Red badge | Full letter program | Governance role</text>
+<rect x="1010" y="115" width="170" height="90" rx="8" fill="#181b22" stroke="#A8BF6A" stroke-width="3" opacity="1.0"/>
+<text x="1095.0" y="122.0" dy="1em" font-size="12" fill="#A8BF6A" font-weight="bold" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">LEGEND</text>
+<text x="1095.0" y="140.0" dy="1em" font-size="10" fill="#A8BF6A" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">500+ hours</text>
+<text x="1095.0" y="158.0" dy="1em" font-size="10" fill="#A8BF6A" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Hall of Service | Premium letter | Lifetime recognition</text>
+<defs><marker id="a0" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#5a5e72"/></marker></defs>
+<path d="M 0 0 L 20 0" stroke="#5a5e72" stroke-width="2" fill="none" marker-end="url(#a0)"/>
+<defs><marker id="a1" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#5a5e72"/></marker></defs>
+<path d="M 0 0 L 20 0" stroke="#5a5e72" stroke-width="2" fill="none" marker-end="url(#a1)"/>
+<defs><marker id="a2" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#5a5e72"/></marker></defs>
+<path d="M 0 0 L 20 0" stroke="#5a5e72" stroke-width="2" fill="none" marker-end="url(#a2)"/>
+<defs><marker id="a3" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#5a5e72"/></marker></defs>
+<path d="M 0 0 L 20 0" stroke="#5a5e72" stroke-width="2" fill="none" marker-end="url(#a3)"/>
+<defs><marker id="a4" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#5a5e72"/></marker></defs>
+<path d="M 0 0 L 20 0" stroke="#5a5e72" stroke-width="2" fill="none" marker-end="url(#a4)"/>
+<rect x="80" y="250" width="500" height="280" rx="8" fill="#111318" stroke="#55c57a" stroke-width="2" opacity="1.0"/>
+<text x="100" y="262.0" dy="1em" font-size="14" fill="#55c57a" font-weight="bold" text-anchor="start" font-family="monospace" dominant-baseline="hanging">RETENTION IMPACT</text>
+<rect x="100" y="295" width="460" height="28" rx="8" fill="#1e2230" stroke="#2a2e3a" stroke-width="1" opacity="1.0"/>
+<rect x="100" y="295" width="161" height="28" rx="4" fill="#e05555" stroke="#e05555" stroke-width="1" opacity="0.8"/>
+<text x="180.0" y="299.0" dy="1em" font-size="11" fill="#e05555" font-weight="bold" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">CURRENT: 35%</text>
+<text x="270" y="299.0" dy="1em" font-size="10" fill="#5a5e72" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">12-month retention</text>
+<rect x="100" y="333" width="460" height="28" rx="8" fill="#1e2230" stroke="#2a2e3a" stroke-width="1" opacity="1.0"/>
+<rect x="100" y="333" width="322" height="28" rx="4" fill="#A8BF6A" stroke="#A8BF6A" stroke-width="1" opacity="0.8"/>
+<text x="260.0" y="337.0" dy="1em" font-size="11" fill="#A8BF6A" font-weight="bold" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">+ RECOGNITION: 45-49%</text>
+<text x="430" y="337.0" dy="1em" font-size="10" fill="#A8BF6A" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">(+30-40%)</text>
+<rect x="100" y="371" width="460" height="28" rx="8" fill="#1e2230" stroke="#2a2e3a" stroke-width="1" opacity="1.0"/>
+<rect x="100" y="371" width="406" height="28" rx="4" fill="#55c57a" stroke="#55c57a" stroke-width="1" opacity="0.8"/>
+<text x="302.5" y="375.0" dy="1em" font-size="11" fill="#55c57a" font-weight="bold" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">+ BOT + KB: 55-65%</text>
+<text x="510" y="375.0" dy="1em" font-size="10" fill="#55c57a" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">(+60%)</text>
+<rect x="100" y="415" width="460" height="100" rx="8" fill="#181b22" stroke="#3a3e4e" stroke-width="1" opacity="1.0"/>
+<text x="115" y="425.0" dy="1em" font-size="11" fill="#A8BF6A" font-weight="bold" text-anchor="start" font-family="monospace" dominant-baseline="hanging">78% want more recognition</text>
+<text x="115" y="443.0" dy="1em" font-size="11" fill="#55c57a" font-weight="bold" text-anchor="start" font-family="monospace" dominant-baseline="hanging">30-40% retention improvement</text>
+<text x="115" y="461.0" dy="1em" font-size="11" fill="#5b8dee" font-weight="bold" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Near-zero program cost</text>
+<text x="115" y="479.0" dy="1em" font-size="11" fill="#d0bfff" font-weight="bold" text-anchor="start" font-family="monospace" dominant-baseline="hanging">3-5 month full rollout</text>
+<text x="115" y="497.0" dy="1em" font-size="11" fill="#e05555" font-weight="bold" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Career-value letters for volunteers</text>
+<rect x="620" y="250" width="540" height="280" rx="8" fill="#111318" stroke="#5b8dee" stroke-width="2" opacity="1.0"/>
+<text x="640" y="262.0" dy="1em" font-size="14" fill="#5b8dee" font-weight="bold" text-anchor="start" font-family="monospace" dominant-baseline="hanging">VOLUNTEER CAREER VALUE</text>
+<rect x="635" y="290" width="245" height="65" rx="8" fill="#1e2230" stroke="#5b8dee" stroke-width="1" opacity="1.0"/>
+<text x="645" y="296.0" dy="1em" font-size="11" fill="#5b8dee" font-weight="bold" text-anchor="start" font-family="monospace" dominant-baseline="hanging">SKILLS TRANSLATION</text>
+<text x="645" y="312.0" dy="1em" font-size="10" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">BOA roles mapped to professional competencies</text>
+<rect x="635" y="365" width="245" height="65" rx="8" fill="#1e2230" stroke="#A8BF6A" stroke-width="1" opacity="1.0"/>
+<text x="645" y="371.0" dy="1em" font-size="11" fill="#A8BF6A" font-weight="bold" text-anchor="start" font-family="monospace" dominant-baseline="hanging">RECOMMENDATION LETTERS</text>
+<text x="645" y="387.0" dy="1em" font-size="10" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Co-branded | Written by leadership | 4 pathways</text>
+<rect x="635" y="440" width="245" height="65" rx="8" fill="#1e2230" stroke="#55c57a" stroke-width="1" opacity="1.0"/>
+<text x="645" y="446.0" dy="1em" font-size="11" fill="#55c57a" font-weight="bold" text-anchor="start" font-family="monospace" dominant-baseline="hanging">SERVICE RECORDS</text>
+<text x="645" y="462.0" dy="1em" font-size="10" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Verifiable log | Exportable | Privacy controlled</text>
+<rect x="900" y="290" width="245" height="130" rx="8" fill="#1e2230" stroke="#d0bfff" stroke-width="1" opacity="1.0"/>
+<text x="910" y="296.0" dy="1em" font-size="11" fill="#d0bfff" font-weight="bold" text-anchor="start" font-family="monospace" dominant-baseline="hanging">QUARTERLY AWARDS</text>
+<text x="910" y="312.0" dy="1em" font-size="10" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">5 categories | Peer-nominated | Hall of Service | Digital badges | LinkedIn shareable</text>
+<rect x="900" y="440" width="245" height="65" rx="8" fill="#1e2230" stroke="#e05555" stroke-width="1" opacity="1.0"/>
+<text x="910" y="446.0" dy="1em" font-size="11" fill="#e05555" font-weight="bold" text-anchor="start" font-family="monospace" dominant-baseline="hanging">MILESTONE PATH</text>
+<text x="910" y="462.0" dy="1em" font-size="10" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">6 tiers from Newcomer to Legend | Hour-based</text>
+</svg>`});
+DIAGRAMS.push({id: "04-knowledge-base", svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" width="100%" height="auto" style="display:block;margin:0 auto;max-width:100%;">
+<rect width="1200" height="700" fill="#0a0c0e"/>
+<text x="600.0" y="25.0" dy="1em" font-size="26" fill="#55c57a" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Knowledge Base — Information Architecture</text>
+<text x="600.0" y="58.0" dy="1em" font-size="13" fill="#5a5e72" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Organizational memory. Searchable. Living. Zero single points of failure.</text>
+<rect x="400" y="100" width="400" height="55" rx="8" fill="#1e2230" stroke="#A8BF6A" stroke-width="3" opacity="1.0"/>
+<text x="600.0" y="108.0" dy="1em" font-size="18" fill="#A8BF6A" font-weight="bold" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">BOA KNOWLEDGE BASE</text>
+<text x="600.0" y="130.0" dy="1em" font-size="10" fill="#5a5e72" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Single source of truth · All volunteers</text>
+<rect x="40" y="210" width="200" height="180" rx="8" fill="#111318" stroke="#5b8dee" stroke-width="2" opacity="1.0"/>
+<text x="140.0" y="218.0" dy="1em" font-size="13" fill="#5b8dee" font-weight="bold" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">ONBOARDING</text>
+<text x="140.0" y="238.0" dy="1em" font-size="11" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Quick Start</text>
+<text x="140.0" y="253.4" dy="1em" font-size="11" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Role Guides</text>
+<text x="140.0" y="268.8" dy="1em" font-size="11" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">30-Day Plan</text>
+<text x="140.0" y="284.2" dy="1em" font-size="11" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Systems Setup</text>
+<text x="140.0" y="299.6" dy="1em" font-size="11" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Policy Accounts</text>
+<text x="140.0" y="315.0" dy="1em" font-size="11" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">FAQ · Escalation</text>
+<rect x="260" y="210" width="200" height="180" rx="8" fill="#111318" stroke="#A8BF6A" stroke-width="2" opacity="1.0"/>
+<text x="360.0" y="218.0" dy="1em" font-size="13" fill="#A8BF6A" font-weight="bold" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">SOPs</text>
+<text x="360.0" y="238.0" dy="1em" font-size="11" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Event Planning</text>
+<text x="360.0" y="253.4" dy="1em" font-size="11" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Recognition Process</text>
+<text x="360.0" y="268.8" dy="1em" font-size="11" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Incident Response</text>
+<text x="360.0" y="284.2" dy="1em" font-size="11" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Monthly Reporting</text>
+<text x="360.0" y="299.6" dy="1em" font-size="11" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Moderation Guides</text>
+<text x="360.0" y="315.0" dy="1em" font-size="11" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Communication</text>
+<rect x="480" y="210" width="200" height="180" rx="8" fill="#111318" stroke="#55c57a" stroke-width="2" opacity="1.0"/>
+<text x="580.0" y="218.0" dy="1em" font-size="13" fill="#55c57a" font-weight="bold" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">VOLUNTEER RESOURCES</text>
+<text x="580.0" y="238.0" dy="1em" font-size="11" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Shift Checklists</text>
+<text x="580.0" y="253.4" dy="1em" font-size="11" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Common Q&amp;A</text>
+<text x="580.0" y="268.8" dy="1em" font-size="11" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Escalation Paths</text>
+<text x="580.0" y="284.2" dy="1em" font-size="11" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Skills Translation</text>
+<text x="580.0" y="299.6" dy="1em" font-size="11" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Growth Guides</text>
+<text x="580.0" y="315.0" dy="1em" font-size="11" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Wellness · Burnout</text>
+<rect x="700" y="210" width="200" height="180" rx="8" fill="#111318" stroke="#e05555" stroke-width="2" opacity="1.0"/>
+<text x="800.0" y="218.0" dy="1em" font-size="13" fill="#e05555" font-weight="bold" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">LEADERSHIP</text>
+<text x="800.0" y="238.0" dy="1em" font-size="11" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Decision Log</text>
+<text x="800.0" y="253.4" dy="1em" font-size="11" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Succession Plans</text>
+<text x="800.0" y="268.8" dy="1em" font-size="11" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Templates</text>
+<text x="800.0" y="284.2" dy="1em" font-size="11" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Governance</text>
+<text x="800.0" y="299.6" dy="1em" font-size="11" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Strategic Direction</text>
+<text x="800.0" y="315.0" dy="1em" font-size="11" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Meeting Notes</text>
+<rect x="920" y="210" width="200" height="180" rx="8" fill="#111318" stroke="#d0bfff" stroke-width="2" opacity="1.0"/>
+<text x="1020.0" y="218.0" dy="1em" font-size="13" fill="#d0bfff" font-weight="bold" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">ARCHIVES</text>
+<text x="1020.0" y="238.0" dy="1em" font-size="11" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Event History</text>
+<text x="1020.0" y="253.4" dy="1em" font-size="11" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Retrospectives</text>
+<text x="1020.0" y="268.8" dy="1em" font-size="11" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Past Decisions</text>
+<text x="1020.0" y="284.2" dy="1em" font-size="11" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Lessons Learned</text>
+<text x="1020.0" y="299.6" dy="1em" font-size="11" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Program Evolution</text>
+<text x="1020.0" y="315.0" dy="1em" font-size="11" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Annual Reports</text>
+<defs><marker id="a0" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#3a3e4e"/></marker></defs>
+<path d="M 0 0 L 0 55" stroke="#3a3e4e" stroke-width="1.5" fill="none" marker-end="url(#a0)"/>
+<defs><marker id="a1" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#3a3e4e"/></marker></defs>
+<path d="M 0 0 L 0 55" stroke="#3a3e4e" stroke-width="1.5" fill="none" marker-end="url(#a1)"/>
+<defs><marker id="a2" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#A8BF6A"/></marker></defs>
+<path d="M 0 0 L 0 55" stroke="#A8BF6A" stroke-width="2" fill="none" marker-end="url(#a2)"/>
+<defs><marker id="a3" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#3a3e4e"/></marker></defs>
+<path d="M 0 0 L 0 55" stroke="#3a3e4e" stroke-width="1.5" fill="none" marker-end="url(#a3)"/>
+<defs><marker id="a4" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#3a3e4e"/></marker></defs>
+<path d="M 0 0 L 0 55" stroke="#3a3e4e" stroke-width="1.5" fill="none" marker-end="url(#a4)"/>
+<rect x="40" y="430" width="1080" height="120" rx="8" fill="#111318" stroke="#2a2e3a" stroke-width="1" opacity="1.0"/>
+<text x="60" y="442.0" dy="1em" font-size="13" fill="#5b8dee" font-weight="bold" text-anchor="start" font-family="monospace" dominant-baseline="hanging">NEW VOLUNTEER JOURNEY</text>
+<rect x="60" y="468" width="150" height="68" rx="8" fill="#1e2230" stroke="#5b8dee" stroke-width="1" opacity="1.0"/>
+<text x="135.0" y="476.0" dy="1em" font-size="11" fill="#5b8dee" font-weight="bold" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Discover BOA</text>
+<text x="135.0" y="492.0" dy="1em" font-size="9" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Public pages</text>
+<text x="135.0" y="504.6" dy="1em" font-size="9" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Discord invite</text>
+<rect x="230" y="468" width="150" height="68" rx="8" fill="#1e2230" stroke="#A8BF6A" stroke-width="1" opacity="1.0"/>
+<text x="305.0" y="476.0" dy="1em" font-size="11" fill="#A8BF6A" font-weight="bold" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Onboarding</text>
+<text x="305.0" y="492.0" dy="1em" font-size="9" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Self-serve guides</text>
+<text x="305.0" y="504.6" dy="1em" font-size="9" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Mentor pairing</text>
+<rect x="400" y="468" width="150" height="68" rx="8" fill="#1e2230" stroke="#55c57a" stroke-width="1" opacity="1.0"/>
+<text x="475.0" y="476.0" dy="1em" font-size="11" fill="#55c57a" font-weight="bold" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">First Role</text>
+<text x="475.0" y="492.0" dy="1em" font-size="9" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">SOPs · Checklists</text>
+<text x="475.0" y="504.6" dy="1em" font-size="9" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Supervised tasks</text>
+<rect x="570" y="468" width="150" height="68" rx="8" fill="#1e2230" stroke="#d0bfff" stroke-width="1" opacity="1.0"/>
+<text x="645.0" y="476.0" dy="1em" font-size="11" fill="#d0bfff" font-weight="bold" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Active Service</text>
+<text x="645.0" y="492.0" dy="1em" font-size="9" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Full access</text>
+<text x="645.0" y="504.6" dy="1em" font-size="9" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Recognition starts</text>
+<rect x="740" y="468" width="150" height="68" rx="8" fill="#1e2230" stroke="#e05555" stroke-width="1" opacity="1.0"/>
+<text x="815.0" y="476.0" dy="1em" font-size="11" fill="#e05555" font-weight="bold" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Leadership</text>
+<text x="815.0" y="492.0" dy="1em" font-size="9" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Decision docs</text>
+<text x="815.0" y="504.6" dy="1em" font-size="9" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Governance role</text>
+<rect x="910" y="468" width="150" height="68" rx="8" fill="#1e2230" stroke="#A8BF6A" stroke-width="1" opacity="1.0"/>
+<text x="985.0" y="476.0" dy="1em" font-size="11" fill="#A8BF6A" font-weight="bold" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Mentor / Alumni</text>
+<text x="985.0" y="492.0" dy="1em" font-size="9" fill="#A8BF6A" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Pay it forward</text>
+<text x="985.0" y="504.6" dy="1em" font-size="9" fill="#A8BF6A" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Hall of Service</text>
+<defs><marker id="a5" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#3a3e4e"/></marker></defs>
+<path d="M 0 0 L 20 0" stroke="#3a3e4e" stroke-width="1" fill="none" marker-end="url(#a5)"/>
+<defs><marker id="a6" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#3a3e4e"/></marker></defs>
+<path d="M 0 0 L 20 0" stroke="#3a3e4e" stroke-width="1" fill="none" marker-end="url(#a6)"/>
+<defs><marker id="a7" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#3a3e4e"/></marker></defs>
+<path d="M 0 0 L 20 0" stroke="#3a3e4e" stroke-width="1" fill="none" marker-end="url(#a7)"/>
+<defs><marker id="a8" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#3a3e4e"/></marker></defs>
+<path d="M 0 0 L 20 0" stroke="#3a3e4e" stroke-width="1" fill="none" marker-end="url(#a8)"/>
+<defs><marker id="a9" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#3a3e4e"/></marker></defs>
+<path d="M 0 0 L 20 0" stroke="#3a3e4e" stroke-width="1" fill="none" marker-end="url(#a9)"/>
+<rect x="40" y="585" width="1080" height="130" rx="8" fill="#111318" stroke="#2a2e3a" stroke-width="1" opacity="1.0"/>
+<text x="60" y="597.0" dy="1em" font-size="13" fill="#A8BF6A" font-weight="bold" text-anchor="start" font-family="monospace" dominant-baseline="hanging">KEY METRICS &amp; BENEFITS</text>
+<rect x="60" y="620" width="230" height="75" rx="8" fill="#1e2230" stroke="#5b8dee" stroke-width="1" opacity="1.0"/>
+<text x="175.0" y="628.0" dy="1em" font-size="20" fill="#5b8dee" font-weight="bold" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">40-60%</text>
+<text x="175.0" y="650.0" dy="1em" font-size="10" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">faster onboarding</text>
+<text x="175.0" y="664.0" dy="1em" font-size="10" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">(with documented processes)</text>
+<rect x="310" y="620" width="230" height="75" rx="8" fill="#1e2230" stroke="#55c57a" stroke-width="1" opacity="1.0"/>
+<text x="425.0" y="628.0" dy="1em" font-size="20" fill="#55c57a" font-weight="bold" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">5 SPOFs</text>
+<text x="425.0" y="650.0" dy="1em" font-size="10" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">single points of failure</text>
+<text x="425.0" y="664.0" dy="1em" font-size="10" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">eliminated</text>
+<rect x="560" y="620" width="230" height="75" rx="8" fill="#1e2230" stroke="#A8BF6A" stroke-width="1" opacity="1.0"/>
+<text x="675.0" y="628.0" dy="1em" font-size="20" fill="#A8BF6A" font-weight="bold" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">3-5x ROI</text>
+<text x="675.0" y="650.0" dy="1em" font-size="10" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">productivity gain per $1</text>
+<text x="675.0" y="664.0" dy="1em" font-size="10" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">invested in knowledge mgmt</text>
+<rect x="810" y="620" width="290" height="75" rx="8" fill="#1e2230" stroke="#d0bfff" stroke-width="1" opacity="1.0"/>
+<text x="955.0" y="628.0" dy="1em" font-size="20" fill="#d0bfff" font-weight="bold" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">25%</text>
+<text x="955.0" y="650.0" dy="1em" font-size="10" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">of org decisions currently</text>
+<text x="955.0" y="664.0" dy="1em" font-size="10" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">documented (target: 90%+)</text>
+</svg>`});
+DIAGRAMS.push({id: "05-roadmap-timeline", svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" width="100%" height="auto" style="display:block;margin:0 auto;max-width:100%;">
+<rect width="1200" height="700" fill="#0a0c0e"/>
+<text x="600.0" y="25.0" dy="1em" font-size="26" fill="#A8BF6A" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Partnership Roadmap — Phased Approach</text>
+<text x="600.0" y="58.0" dy="1em" font-size="13" fill="#5a5e72" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Quick wins first. Flagship projects next. Scale and sustain.</text>
+<rect x="40" y="110" width="340" height="380" rx="8" fill="#111318" stroke="#55c57a" stroke-width="3" opacity="1.0"/>
+<text x="210.0" y="120.0" dy="1em" font-size="13" fill="#55c57a" font-weight="bold" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">PHASE 1 — QUICK WINS</text>
+<text x="210.0" y="136.0" dy="1em" font-size="10" fill="#5a5e72" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Weeks 1-8 · Foundation</text>
+<rect x="55" y="160" width="310" height="72" rx="8" fill="#1e2230" stroke="#55c57a" stroke-width="1" opacity="1.0"/>
+<text x="65" y="166.0" dy="1em" font-size="11" fill="#55c57a" font-weight="bold" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Recognition Program Launch</text>
+<text x="65" y="182.0" dy="1em" font-size="10" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Badge design · Milestone config</text>
+<text x="65" y="196.0" dy="1em" font-size="10" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Bot integration · Announcement</text>
+<rect x="55" y="242" width="310" height="72" rx="8" fill="#1e2230" stroke="#5b8dee" stroke-width="1" opacity="1.0"/>
+<text x="65" y="248.0" dy="1em" font-size="11" fill="#5b8dee" font-weight="bold" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Knowledge Base MVP</text>
+<text x="65" y="264.0" dy="1em" font-size="10" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Core SOPs · Onboarding guides</text>
+<text x="65" y="278.0" dy="1em" font-size="10" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Role pages · Search</text>
+<rect x="55" y="324" width="310" height="72" rx="8" fill="#1e2230" stroke="#A8BF6A" stroke-width="1" opacity="1.0"/>
+<text x="65" y="330.0" dy="1em" font-size="11" fill="#A8BF6A" font-weight="bold" text-anchor="start" font-family="monospace" dominant-baseline="hanging">EU Recruitment Drive</text>
+<text x="65" y="346.0" dy="1em" font-size="10" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Targeted outreach · Flexible roles</text>
+<text x="65" y="360.0" dy="1em" font-size="10" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Time-zone coverage plan</text>
+<rect x="55" y="406" width="310" height="72" rx="8" fill="#1e2230" stroke="#d0bfff" stroke-width="1" opacity="1.0"/>
+<text x="65" y="412.0" dy="1em" font-size="11" fill="#d0bfff" font-weight="bold" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Bot Requirements Doc</text>
+<text x="65" y="428.0" dy="1em" font-size="10" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Feature spec · Security review</text>
+<text x="65" y="442.0" dy="1em" font-size="10" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Permission model · Hosting plan</text>
+<text x="210.0" y="488.0" dy="1em" font-size="10" fill="#55c57a" font-weight="bold" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Impact: Trust + Momentum</text>
+<rect x="430" y="110" width="340" height="380" rx="8" fill="#111318" stroke="#A8BF6A" stroke-width="3" opacity="1.0"/>
+<text x="600.0" y="120.0" dy="1em" font-size="13" fill="#A8BF6A" font-weight="bold" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">PHASE 2 — CORE BUILD</text>
+<text x="600.0" y="136.0" dy="1em" font-size="10" fill="#5a5e72" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Weeks 9-20 · Development</text>
+<rect x="445" y="160" width="310" height="72" rx="8" fill="#1e2230" stroke="#5b8dee" stroke-width="1" opacity="1.0"/>
+<text x="455" y="166.0" dy="1em" font-size="11" fill="#5b8dee" font-weight="bold" text-anchor="start" font-family="monospace" dominant-baseline="hanging">BOA Bot MVP Development</text>
+<text x="455" y="182.0" dy="1em" font-size="10" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Session tracking · Recognition</text>
+<text x="455" y="196.0" dy="1em" font-size="10" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Ticket routing · Auto-reports</text>
+<rect x="445" y="242" width="310" height="72" rx="8" fill="#1e2230" stroke="#55c57a" stroke-width="1" opacity="1.0"/>
+<text x="455" y="248.0" dy="1em" font-size="11" fill="#55c57a" font-weight="bold" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Knowledge Base Expansion</text>
+<text x="455" y="264.0" dy="1em" font-size="10" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Full SOP library · Archives</text>
+<text x="455" y="278.0" dy="1em" font-size="10" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Decision logs · Templates</text>
+<rect x="445" y="324" width="310" height="72" rx="8" fill="#1e2230" stroke="#A8BF6A" stroke-width="1" opacity="1.0"/>
+<text x="455" y="330.0" dy="1em" font-size="11" fill="#A8BF6A" font-weight="bold" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Recognition Expansion</text>
+<text x="455" y="346.0" dy="1em" font-size="10" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Letter program · Service records</text>
+<text x="455" y="360.0" dy="1em" font-size="10" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Quarterly awards · Hall of Service</text>
+<rect x="445" y="406" width="310" height="72" rx="8" fill="#1e2230" stroke="#e05555" stroke-width="1" opacity="1.0"/>
+<text x="455" y="412.0" dy="1em" font-size="11" fill="#e05555" font-weight="bold" text-anchor="start" font-family="monospace" dominant-baseline="hanging">SOP Documentation Project</text>
+<text x="455" y="428.0" dy="1em" font-size="10" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">All recurring processes</text>
+<text x="455" y="442.0" dy="1em" font-size="10" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Version controlled · Reviewed</text>
+<text x="600.0" y="488.0" dy="1em" font-size="10" fill="#A8BF6A" font-weight="bold" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Impact: Efficiency + Retention</text>
+<rect x="820" y="110" width="340" height="380" rx="8" fill="#111318" stroke="#5b8dee" stroke-width="3" opacity="1.0"/>
+<text x="990.0" y="120.0" dy="1em" font-size="13" fill="#5b8dee" font-weight="bold" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">PHASE 3 — MATURITY</text>
+<text x="990.0" y="136.0" dy="1em" font-size="10" fill="#5a5e72" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Weeks 21-52 · Scale and Sustain</text>
+<rect x="835" y="160" width="310" height="72" rx="8" fill="#1e2230" stroke="#5b8dee" stroke-width="1" opacity="1.0"/>
+<text x="845" y="166.0" dy="1em" font-size="11" fill="#5b8dee" font-weight="bold" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Full Bot Deployment</text>
+<text x="845" y="182.0" dy="1em" font-size="10" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">All 5 modules live</text>
+<text x="845" y="196.0" dy="1em" font-size="10" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Analytics dashboard</text>
+<text x="845" y="210.0" dy="1em" font-size="10" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Iterative improvement</text>
+<rect x="835" y="242" width="310" height="72" rx="8" fill="#1e2230" stroke="#d0bfff" stroke-width="1" opacity="1.0"/>
+<text x="845" y="248.0" dy="1em" font-size="11" fill="#d0bfff" font-weight="bold" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Technical Collaboration</text>
+<text x="845" y="264.0" dy="1em" font-size="10" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Joint workshops · Co-authored</text>
+<text x="845" y="278.0" dy="1em" font-size="10" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">content · Open-source projects</text>
+<rect x="835" y="324" width="310" height="72" rx="8" fill="#1e2230" stroke="#55c57a" stroke-width="1" opacity="1.0"/>
+<text x="845" y="330.0" dy="1em" font-size="11" fill="#55c57a" font-weight="bold" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Cross-Org Content</text>
+<text x="845" y="346.0" dy="1em" font-size="10" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Player education · Transparency</text>
+<text x="845" y="360.0" dy="1em" font-size="10" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Community trust building</text>
+<rect x="835" y="406" width="310" height="72" rx="8" fill="#1e2230" stroke="#A8BF6A" stroke-width="1" opacity="1.0"/>
+<text x="845" y="412.0" dy="1em" font-size="11" fill="#A8BF6A" font-weight="bold" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Impact Reporting</text>
+<text x="845" y="428.0" dy="1em" font-size="10" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Measurable outcomes</text>
+<text x="845" y="442.0" dy="1em" font-size="10" fill="#8b8fa3" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">Annual review · Program iteration</text>
+<text x="990.0" y="488.0" dy="1em" font-size="10" fill="#5b8dee" font-weight="bold" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Impact: Scale + Sustainability</text>
+<defs><marker id="a0" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#A8BF6A"/></marker></defs>
+<path d="M 0 0 L 1000 0" stroke="#A8BF6A" stroke-width="3" fill="none" marker-end="url(#a0)"/>
+<text x="200.0" y="540.0" dy="1em" font-size="10" fill="#55c57a" font-weight="bold" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Month 1-2</text>
+<text x="570.0" y="540.0" dy="1em" font-size="10" fill="#A8BF6A" font-weight="bold" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Month 3-5</text>
+<text x="960.0" y="540.0" dy="1em" font-size="10" fill="#5b8dee" font-weight="bold" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Month 6-12</text>
+<text x="195" y="524.0" dy="1em" font-size="14" fill="#55c57a" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">●</text>
+<text x="565" y="524.0" dy="1em" font-size="14" fill="#A8BF6A" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">●</text>
+<text x="955" y="524.0" dy="1em" font-size="14" fill="#5b8dee" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">●</text>
+<rect x="40" y="575" width="1120" height="90" rx="8" fill="#1e2230" stroke="#A8BF6A" stroke-width="2" opacity="1.0"/>
+<text x="60" y="585.0" dy="1em" font-size="12" fill="#A8BF6A" font-weight="bold" text-anchor="start" font-family="monospace" dominant-baseline="hanging">PROJECTED COMBINED IMPACT</text>
+<rect x="60" y="608" width="240" height="44" rx="8" fill="#181b22" stroke="#55c57a" stroke-width="1" opacity="1.0"/>
+<text x="180.0" y="614.0" dy="1em" font-size="18" fill="#55c57a" font-weight="bold" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">50%</text>
+<text x="180.0" y="632.0" dy="1em" font-size="9" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">reduced operational overhead</text>
+<rect x="320" y="608" width="240" height="44" rx="8" fill="#181b22" stroke="#A8BF6A" stroke-width="1" opacity="1.0"/>
+<text x="440.0" y="614.0" dy="1em" font-size="18" fill="#A8BF6A" font-weight="bold" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">40%</text>
+<text x="440.0" y="632.0" dy="1em" font-size="9" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">improvement in retention</text>
+<rect x="580" y="608" width="240" height="44" rx="8" fill="#181b22" stroke="#5b8dee" stroke-width="1" opacity="1.0"/>
+<text x="700.0" y="614.0" dy="1em" font-size="18" fill="#5b8dee" font-weight="bold" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">3x</text>
+<text x="700.0" y="632.0" dy="1em" font-size="9" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">increase in community reach</text>
+<rect x="840" y="608" width="300" height="44" rx="8" fill="#181b22" stroke="#d0bfff" stroke-width="1" opacity="1.0"/>
+<text x="990.0" y="614.0" dy="1em" font-size="18" fill="#d0bfff" font-weight="bold" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">642-876h</text>
+<text x="990.0" y="632.0" dy="1em" font-size="9" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">annual volunteer time saved</text>
+</svg>`});
+  DIAGRAMS.forEach(function(d){
+    var el = document.getElementById('diag-' + d.id);
+    if(el) el.innerHTML = d.svg;
+  });
+})();
+</script>
+
+<button id="returnTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Return to top">&#8679;</button>
+<script>
+var rtb=document.getElementById('returnTop');
+window.addEventListener('scroll',function(){if(window.scrollY>400){rtb.classList.add('visible')}else{rtb.classList.remove('visible')}});
+</script>
+</body>
+</html>
