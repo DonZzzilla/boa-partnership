@@ -32,6 +32,10 @@
   --gold:#DED59A;--goldg:rgba(222,213,154,0.12);
   --R:4px;--RL:8px
 }
+/* Futuristic cursor */
+*{cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='10' fill='none' stroke='%23A8BF6A' stroke-width='2' opacity='0.8'/%3E%3Ccircle cx='12' cy='12' r='3' fill='%23A8BF6A'/%3E%3Cline x1='12' y1='2' x2='12' y2='6' stroke='%23A8BF6A' stroke-width='1.5'/%3E%3Cline x1='12' y1='18' x2='12' y2='22' stroke='%23A8BF6A' stroke-width='1.5'/%3E%3Cline x1='2' y1='12' x2='6' y2='12' stroke='%23A8BF6A' stroke-width='1.5'/%3E%3Cline x1='18' y1='12' x2='22' y2='12' stroke='%23A8BF6A' stroke-width='1.5'/%3E%3C/svg%3E") 12 12,auto}
+a,button,.mobile-toggle,.nav-cta{cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='10' fill='none' stroke='%23A8BF6A' stroke-width='2'/%3E%3Ccircle cx='12' cy='12' r='4' fill='%23A8BF6A' opacity='0.6'/%3E%3Cline x1='12' y1='1' x2='12' y2='7' stroke='%23A8BF6A' stroke-width='2'/%3E%3Cline x1='12' y1='17' x2='12' y2='23' stroke='%23A8BF6A' stroke-width='2'/%3E%3Cline x1='1' y1='12' x2='7' y2='12' stroke='%23A8BF6A' stroke-width='2'/%3E%3Cline x1='17' y1='12' x2='23' y2='12' stroke='%23A8BF6A' stroke-width='2'/%3E%3C/svg%3E") 12 12,pointer}
+
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;background:var(--bg)}
 body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
@@ -176,7 +180,7 @@ footer{border-top:1px solid var(--bo);padding:48px 0;text-align:center;position:
 .footer-logo{font-family:'Orbitron',monospace;font-weight:800;font-size:1rem;margin-bottom:12px;letter-spacing:0.1em}
 .footer-tagline{color:var(--tm);font-size:0.85rem;margin-bottom:20px}
 .footer-meta{font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:var(--td);letter-spacing:0.1em}
-.mobile-nav{display:none;position:fixed;top:60px;left:0;right:0;bottom:0;background:#050608;z-index:99;padding:24px;flex-direction:column;gap:12px;border-top:1px solid var(--bo);backdrop-filter:blur(20px)}.mobile-nav.open{display:flex}
+.mobile-nav{display:none;position:fixed;top:60px;left:0;right:0;bottom:0;background:rgba(10,12,14,0.97);z-index:99;padding:24px;flex-direction:column;gap:12px;border-top:1px solid var(--bo);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);overflow-y:auto}.mobile-nav.open{display:flex}
 .mobile-nav a{color:var(--t);text-decoration:none;font-weight:600;padding:12px 0;border-bottom:1px solid var(--bo);font-family:'JetBrains Mono',monospace;font-size:0.85rem;text-transform:uppercase;letter-spacing:0.1em}
 .fade-up{opacity:0;transform:translateY(30px);transition:opacity 0.8s cubic-bezier(0.4,0,0.2,1),transform 0.8s cubic-bezier(0.4,0,0.2,1)}.fade-up.visible{opacity:1;transform:translateY(0)}
 @media(max-width:1024px){.about-grid{grid-template-columns:repeat(2,1fr)}.contrib-grid{grid-template-columns:repeat(2,1fr)}.proposal-grid{grid-template-columns:1fr}}
@@ -188,6 +192,13 @@ footer{border-top:1px solid var(--bo);padding:48px 0;text-align:center;position:
 
 .diagram-section{padding:80px 0;background:var(--bg)}.diagram-grid{display:grid;gap:48px}.diagram-card{background:rgba(10,12,16,0.6);border:1px solid var(--bo);border-radius:var(--RL);overflow:hidden;transition:all 0.4s}.diagram-card:hover{border-color:rgba(168,191,106,0.25);box-shadow:0 20px 60px rgba(0,0,0,0.3)}.diagram-svg-wrap{padding:24px 24px 0;background:rgba(5,6,8,0.5)}.diagram-svg-wrap svg{border-radius:var(--RL) var(--RL) 0 0}.diagram-label{padding:16px 24px 20px}.diagram-label h4{font-family:'Orbitron',sans-serif;font-size:0.85rem;font-weight:700;color:var(--a);margin-bottom:4px}.diagram-label p{font-size:0.75rem;color:var(--tm)}
 
+
+/* Futuristic cursor */
+*{cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='10' fill='none' stroke='%23A8BF6A' stroke-width='2' opacity='0.8'/%3E%3Ccircle cx='12' cy='12' r='3' fill='%23A8BF6A'/%3E%3Cline x1='12' y1='2' x2='12' y2='6' stroke='%23A8BF6A' stroke-width='1.5'/%3E%3Cline x1='12' y1='18' x2='12' y2='22' stroke='%23A8BF6A' stroke-width='1.5'/%3E%3Cline x1='2' y1='12' x2='6' y2='12' stroke='%23A8BF6A' stroke-width='1.5'/%3E%3Cline x1='18' y1='12' x2='22' y2='12' stroke='%23A8BF6A' stroke-width='1.5'/%3E%3C/svg%3E") 12 12,auto}
+a,button,.mobile-toggle,.nav-cta{cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='10' fill='none' stroke='%23A8BF6A' stroke-width='2'/%3E%3Ccircle cx='12' cy='12' r='4' fill='%23A8BF6A' opacity='0.6'/%3E%3Cline x1='12' y1='1' x2='12' y2='7' stroke='%23A8BF6A' stroke-width='2'/%3E%3Cline x1='12' y1='17' x2='12' y2='23' stroke='%23A8BF6A' stroke-width='2'/%3E%3Cline x1='1' y1='12' x2='7' y2='12' stroke='%23A8BF6A' stroke-width='2'/%3E%3Cline x1='17' y1='12' x2='23' y2='12' stroke='%23A8BF6A' stroke-width='2'/%3E%3C/svg%3E") 12 12,pointer}
+
+/* Return to top button */
+#returnTop{position:fixed;bottom:28px;right:28px;width:48px;height:48px;border-radius:50%;background:var(--a);color:var(--bg);border:none;font-size:1.2rem;display:flex;align-items:center;justify-content:center;opacity:0;transform:translateY(20px);transition:all 0.4s cubic-bezier(0.4,0,0.2,1);z-index:999;box-shadow:0 4px 20px rgba(168,191,106,0.3)}#returnTop.visible{opacity:1;transform:translateY(0)}#returnTop:hover{transform:translateY(-4px) scale(1.1);box-shadow:0 8px 30px rgba(168,191,106,0.5)}@media(max-width:768px){#returnTop{bottom:20px;right:20px;width:44px;height:44px}}
 </style>
 </head>
 <body>
@@ -199,20 +210,20 @@ footer{border-top:1px solid var(--bo);padding:48px 0;text-align:center;position:
 <div class='nav-links'>
 <a href='#context'>Context</a>
 <a href='#challenges'>Problems</a>
-<a href='#challenges'>Problems</a>
 <a href='#asks'>Asks</a>
-<a href='#roadmap'>Roadmap</a>
+<a href='#communication'>Theme</a>
+<a href='#vision'>Roadmap</a>
 <a href='#diagrams'>Diagrams</a>
 <a href='#contact' class='nav-cta'>Engage</a>
 </div>
 <button class='mobile-toggle' onclick='toggleMobile()' aria-label='Menu'>&#9776;</button>
 </div>
 <div class='mobile-nav' id='mobileNav'>
-<a href='#state' onclick='toggleMobile()'>Context</a>
+<a href='#context' onclick='toggleMobile()'>Context</a>
 <a href='#challenges' onclick='toggleMobile()'>Challenges</a>
-<a href='#contributions' onclick='toggleMobile()'>Problems</a>
-<a href='#proposals' onclick='toggleMobile()'>Asks</a>
-<a href='#knowledge' onclick='toggleMobile()'>Knowledge Base</a>
+<a href='#challenges' onclick='toggleMobile()'>Problems</a>
+<a href='#asks' onclick='toggleMobile()'>Asks</a>
+<a href='#communication' onclick='toggleMobile()'>Unifying Theme</a>
 <a href='#communication' onclick='toggleMobile()'>Communication</a>
 <a href='#vision' onclick='toggleMobile()'>Roadmap</a>
 <a href='#diagrams' onclick='toggleMobile()'>Diagrams</a>
@@ -995,6 +1006,12 @@ DIAGRAMS.push({id: "05-roadmap-timeline", svg: `<svg xmlns="http://www.w3.org/20
     if(el) el.innerHTML = d.svg;
   });
 })();
+</script>
+
+<button id="returnTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Return to top">&#8679;</button>
+<script>
+var rtb=document.getElementById('returnTop');
+window.addEventListener('scroll',function(){if(window.scrollY>400){rtb.classList.add('visible')}else{rtb.classList.remove('visible')}});
 </script>
 </body>
 </html>
