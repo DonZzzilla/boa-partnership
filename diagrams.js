@@ -427,3 +427,27 @@ DIAGRAMS.push({id: "05-roadmap-timeline", svg: `<svg xmlns="http://www.w3.org/20
 <text x="990.0" y="614.0" dy="1em" font-size="18" fill="#d0bfff" font-weight="bold" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">642-876h</text>
 <text x="990.0" y="632.0" dy="1em" font-size="9" fill="#8b8fa3" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">annual volunteer time saved</text>
 </svg>`});
+DIAGRAMS.push({id: "06-mod-log-access", svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" width="100%" height="auto" style="display:block;margin:0 auto;max-width:100%;">
+<rect width="1200" height="700" fill="#0a0c0e"/>
+<text x="600.0" y="30.0" dy="1em" font-size="26" fill="#A8BF6A" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Ask #06: Mod Log Access for Lead BOAs</text>
+<text x="600.0" y="70.0" dy="1em" font-size="13" fill="#7a8099" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">Faster vetting. Less manual work. Better communication.</text>
+<rect x="60" y="120" width="500" height="500" rx="8" fill="#111318" stroke="#CC3366" stroke-width="2" opacity="1.0"/>
+<text x="310.0" y="135.0" dy="1em" font-size="14" fill="#CC3366" font-weight="bold" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">COMMUNICATION PROBLEM</text>
+<rect x="90" y="175" width="440" height="100" rx="8" fill="#181b22" stroke="#2a2e3a" stroke-width="1" opacity="0.8"/>
+<text x="100" y="185.0" dy="1em" font-size="12" fill="#e0e4f0" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">• Vetting new volunteers is manual &amp; slow</text>
+<text x="100" y="201.8" dy="1em" font-size="12" fill="#e0e4f0" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">• Lead BOAs can&#x27;t see moderation history</text>
+<text x="100" y="218.6" dy="1em" font-size="12" fill="#e0e4f0" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">• Candidate research requires asking around</text>
+<text x="100" y="235.39999999999998" dy="1em" font-size="12" fill="#e0e4f0" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">• Communication gaps in vetting pipeline</text>
+<defs><marker id="a0" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#A8BF6A"/></marker></defs>
+<path d="M 0 0 L 60 0" stroke="#A8BF6A" stroke-width="3" fill="none" marker-end="url(#a0)"/>
+<text x="600.0" y="330.0" dy="1em" font-size="12" fill="#A8BF6A" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">access</text>
+<rect x="640" y="120" width="500" height="500" rx="8" fill="#111318" stroke="#A8BF6A" stroke-width="2" opacity="1.0"/>
+<text x="890.0" y="135.0" dy="1em" font-size="14" fill="#A8BF6A" font-weight="bold" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">COMMUNICATION IMPROVEMENT</text>
+<rect x="670" y="175" width="440" height="100" rx="8" fill="#181b22" stroke="#2a2e3a" stroke-width="1" opacity="0.8"/>
+<text x="680" y="185.0" dy="1em" font-size="12" fill="#e0e4f0" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">• Faster vetting of BOA candidates</text>
+<text x="680" y="201.8" dy="1em" font-size="12" fill="#e0e4f0" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">• Lead BOAs review mod actions directly</text>
+<text x="680" y="218.6" dy="1em" font-size="12" fill="#e0e4f0" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">• One less manual step in onboarding</text>
+<text x="680" y="235.39999999999998" dy="1em" font-size="12" fill="#e0e4f0" font-weight="normal" text-anchor="start" font-family="monospace" dominant-baseline="hanging">• BOA leadership already signed NDA</text>
+<rect x="300" y="640" width="600" height="40" rx="8" fill="rgba(168,191,106,0.08)" stroke="rgba(168,191,106,0.2)" stroke-width="1" opacity="1.0"/>
+<text x="600.0" y="648.0" dy="1em" font-size="11" fill="#A8BF6A" font-weight="normal" text-anchor="middle" font-family="monospace" dominant-baseline="hanging">BOA Lead leadership has already signed an NDA with CWS. This is about using existing trust to improve communication flow.</text>
+</svg>`});
