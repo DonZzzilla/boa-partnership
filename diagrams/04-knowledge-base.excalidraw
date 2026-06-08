@@ -3,71 +3,1148 @@
   "version": 2,
   "source": "hermes-agent",
   "elements": [
-    {"type":"rectangle","id":"bg","x":0,"y":0,"width":1200,"height":750,"backgroundColor":"#0a0b0e","fillStyle":"solid","strokeColor":"#0a0b0e","roughness":0,"opacity":100,"strokeWidth":0},
-    {"type":"text","id":"title","x":300,"y":25,"width":600,"height":32,"text":"Knowledge Base — Information Architecture","fontSize":26,"fontFamily":1,"strokeColor":"#55c57a","textAlign":"center","verticalAlign":"middle","originalText":"Knowledge Base — Information Architecture","autoResize":true},
-    {"type":"text","id":"subtitle","x":350,"y":58,"width":500,"height":18,"text":"Organizational memory. Searchable. Living. Zero single points of failure.","fontSize":13,"fontFamily":1,"strokeColor":"#5a5e72","textAlign":"center","verticalAlign":"middle","originalText":"Organizational memory. Searchable. Living. Zero single points of failure.","autoResize":true},
-    {"type":"rectangle","id":"root","x":400,"y":100,"width":400,"height":55,"backgroundColor":"#1e2230","fillStyle":"solid","strokeColor":"#d4a853","strokeWidth":3,"roughness":2,"roundness":{"type":3}},
-    {"type":"text","id":"roott","x":410,"y":108,"width":380,"height":20,"text":"BOA KNOWLEDGE BASE","fontSize":18,"fontFamily":1,"strokeColor":"#d4a853","fontWeight":800,"textAlign":"center","originalText":"BOA KNOWLEDGE BASE","autoResize":true},
-    {"type":"text","id":"roots","x":410,"y":130,"width":380,"height":16,"text":"Single source of truth · All volunteers","fontSize":10,"fontFamily":1,"strokeColor":"#5a5e72","textAlign":"center","originalText":"Single source of truth · All volunteers","autoResize":true},
-    {"type":"rectangle","id":"onbox","x":40,"y":210,"width":200,"height":180,"backgroundColor":"#111318","fillStyle":"solid","strokeColor":"#5b8dee","strokeWidth":2,"roughness":1,"roundness":{"type":3}},
-    {"type":"text","id":"ont","x":55,"y":218,"width":170,"height":16,"text":"ONBOARDING","fontSize":13,"fontFamily":1,"strokeColor":"#5b8dee","fontWeight":700,"textAlign":"center","originalText":"ONBOARDING","autoResize":true},
-    {"type":"text","id":"ond","x":55,"y":238,"width":170,"height":140,"text":"Quick Start\nRole Guides\n30-Day Plan\nSystems Setup\nPolicy Accounts\nFAQ · Escalation","fontSize":11,"fontFamily":1,"strokeColor":"#8b8fa3","textAlign":"center","originalText":"Quick Start\nRole Guides\n30-Day Plan\nSystems Setup\nPolicy Accounts\nFAQ · Escalation","autoResize":true},
-    {"type":"rectangle","id":"sopbox","x":260,"y":210,"width":200,"height":180,"backgroundColor":"#111318","fillStyle":"solid","strokeColor":"#d4a853","strokeWidth":2,"roughness":1,"roundness":{"type":3}},
-    {"type":"text","id":"sopt","x":275,"y":218,"width":170,"height":16,"text":"SOPs","fontSize":13,"fontFamily":1,"strokeColor":"#d4a853","fontWeight":700,"textAlign":"center","originalText":"SOPs","autoResize":true},
-    {"type":"text","id":"sopd","x":275,"y":238,"width":170,"height":140,"text":"Event Planning\nRecognition Process\nIncident Response\nMonthly Reporting\nModeration Guides\nCommunication","fontSize":11,"fontFamily":1,"strokeColor":"#8b8fa3","textAlign":"center","originalText":"Event Planning\nRecognition Process\nIncident Response\nMonthly Reporting\nModeration Guides\nCommunication","autoResize":true},
-    {"type":"rectangle","id":"resbox","x":480,"y":210,"width":200,"height":180,"backgroundColor":"#111318","fillStyle":"solid","strokeColor":"#55c57a","strokeWidth":2,"roughness":1,"roundness":{"type":3}},
-    {"type":"text","id":"rest","x":495,"y":218,"width":170,"height":16,"text":"VOLUNTEER RESOURCES","fontSize":13,"fontFamily":1,"strokeColor":"#55c57a","fontWeight":700,"textAlign":"center","originalText":"VOLUNTEER RESOURCES","autoResize":true},
-    {"type":"text","id":"resd","x":495,"y":238,"width":170,"height":140,"text":"Shift Checklists\nCommon Q&A\nEscalation Paths\nSkills Translation\nGrowth Guides\nWellness · Burnout","fontSize":11,"fontFamily":1,"strokeColor":"#8b8fa3","textAlign":"center","originalText":"Shift Checklists\nCommon Q&A\nEscalation Paths\nSkills Translation\nGrowth Guides\nWellness · Burnout","autoResize":true},
-    {"type":"rectangle","id":"leadbox","x":700,"y":210,"width":200,"height":180,"backgroundColor":"#111318","fillStyle":"solid","strokeColor":"#e05555","strokeWidth":2,"roughness":1,"roundness":{"type":3}},
-    {"type":"text","id":"leadt","x":715,"y":218,"width":170,"height":16,"text":"LEADERSHIP","fontSize":13,"fontFamily":1,"strokeColor":"#e05555","fontWeight":700,"textAlign":"center","originalText":"LEADERSHIP","autoResize":true},
-    {"type":"text","id":"leadd","x":715,"y":238,"width":170,"height":140,"text":"Decision Log\nSuccession Plans\nTemplates\nGovernance\nStrategic Direction\nMeeting Notes","fontSize":11,"fontFamily":1,"strokeColor":"#8b8fa3","textAlign":"center","originalText":"Decision Log\nSuccession Plans\nTemplates\nGovernance\nStrategic Direction\nMeeting Notes","autoResize":true},
-    {"type":"rectangle","id":"archbox","x":920,"y":210,"width":200,"height":180,"backgroundColor":"#111318","fillStyle":"solid","strokeColor":"#d0bfff","strokeWidth":2,"roughness":1,"roundness":{"type":3}},
-    {"type":"text","id":"archt","x":935,"y":218,"width":170,"height":16,"text":"ARCHIVES","fontSize":13,"fontFamily":1,"strokeColor":"#d0bfff","fontWeight":700,"textAlign":"center","originalText":"ARCHIVES","autoResize":true},
-    {"type":"text","id":"archd","x":935,"y":238,"width":170,"height":140,"text":"Event History\nRetrospectives\nPast Decisions\nLessons Learned\nProgram Evolution\nAnnual Reports","fontSize":11,"fontFamily":1,"strokeColor":"#8b8fa3","textAlign":"center","originalText":"Event History\nRetrospectives\nPast Decisions\nLessons Learned\nProgram Evolution\nAnnual Reports","autoResize":true},
-    {"type":"arrow","id":"la1","x":440,"y":155,"width":-100,"height":55,"points":[[0,0],[0,55]],"strokeColor":"#3a3e4e","strokeWidth":1.5,"endArrowhead":"arrow","startBinding":{"elementId":"root","fixedPoint":[0.1,1]},"endBinding":{"elementId":"onbox","fixedPoint":[0.5,0]}},
-    {"type":"arrow","id":"la2","x":500,"y":155,"width":-80,"height":55,"points":[[0,0],[0,55]],"strokeColor":"#3a3e4e","strokeWidth":1.5,"endArrowhead":"arrow","startBinding":{"elementId":"root","fixedPoint":[0.25,1]},"endBinding":{"elementId":"sopbox","fixedPoint":[0.5,0]}},
-    {"type":"arrow","id":"la3","x":600,"y":155,"width":0,"height":55,"points":[[0,0],[0,55]],"strokeColor":"#d4a853","strokeWidth":2,"endArrowhead":"arrow","startBinding":{"elementId":"root","fixedPoint":[0.5,1]},"endBinding":{"elementId":"resbox","fixedPoint":[0.5,0]}},
-    {"type":"arrow","id":"la4","x":700,"y":155,"width":80,"height":55,"points":[[0,0],[0,55]],"strokeColor":"#3a3e4e","strokeWidth":1.5,"endArrowhead":"arrow","startBinding":{"elementId":"root","fixedPoint":[0.75,1]},"endBinding":{"elementId":"leadbox","fixedPoint":[0.5,0]}},
-    {"type":"arrow","id":"la5","x":800,"y":155,"width":100,"height":55,"points":[[0,0],[0,55]],"strokeColor":"#3a3e4e","strokeWidth":1.5,"endArrowhead":"arrow","startBinding":{"elementId":"root","fixedPoint":[0.9,1]},"endBinding":{"elementId":"archbox","fixedPoint":[0.5,0]}},
-    {"type":"rectangle","id":"flowZone","x":40,"y":430,"width":1080,"height":120,"backgroundColor":"#111318","fillStyle":"solid","strokeColor":"#2a2e3a","strokeWidth":1,"roughness":1,"roundness":{"type":3}},
-    {"type":"text","id":"flowt","x":60,"y":442,"width":200,"height":16,"text":"NEW VOLUNTEER JOURNEY","fontSize":13,"fontFamily":1,"strokeColor":"#5b8dee","fontWeight":700,"originalText":"NEW VOLUNTEER JOURNEY","autoResize":true},
-    {"type":"rectangle","id":"step1","x":60,"y":468,"width":150,"height":68,"backgroundColor":"#1e2230","fillStyle":"solid","strokeColor":"#5b8dee","strokeWidth":1,"roughness":1,"roundness":{"type":3}},
-    {"type":"text","id":"step1t","x":70,"y":476,"width":130,"height":14,"text":"Discover BOA","fontSize":11,"fontFamily":1,"strokeColor":"#5b8dee","fontWeight":700,"textAlign":"center","originalText":"Discover BOA","autoResize":true},
-    {"type":"text","id":"step1d","x":70,"y":492,"width":130,"height":36,"text":"Public pages\nDiscord invite","fontSize":9,"fontFamily":1,"strokeColor":"#8b8fa3","textAlign":"center","originalText":"Public pages\nDiscord invite","autoResize":true},
-    {"type":"rectangle","id":"step2","x":230,"y":468,"width":150,"height":68,"backgroundColor":"#1e2230","fillStyle":"solid","strokeColor":"#d4a853","strokeWidth":1,"roughness":1,"roundness":{"type":3}},
-    {"type":"text","id":"step2t","x":240,"y":476,"width":130,"height":14,"text":"Onboarding","fontSize":11,"fontFamily":1,"strokeColor":"#d4a853","fontWeight":700,"textAlign":"center","originalText":"Onboarding","autoResize":true},
-    {"type":"text","id":"step2d","x":240,"y":492,"width":130,"height":36,"text":"Self-serve guides\nMentor pairing","fontSize":9,"fontFamily":1,"strokeColor":"#8b8fa3","textAlign":"center","originalText":"Self-serve guides\nMentor pairing","autoResize":true},
-    {"type":"rectangle","id":"step3","x":400,"y":468,"width":150,"height":68,"backgroundColor":"#1e2230","fillStyle":"solid","strokeColor":"#55c57a","strokeWidth":1,"roughness":1,"roundness":{"type":3}},
-    {"type":"text","id":"step3t","x":410,"y":476,"width":130,"height":14,"text":"First Role","fontSize":11,"fontFamily":1,"strokeColor":"#55c57a","fontWeight":700,"textAlign":"center","originalText":"First Role","autoResize":true},
-    {"type":"text","id":"step3d","x":410,"y":492,"width":130,"height":36,"text":"SOPs · Checklists\nSupervised tasks","fontSize":9,"fontFamily":1,"strokeColor":"#8b8fa3","textAlign":"center","originalText":"SOPs · Checklists\nSupervised tasks","autoResize":true},
-    {"type":"rectangle","id":"step4","x":570,"y":468,"width":150,"height":68,"backgroundColor":"#1e2230","fillStyle":"solid","strokeColor":"#d0bfff","strokeWidth":1,"roughness":1,"roundness":{"type":3}},
-    {"type":"text","id":"step4t","x":580,"y":476,"width":130,"height":14,"text":"Active Service","fontSize":11,"fontFamily":1,"strokeColor":"#d0bfff","fontWeight":700,"textAlign":"center","originalText":"Active Service","autoResize":true},
-    {"type":"text","id":"step4d","x":580,"y":492,"width":130,"height":36,"text":"Full access\nRecognition starts","fontSize":9,"fontFamily":1,"strokeColor":"#8b8fa3","textAlign":"center","originalText":"Full access\nRecognition starts","autoResize":true},
-    {"type":"rectangle","id":"step5","x":740,"y":468,"width":150,"height":68,"backgroundColor":"#1e2230","fillStyle":"solid","strokeColor":"#e05555","strokeWidth":1,"roughness":1,"roundness":{"type":3}},
-    {"type":"text","id":"step5t","x":750,"y":476,"width":130,"height":14,"text":"Leadership","fontSize":11,"fontFamily":1,"strokeColor":"#e05555","fontWeight":700,"textAlign":"center","originalText":"Leadership","autoResize":true},
-    {"type":"text","id":"step5d","x":750,"y":492,"width":130,"height":36,"text":"Decision docs\nGovernance role","fontSize":9,"fontFamily":1,"strokeColor":"#8b8fa3","textAlign":"center","originalText":"Decision docs\nGovernance role","autoResize":true},
-    {"type":"rectangle","id":"step6","x":910,"y":468,"width":150,"height":68,"backgroundColor":"#1e2230","fillStyle":"solid","strokeColor":"#d4a853","strokeWidth":1,"roughness":1,"roundness":{"type":3}},
-    {"type":"text","id":"step6t","x":920,"y":476,"width":130,"height":14,"text":"Mentor / Alumni","fontSize":11,"fontFamily":1,"strokeColor":"#d4a853","fontWeight":700,"textAlign":"center","originalText":"Mentor / Alumni","autoResize":true},
-    {"type":"text","id":"step6d","x":920,"y":492,"width":130,"height":36,"text":"Pay it forward\nHall of Service","fontSize":9,"fontFamily":1,"strokeColor":"#d4a853","textAlign":"center","originalText":"Pay it forward\nHall of Service","autoResize":true},
-    {"type":"arrow","id":"far1","x":210,"y":502,"width":20,"height":0,"points":[[0,0],[20,0]],"strokeColor":"#3a3e4e","strokeWidth":1,"endArrowhead":"arrow"},
-    {"type":"arrow","id":"far2","x":380,"y":502,"width":20,"height":0,"points":[[0,0],[20,0]],"strokeColor":"#3a3e4e","strokeWidth":1,"endArrowhead":"arrow"},
-    {"type":"arrow","id":"far3","x":550,"y":502,"width":20,"height":0,"points":[[0,0],[20,0]],"strokeColor":"#3a3e4e","strokeWidth":1,"endArrowhead":"arrow"},
-    {"type":"arrow","id":"far4","x":720,"y":502,"width":20,"height":0,"points":[[0,0],[20,0]],"strokeColor":"#3a3e4e","strokeWidth":1,"endArrowhead":"arrow"},
-    {"type":"arrow","id":"far5","x":890,"y":502,"width":20,"height":0,"points":[[0,0],[20,0]],"strokeColor":"#3a3e4e","strokeWidth":1,"endArrowhead":"arrow"},
-    {"type":"rectangle","id":"metZone","x":40,"y":585,"width":1080,"height":130,"backgroundColor":"#111318","fillStyle":"solid","strokeColor":"#2a2e3a","strokeWidth":1,"roughness":1,"roundness":{"type":3}},
-    {"type":"text","id":"mett","x":60,"y":597,"width":200,"height":16,"text":"KEY METRICS & BENEFITS","fontSize":13,"fontFamily":1,"strokeColor":"#d4a853","fontWeight":700,"originalText":"KEY METRICS & BENEFITS","autoResize":true},
-    {"type":"rectangle","id":"m1bg","x":60,"y":620,"width":230,"height":75,"backgroundColor":"#1e2230","fillStyle":"solid","strokeColor":"#5b8dee","strokeWidth":1,"roughness":1,"roundness":{"type":3}},
-    {"type":"text","id":"m1t","x":75,"y":628,"width":200,"height":18,"text":"40-60%","fontSize":20,"fontFamily":1,"strokeColor":"#5b8dee","fontWeight":800,"textAlign":"center","originalText":"40-60%","autoResize":true},
-    {"type":"text","id":"m1d","x":75,"y":650,"width":200,"height":36,"text":"faster onboarding\n(with documented processes)","fontSize":10,"fontFamily":1,"strokeColor":"#8b8fa3","textAlign":"center","originalText":"faster onboarding\n(with documented processes)","autoResize":true},
-    {"type":"rectangle","id":"m2bg","x":310,"y":620,"width":230,"height":75,"backgroundColor":"#1e2230","fillStyle":"solid","strokeColor":"#55c57a","strokeWidth":1,"roughness":1,"roundness":{"type":3}},
-    {"type":"text","id":"m2t","x":325,"y":628,"width":200,"height":18,"text":"5 SPOFs","fontSize":20,"fontFamily":1,"strokeColor":"#55c57a","fontWeight":800,"textAlign":"center","originalText":"5 SPOFs","autoResize":true},
-    {"type":"text","id":"m2d","x":325,"y":650,"width":200,"height":36,"text":"single points of failure\neliminated","fontSize":10,"fontFamily":1,"strokeColor":"#8b8fa3","textAlign":"center","originalText":"single points of failure\neliminated","autoResize":true},
-    {"type":"rectangle","id":"m3bg","x":560,"y":620,"width":230,"height":75,"backgroundColor":"#1e2230","fillStyle":"solid","strokeColor":"#d4a853","strokeWidth":1,"roughness":1,"roundness":{"type":3}},
-    {"type":"text","id":"m3t","x":575,"y":628,"width":200,"height":18,"text":"3-5x ROI","fontSize":20,"fontFamily":1,"strokeColor":"#d4a853","fontWeight":800,"textAlign":"center","originalText":"3-5x ROI","autoResize":true},
-    {"type":"text","id":"m3d","x":575,"y":650,"width":200,"height":36,"text":"productivity gain per $1\ninvested in knowledge mgmt","fontSize":10,"fontFamily":1,"strokeColor":"#8b8fa3","textAlign":"center","originalText":"productivity gain per $1\ninvested in knowledge mgmt","autoResize":true},
-    {"type":"rectangle","id":"m4bg","x":810,"y":620,"width":290,"height":75,"backgroundColor":"#1e2230","fillStyle":"solid","strokeColor":"#d0bfff","strokeWidth":1,"roughness":1,"roundness":{"type":3}},
-    {"type":"text","id":"m4t","x":825,"y":628,"width":260,"height":18,"text":"25%","fontSize":20,"fontFamily":1,"strokeColor":"#d0bfff","fontWeight":800,"textAlign":"center","originalText":"25%","autoResize":true},
-    {"type":"text","id":"m4d","x":825,"y":650,"width":260,"height":36,"text":"of org decisions currently\ndocumented (target: 90%+)","fontSize":10,"fontFamily":1,"strokeColor":"#8b8fa3","textAlign":"center","originalText":"of org decisions currently\ndocumented (target: 90%+)","autoResize":true}
+    {
+      "type": "rectangle",
+      "id": "bg",
+      "x": 0,
+      "y": 0,
+      "width": 1200,
+      "height": 750,
+      "backgroundColor": "#0a0b0e",
+      "fillStyle": "solid",
+      "strokeColor": "#0a0b0e",
+      "roughness": 0,
+      "opacity": 100,
+      "strokeWidth": 0
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "x": 300,
+      "y": 25,
+      "width": 600,
+      "height": 32,
+      "text": "Knowledge Base \u2014 Information Architecture",
+      "fontSize": 26,
+      "fontFamily": 1,
+      "strokeColor": "#55c57a",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "originalText": "Knowledge Base \u2014 Information Architecture",
+      "autoResize": true
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "x": 350,
+      "y": 58,
+      "width": 500,
+      "height": 18,
+      "text": "Organizational memory. Searchable. Living. Zero single points of failure.",
+      "fontSize": 13,
+      "fontFamily": 1,
+      "strokeColor": "#5a5e72",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "originalText": "Organizational memory. Searchable. Living. Zero single points of failure.",
+      "autoResize": true
+    },
+    {
+      "type": "rectangle",
+      "id": "root",
+      "x": 400,
+      "y": 100,
+      "width": 400,
+      "height": 55,
+      "backgroundColor": "#1e2230",
+      "fillStyle": "solid",
+      "strokeColor": "#d4a853",
+      "strokeWidth": 3,
+      "roughness": 2,
+      "roundness": {
+        "type": 3
+      }
+    },
+    {
+      "type": "text",
+      "id": "roott",
+      "x": 410,
+      "y": 108,
+      "width": 380,
+      "height": 20,
+      "text": "BOA KNOWLEDGE BASE",
+      "fontSize": 18,
+      "fontFamily": 1,
+      "strokeColor": "#d4a853",
+      "fontWeight": 800,
+      "textAlign": "center",
+      "originalText": "BOA KNOWLEDGE BASE",
+      "autoResize": true
+    },
+    {
+      "type": "text",
+      "id": "roots",
+      "x": 410,
+      "y": 130,
+      "width": 380,
+      "height": 16,
+      "text": "Single source of truth \u00b7 All volunteers",
+      "fontSize": 10,
+      "fontFamily": 1,
+      "strokeColor": "#5a5e72",
+      "textAlign": "center",
+      "originalText": "Single source of truth \u00b7 All volunteers",
+      "autoResize": true
+    },
+    {
+      "type": "rectangle",
+      "id": "onbox",
+      "x": 40,
+      "y": 210,
+      "width": 200,
+      "height": 180,
+      "backgroundColor": "#111318",
+      "fillStyle": "solid",
+      "strokeColor": "#5b8dee",
+      "strokeWidth": 2,
+      "roughness": 1,
+      "roundness": {
+        "type": 3
+      }
+    },
+    {
+      "type": "text",
+      "id": "ont",
+      "x": 55,
+      "y": 218,
+      "width": 170,
+      "height": 16,
+      "text": "ONBOARDING",
+      "fontSize": 13,
+      "fontFamily": 1,
+      "strokeColor": "#5b8dee",
+      "fontWeight": 700,
+      "textAlign": "center",
+      "originalText": "ONBOARDING",
+      "autoResize": true
+    },
+    {
+      "type": "text",
+      "id": "ond",
+      "x": 55,
+      "y": 238,
+      "width": 170,
+      "height": 140,
+      "text": "Quick Start\nRole Guides\n30-Day Plan\nSystems Setup\nPolicy Accounts\nFAQ \u00b7 Escalation",
+      "fontSize": 11,
+      "fontFamily": 1,
+      "strokeColor": "#8b8fa3",
+      "textAlign": "center",
+      "originalText": "Quick Start\nRole Guides\n30-Day Plan\nSystems Setup\nPolicy Accounts\nFAQ \u00b7 Escalation",
+      "autoResize": true
+    },
+    {
+      "type": "rectangle",
+      "id": "sopbox",
+      "x": 260,
+      "y": 210,
+      "width": 200,
+      "height": 180,
+      "backgroundColor": "#111318",
+      "fillStyle": "solid",
+      "strokeColor": "#d4a853",
+      "strokeWidth": 2,
+      "roughness": 1,
+      "roundness": {
+        "type": 3
+      }
+    },
+    {
+      "type": "text",
+      "id": "sopt",
+      "x": 275,
+      "y": 218,
+      "width": 170,
+      "height": 16,
+      "text": "SOPs",
+      "fontSize": 13,
+      "fontFamily": 1,
+      "strokeColor": "#d4a853",
+      "fontWeight": 700,
+      "textAlign": "center",
+      "originalText": "SOPs",
+      "autoResize": true
+    },
+    {
+      "type": "text",
+      "id": "sopd",
+      "x": 275,
+      "y": 238,
+      "width": 170,
+      "height": 140,
+      "text": "Event Planning\nRecognition Process\nIncident Response\nMonthly Reporting\nModeration Guides\nCommunication",
+      "fontSize": 11,
+      "fontFamily": 1,
+      "strokeColor": "#8b8fa3",
+      "textAlign": "center",
+      "originalText": "Event Planning\nRecognition Process\nIncident Response\nMonthly Reporting\nModeration Guides\nCommunication",
+      "autoResize": true
+    },
+    {
+      "type": "rectangle",
+      "id": "resbox",
+      "x": 480,
+      "y": 210,
+      "width": 200,
+      "height": 180,
+      "backgroundColor": "#111318",
+      "fillStyle": "solid",
+      "strokeColor": "#55c57a",
+      "strokeWidth": 2,
+      "roughness": 1,
+      "roundness": {
+        "type": 3
+      }
+    },
+    {
+      "type": "text",
+      "id": "rest",
+      "x": 495,
+      "y": 218,
+      "width": 170,
+      "height": 16,
+      "text": "VOLUNTEER RESOURCES",
+      "fontSize": 13,
+      "fontFamily": 1,
+      "strokeColor": "#55c57a",
+      "fontWeight": 700,
+      "textAlign": "center",
+      "originalText": "VOLUNTEER RESOURCES",
+      "autoResize": true
+    },
+    {
+      "type": "text",
+      "id": "resd",
+      "x": 495,
+      "y": 238,
+      "width": 170,
+      "height": 140,
+      "text": "Shift Checklists\nCommon Q&A\nEscalation Paths\nSkills Translation\nGrowth Guides\nWellness \u00b7 Burnout",
+      "fontSize": 11,
+      "fontFamily": 1,
+      "strokeColor": "#8b8fa3",
+      "textAlign": "center",
+      "originalText": "Shift Checklists\nCommon Q&A\nEscalation Paths\nSkills Translation\nGrowth Guides\nWellness \u00b7 Burnout",
+      "autoResize": true
+    },
+    {
+      "type": "rectangle",
+      "id": "leadbox",
+      "x": 700,
+      "y": 210,
+      "width": 200,
+      "height": 180,
+      "backgroundColor": "#111318",
+      "fillStyle": "solid",
+      "strokeColor": "#e05555",
+      "strokeWidth": 2,
+      "roughness": 1,
+      "roundness": {
+        "type": 3
+      }
+    },
+    {
+      "type": "text",
+      "id": "leadt",
+      "x": 715,
+      "y": 218,
+      "width": 170,
+      "height": 16,
+      "text": "LEADERSHIP",
+      "fontSize": 13,
+      "fontFamily": 1,
+      "strokeColor": "#e05555",
+      "fontWeight": 700,
+      "textAlign": "center",
+      "originalText": "LEADERSHIP",
+      "autoResize": true
+    },
+    {
+      "type": "text",
+      "id": "leadd",
+      "x": 715,
+      "y": 238,
+      "width": 170,
+      "height": 140,
+      "text": "Decision Log\nSuccession Plans\nTemplates\nGovernance\nStrategic Direction\nMeeting Notes",
+      "fontSize": 11,
+      "fontFamily": 1,
+      "strokeColor": "#8b8fa3",
+      "textAlign": "center",
+      "originalText": "Decision Log\nSuccession Plans\nTemplates\nGovernance\nStrategic Direction\nMeeting Notes",
+      "autoResize": true
+    },
+    {
+      "type": "rectangle",
+      "id": "archbox",
+      "x": 920,
+      "y": 210,
+      "width": 200,
+      "height": 180,
+      "backgroundColor": "#111318",
+      "fillStyle": "solid",
+      "strokeColor": "#d0bfff",
+      "strokeWidth": 2,
+      "roughness": 1,
+      "roundness": {
+        "type": 3
+      }
+    },
+    {
+      "type": "text",
+      "id": "archt",
+      "x": 935,
+      "y": 218,
+      "width": 170,
+      "height": 16,
+      "text": "ARCHIVES",
+      "fontSize": 13,
+      "fontFamily": 1,
+      "strokeColor": "#d0bfff",
+      "fontWeight": 700,
+      "textAlign": "center",
+      "originalText": "ARCHIVES",
+      "autoResize": true
+    },
+    {
+      "type": "text",
+      "id": "archd",
+      "x": 935,
+      "y": 238,
+      "width": 170,
+      "height": 140,
+      "text": "Event History\nRetrospectives\nPast Decisions\nLessons Learned\nProgram Evolution\nAnnual Reports",
+      "fontSize": 11,
+      "fontFamily": 1,
+      "strokeColor": "#8b8fa3",
+      "textAlign": "center",
+      "originalText": "Event History\nRetrospectives\nPast Decisions\nLessons Learned\nProgram Evolution\nAnnual Reports",
+      "autoResize": true
+    },
+    {
+      "type": "arrow",
+      "id": "la1",
+      "x": 440,
+      "y": 155,
+      "width": -100,
+      "height": 55,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          55
+        ]
+      ],
+      "strokeColor": "#3a3e4e",
+      "strokeWidth": 1.5,
+      "endArrowhead": "arrow",
+      "startBinding": {
+        "elementId": "root",
+        "fixedPoint": [
+          0.1,
+          1
+        ]
+      },
+      "endBinding": {
+        "elementId": "onbox",
+        "fixedPoint": [
+          0.5,
+          0
+        ]
+      }
+    },
+    {
+      "type": "arrow",
+      "id": "la2",
+      "x": 500,
+      "y": 155,
+      "width": -80,
+      "height": 55,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          55
+        ]
+      ],
+      "strokeColor": "#3a3e4e",
+      "strokeWidth": 1.5,
+      "endArrowhead": "arrow",
+      "startBinding": {
+        "elementId": "root",
+        "fixedPoint": [
+          0.25,
+          1
+        ]
+      },
+      "endBinding": {
+        "elementId": "sopbox",
+        "fixedPoint": [
+          0.5,
+          0
+        ]
+      }
+    },
+    {
+      "type": "arrow",
+      "id": "la3",
+      "x": 600,
+      "y": 155,
+      "width": 0,
+      "height": 55,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          55
+        ]
+      ],
+      "strokeColor": "#d4a853",
+      "strokeWidth": 2,
+      "endArrowhead": "arrow",
+      "startBinding": {
+        "elementId": "root",
+        "fixedPoint": [
+          0.5,
+          1
+        ]
+      },
+      "endBinding": {
+        "elementId": "resbox",
+        "fixedPoint": [
+          0.5,
+          0
+        ]
+      }
+    },
+    {
+      "type": "arrow",
+      "id": "la4",
+      "x": 700,
+      "y": 155,
+      "width": 80,
+      "height": 55,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          55
+        ]
+      ],
+      "strokeColor": "#3a3e4e",
+      "strokeWidth": 1.5,
+      "endArrowhead": "arrow",
+      "startBinding": {
+        "elementId": "root",
+        "fixedPoint": [
+          0.75,
+          1
+        ]
+      },
+      "endBinding": {
+        "elementId": "leadbox",
+        "fixedPoint": [
+          0.5,
+          0
+        ]
+      }
+    },
+    {
+      "type": "arrow",
+      "id": "la5",
+      "x": 800,
+      "y": 155,
+      "width": 100,
+      "height": 55,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          55
+        ]
+      ],
+      "strokeColor": "#3a3e4e",
+      "strokeWidth": 1.5,
+      "endArrowhead": "arrow",
+      "startBinding": {
+        "elementId": "root",
+        "fixedPoint": [
+          0.9,
+          1
+        ]
+      },
+      "endBinding": {
+        "elementId": "archbox",
+        "fixedPoint": [
+          0.5,
+          0
+        ]
+      }
+    },
+    {
+      "type": "rectangle",
+      "id": "flowZone",
+      "x": 40,
+      "y": 430,
+      "width": 1080,
+      "height": 120,
+      "backgroundColor": "#111318",
+      "fillStyle": "solid",
+      "strokeColor": "#2a2e3a",
+      "strokeWidth": 1,
+      "roughness": 1,
+      "roundness": {
+        "type": 3
+      }
+    },
+    {
+      "type": "text",
+      "id": "flowt",
+      "x": 60,
+      "y": 442,
+      "width": 200,
+      "height": 16,
+      "text": "NEW VOLUNTEER JOURNEY",
+      "fontSize": 13,
+      "fontFamily": 1,
+      "strokeColor": "#5b8dee",
+      "fontWeight": 700,
+      "originalText": "NEW VOLUNTEER JOURNEY",
+      "autoResize": true
+    },
+    {
+      "type": "rectangle",
+      "id": "step1",
+      "x": 60,
+      "y": 468,
+      "width": 150,
+      "height": 68,
+      "backgroundColor": "#1e2230",
+      "fillStyle": "solid",
+      "strokeColor": "#5b8dee",
+      "strokeWidth": 1,
+      "roughness": 1,
+      "roundness": {
+        "type": 3
+      }
+    },
+    {
+      "type": "text",
+      "id": "step1t",
+      "x": 70,
+      "y": 476,
+      "width": 130,
+      "height": 14,
+      "text": "Discover BOA",
+      "fontSize": 11,
+      "fontFamily": 1,
+      "strokeColor": "#5b8dee",
+      "fontWeight": 700,
+      "textAlign": "center",
+      "originalText": "Discover BOA",
+      "autoResize": true
+    },
+    {
+      "type": "text",
+      "id": "step1d",
+      "x": 70,
+      "y": 492,
+      "width": 130,
+      "height": 36,
+      "text": "Public pages\nDiscord invite",
+      "fontSize": 9,
+      "fontFamily": 1,
+      "strokeColor": "#8b8fa3",
+      "textAlign": "center",
+      "originalText": "Public pages\nDiscord invite",
+      "autoResize": true
+    },
+    {
+      "type": "rectangle",
+      "id": "step2",
+      "x": 230,
+      "y": 468,
+      "width": 150,
+      "height": 68,
+      "backgroundColor": "#1e2230",
+      "fillStyle": "solid",
+      "strokeColor": "#d4a853",
+      "strokeWidth": 1,
+      "roughness": 1,
+      "roundness": {
+        "type": 3
+      }
+    },
+    {
+      "type": "text",
+      "id": "step2t",
+      "x": 240,
+      "y": 476,
+      "width": 130,
+      "height": 14,
+      "text": "Onboarding",
+      "fontSize": 11,
+      "fontFamily": 1,
+      "strokeColor": "#d4a853",
+      "fontWeight": 700,
+      "textAlign": "center",
+      "originalText": "Onboarding",
+      "autoResize": true
+    },
+    {
+      "type": "text",
+      "id": "step2d",
+      "x": 240,
+      "y": 492,
+      "width": 130,
+      "height": 36,
+      "text": "Self-serve guides\nMentor pairing",
+      "fontSize": 9,
+      "fontFamily": 1,
+      "strokeColor": "#8b8fa3",
+      "textAlign": "center",
+      "originalText": "Self-serve guides\nMentor pairing",
+      "autoResize": true
+    },
+    {
+      "type": "rectangle",
+      "id": "step3",
+      "x": 400,
+      "y": 468,
+      "width": 150,
+      "height": 68,
+      "backgroundColor": "#1e2230",
+      "fillStyle": "solid",
+      "strokeColor": "#55c57a",
+      "strokeWidth": 1,
+      "roughness": 1,
+      "roundness": {
+        "type": 3
+      }
+    },
+    {
+      "type": "text",
+      "id": "step3t",
+      "x": 410,
+      "y": 476,
+      "width": 130,
+      "height": 14,
+      "text": "First Role",
+      "fontSize": 11,
+      "fontFamily": 1,
+      "strokeColor": "#55c57a",
+      "fontWeight": 700,
+      "textAlign": "center",
+      "originalText": "First Role",
+      "autoResize": true
+    },
+    {
+      "type": "text",
+      "id": "step3d",
+      "x": 410,
+      "y": 492,
+      "width": 130,
+      "height": 36,
+      "text": "SOPs \u00b7 Checklists\nSupervised tasks",
+      "fontSize": 9,
+      "fontFamily": 1,
+      "strokeColor": "#8b8fa3",
+      "textAlign": "center",
+      "originalText": "SOPs \u00b7 Checklists\nSupervised tasks",
+      "autoResize": true
+    },
+    {
+      "type": "rectangle",
+      "id": "step4",
+      "x": 570,
+      "y": 468,
+      "width": 150,
+      "height": 68,
+      "backgroundColor": "#1e2230",
+      "fillStyle": "solid",
+      "strokeColor": "#d0bfff",
+      "strokeWidth": 1,
+      "roughness": 1,
+      "roundness": {
+        "type": 3
+      }
+    },
+    {
+      "type": "text",
+      "id": "step4t",
+      "x": 580,
+      "y": 476,
+      "width": 130,
+      "height": 14,
+      "text": "Active Service",
+      "fontSize": 11,
+      "fontFamily": 1,
+      "strokeColor": "#d0bfff",
+      "fontWeight": 700,
+      "textAlign": "center",
+      "originalText": "Active Service",
+      "autoResize": true
+    },
+    {
+      "type": "text",
+      "id": "step4d",
+      "x": 580,
+      "y": 492,
+      "width": 130,
+      "height": 36,
+      "text": "Full access\nRecognition starts",
+      "fontSize": 9,
+      "fontFamily": 1,
+      "strokeColor": "#8b8fa3",
+      "textAlign": "center",
+      "originalText": "Full access\nRecognition starts",
+      "autoResize": true
+    },
+    {
+      "type": "rectangle",
+      "id": "step5",
+      "x": 740,
+      "y": 468,
+      "width": 150,
+      "height": 68,
+      "backgroundColor": "#1e2230",
+      "fillStyle": "solid",
+      "strokeColor": "#e05555",
+      "strokeWidth": 1,
+      "roughness": 1,
+      "roundness": {
+        "type": 3
+      }
+    },
+    {
+      "type": "text",
+      "id": "step5t",
+      "x": 750,
+      "y": 476,
+      "width": 130,
+      "height": 14,
+      "text": "Leadership",
+      "fontSize": 11,
+      "fontFamily": 1,
+      "strokeColor": "#e05555",
+      "fontWeight": 700,
+      "textAlign": "center",
+      "originalText": "Leadership",
+      "autoResize": true
+    },
+    {
+      "type": "text",
+      "id": "step5d",
+      "x": 750,
+      "y": 492,
+      "width": 130,
+      "height": 36,
+      "text": "Decision docs\nGovernance role",
+      "fontSize": 9,
+      "fontFamily": 1,
+      "strokeColor": "#8b8fa3",
+      "textAlign": "center",
+      "originalText": "Decision docs\nGovernance role",
+      "autoResize": true
+    },
+    {
+      "type": "rectangle",
+      "id": "step6",
+      "x": 910,
+      "y": 468,
+      "width": 150,
+      "height": 68,
+      "backgroundColor": "#1e2230",
+      "fillStyle": "solid",
+      "strokeColor": "#d4a853",
+      "strokeWidth": 1,
+      "roughness": 1,
+      "roundness": {
+        "type": 3
+      }
+    },
+    {
+      "type": "text",
+      "id": "step6t",
+      "x": 920,
+      "y": 476,
+      "width": 130,
+      "height": 14,
+      "text": "Mentor / Alumni",
+      "fontSize": 11,
+      "fontFamily": 1,
+      "strokeColor": "#d4a853",
+      "fontWeight": 700,
+      "textAlign": "center",
+      "originalText": "Mentor / Alumni",
+      "autoResize": true
+    },
+    {
+      "type": "text",
+      "id": "step6d",
+      "x": 920,
+      "y": 492,
+      "width": 130,
+      "height": 36,
+      "text": "Pay it forward\nHall of Service",
+      "fontSize": 9,
+      "fontFamily": 1,
+      "strokeColor": "#d4a853",
+      "textAlign": "center",
+      "originalText": "Pay it forward\nHall of Service",
+      "autoResize": true
+    },
+    {
+      "type": "arrow",
+      "id": "far1",
+      "x": 210,
+      "y": 502,
+      "width": 20,
+      "height": 0,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          20,
+          0
+        ]
+      ],
+      "strokeColor": "#3a3e4e",
+      "strokeWidth": 1,
+      "endArrowhead": "arrow"
+    },
+    {
+      "type": "arrow",
+      "id": "far2",
+      "x": 380,
+      "y": 502,
+      "width": 20,
+      "height": 0,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          20,
+          0
+        ]
+      ],
+      "strokeColor": "#3a3e4e",
+      "strokeWidth": 1,
+      "endArrowhead": "arrow"
+    },
+    {
+      "type": "arrow",
+      "id": "far3",
+      "x": 550,
+      "y": 502,
+      "width": 20,
+      "height": 0,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          20,
+          0
+        ]
+      ],
+      "strokeColor": "#3a3e4e",
+      "strokeWidth": 1,
+      "endArrowhead": "arrow"
+    },
+    {
+      "type": "arrow",
+      "id": "far4",
+      "x": 720,
+      "y": 502,
+      "width": 20,
+      "height": 0,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          20,
+          0
+        ]
+      ],
+      "strokeColor": "#3a3e4e",
+      "strokeWidth": 1,
+      "endArrowhead": "arrow"
+    },
+    {
+      "type": "arrow",
+      "id": "far5",
+      "x": 890,
+      "y": 502,
+      "width": 20,
+      "height": 0,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          20,
+          0
+        ]
+      ],
+      "strokeColor": "#3a3e4e",
+      "strokeWidth": 1,
+      "endArrowhead": "arrow"
+    },
+    {
+      "type": "rectangle",
+      "id": "metZone",
+      "x": 40,
+      "y": 585,
+      "width": 1080,
+      "height": 130,
+      "backgroundColor": "#111318",
+      "fillStyle": "solid",
+      "strokeColor": "#2a2e3a",
+      "strokeWidth": 1,
+      "roughness": 1,
+      "roundness": {
+        "type": 3
+      }
+    },
+    {
+      "type": "text",
+      "id": "mett",
+      "x": 60,
+      "y": 597,
+      "width": 200,
+      "height": 16,
+      "text": "KEY METRICS & BENEFITS",
+      "fontSize": 13,
+      "fontFamily": 1,
+      "strokeColor": "#d4a853",
+      "fontWeight": 700,
+      "originalText": "KEY METRICS & BENEFITS",
+      "autoResize": true
+    },
+    {
+      "type": "rectangle",
+      "id": "m1bg",
+      "x": 60,
+      "y": 620,
+      "width": 230,
+      "height": 75,
+      "backgroundColor": "#1e2230",
+      "fillStyle": "solid",
+      "strokeColor": "#5b8dee",
+      "strokeWidth": 1,
+      "roughness": 1,
+      "roundness": {
+        "type": 3
+      }
+    },
+    {
+      "type": "text",
+      "id": "m1t",
+      "x": 75,
+      "y": 628,
+      "width": 200,
+      "height": 18,
+      "text": "40-60%",
+      "fontSize": 20,
+      "fontFamily": 1,
+      "strokeColor": "#5b8dee",
+      "fontWeight": 800,
+      "textAlign": "center",
+      "originalText": "40-60%",
+      "autoResize": true
+    },
+    {
+      "type": "text",
+      "id": "m1d",
+      "x": 75,
+      "y": 650,
+      "width": 200,
+      "height": 36,
+      "text": "faster onboarding\n(with documented processes)",
+      "fontSize": 10,
+      "fontFamily": 1,
+      "strokeColor": "#8b8fa3",
+      "textAlign": "center",
+      "originalText": "faster onboarding\n(with documented processes)",
+      "autoResize": true
+    },
+    {
+      "type": "rectangle",
+      "id": "m2bg",
+      "x": 310,
+      "y": 620,
+      "width": 230,
+      "height": 75,
+      "backgroundColor": "#1e2230",
+      "fillStyle": "solid",
+      "strokeColor": "#55c57a",
+      "strokeWidth": 1,
+      "roughness": 1,
+      "roundness": {
+        "type": 3
+      }
+    },
+    {
+      "type": "text",
+      "id": "m2t",
+      "x": 325,
+      "y": 628,
+      "width": 200,
+      "height": 18,
+      "text": "5 SPOFs",
+      "fontSize": 20,
+      "fontFamily": 1,
+      "strokeColor": "#55c57a",
+      "fontWeight": 800,
+      "textAlign": "center",
+      "originalText": "5 SPOFs",
+      "autoResize": true
+    },
+    {
+      "type": "text",
+      "id": "m2d",
+      "x": 325,
+      "y": 650,
+      "width": 200,
+      "height": 36,
+      "text": "single points of failure\neliminated",
+      "fontSize": 10,
+      "fontFamily": 1,
+      "strokeColor": "#8b8fa3",
+      "textAlign": "center",
+      "originalText": "single points of failure\neliminated",
+      "autoResize": true
+    },
+    {
+      "type": "rectangle",
+      "id": "m3bg",
+      "x": 560,
+      "y": 620,
+      "width": 230,
+      "height": 75,
+      "backgroundColor": "#1e2230",
+      "fillStyle": "solid",
+      "strokeColor": "#d4a853",
+      "strokeWidth": 1,
+      "roughness": 1,
+      "roundness": {
+        "type": 3
+      }
+    },
+    {
+      "type": "text",
+      "id": "m3t",
+      "x": 575,
+      "y": 628,
+      "width": 200,
+      "height": 18,
+      "text": "3-5x ROI",
+      "fontSize": 20,
+      "fontFamily": 1,
+      "strokeColor": "#d4a853",
+      "fontWeight": 800,
+      "textAlign": "center",
+      "originalText": "3-5x ROI",
+      "autoResize": true
+    },
+    {
+      "type": "text",
+      "id": "m3d",
+      "x": 575,
+      "y": 650,
+      "width": 200,
+      "height": 36,
+      "text": "productivity gain per $1\ninvested in knowledge mgmt",
+      "fontSize": 10,
+      "fontFamily": 1,
+      "strokeColor": "#8b8fa3",
+      "textAlign": "center",
+      "originalText": "productivity gain per $1\ninvested in knowledge mgmt",
+      "autoResize": true
+    },
+    {
+      "type": "rectangle",
+      "id": "m4bg",
+      "x": 810,
+      "y": 620,
+      "width": 290,
+      "height": 75,
+      "backgroundColor": "#1e2230",
+      "fillStyle": "solid",
+      "strokeColor": "#d0bfff",
+      "strokeWidth": 1,
+      "roughness": 1,
+      "roundness": {
+        "type": 3
+      }
+    },
+    {
+      "type": "text",
+      "id": "m4t",
+      "x": 825,
+      "y": 628,
+      "width": 260,
+      "height": 18,
+      "text": "25%",
+      "fontSize": 20,
+      "fontFamily": 1,
+      "strokeColor": "#d0bfff",
+      "fontWeight": 800,
+      "textAlign": "center",
+      "originalText": "25%",
+      "autoResize": true
+    },
+    {
+      "type": "text",
+      "id": "m4d",
+      "x": 825,
+      "y": 650,
+      "width": 260,
+      "height": 36,
+      "text": "of org decisions currently\ndocumented (target: 90%+)",
+      "fontSize": 10,
+      "fontFamily": 1,
+      "strokeColor": "#8b8fa3",
+      "textAlign": "center",
+      "originalText": "of org decisions currently\ndocumented (target: 90%+)",
+      "autoResize": true
+    }
   ],
-  "appState": {"viewBackgroundColor":"#0a0b0e"}
+  "appState": {
+    "viewBackgroundColor": "#0a0b0e"
+  }
 }
