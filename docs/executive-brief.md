@@ -1,6 +1,6 @@
 # Executive Brief: BOA Partnership Proposal
 
-**Prepared by:** OWL (on behalf of the Ghost of Tabor community)
+**Prepared by:** DonZzzilla (on behalf of the Ghost of Tabor community)
 **Date:** June 2026
 **Purpose:** To outline the current state of the Battlefield Operation and Awareness (BOA), identify key challenges the guild is navigating, and propose a collaborative partnership to strengthen mutual outcomes.
 
