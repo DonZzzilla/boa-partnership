@@ -1,7 +1,7 @@
 # BOA Volunteer Recognition Program
 
 **Prepared for:** Battlefield Operation and Awareness (BOA) Leadership & Partnership Review
-**Prepared by:** OWL Intelligent Systems, a division of ZOO Company
+**Prepared by:** DonZzzilla, Lead BOA, a division of ZOO Company
 **Date:** June 2026
 **Classification:** Partnership Deliverable — Confidential
 **Version:** 1.0
