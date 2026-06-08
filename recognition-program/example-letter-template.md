@@ -20,7 +20,7 @@ Letter authors should use this template as a guide, not a form to fill in mechan
 ```
 ┌─────────────────────────────────────────────────────────────────┐
 │                                                                 │
-│              BROTHERHOOD OF ASCENSION (BOA)                     │
+│              BATTLEFIELD OPERATION AND AWARENESS (BOA)                     │
 │         Ghost of Tabor Community — Volunteer Division           │
 │                                                                 │
 │  "Lifting others as we rise."                                   │
@@ -40,7 +40,7 @@ Letter authors should use this template as a guide, not a form to fill in mechan
 
 ---
 
-**BROTHERHOOD OF ASCENSION**
+**BATTLEFIELD OPERATION AND AWARENESS**
 Ghost of Tabor Community — Volunteer Division
 
 [BOA Logo] · [Partner Logo, if applicable]
@@ -53,7 +53,7 @@ To Whom It May Concern,
 
 It is my genuine pleasure to recommend **[Volunteer Name]** for [the position of / admission to / consideration for] **[opportunity — e.g., "the Community Manager role at your organization" / "your graduate program in Information Science" / "any professional opportunity that values dedication, skill, and character"]**.
 
-I have had the privilege of working alongside [Volunteer Name] for **[duration — e.g., "seven months"]** in my capacity as **[Author's Role — e.g., "Onboarding Team Lead for the Brotherhood of Ascension (BOA)"]**, a volunteer-driven community organization serving players of Ghost of Tabor. During this time, [Volunteer Name] has served in the roles of **[Role 1]**, **[Role 2]**, and **[Role 3]**, contributing approximately **[total hours]** hours of verified service.
+I have had the privilege of working alongside [Volunteer Name] for **[duration — e.g., "seven months"]** in my capacity as **[Author's Role — e.g., "Onboarding Team Lead for the Battlefield Operation and Awareness (BOA)"]**, a volunteer-driven community organization serving players of Ghost of Tabor. During this time, [Volunteer Name] has served in the roles of **[Role 1]**, **[Role 2]**, and **[Role 3]**, contributing approximately **[total hours]** hours of verified service.
 
 **[Paragraph 2 — Specific Contributions]**
 
@@ -84,7 +84,7 @@ I am happy to provide further context or answer specific questions. I can be rea
 With sincere respect and confidence,
 
 **[Author Name]**
-[Author Title — e.g., Onboarding Team Lead, Brotherhood of Ascension]
+[Author Title — e.g., Onboarding Team Lead, Battlefield Operation and Awareness]
 [Author Tenure — e.g., BOA Officer since March 2024]
 
 [BOA Digital Seal / Signature]
